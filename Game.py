@@ -1,12 +1,13 @@
 from PlayerRoles import Knight, Wizard, Thief
+from Map import Map
 
 
 class Game:
     def __init__(self):
         pass
 
-    def create_dungeoun(self):
-        self.map = dungeoun
+    def create_map(self):
+        self.map = Map()
 
     def create_player(self, position, role):
         if role == 1:
