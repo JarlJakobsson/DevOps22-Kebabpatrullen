@@ -6,9 +6,10 @@ class Knight(Player):
     def __init__(self):
         super().__init__()
         self.initative = 5
-        self.endurance = 9
+        self.health = 9
         self.attack = 6
         self.agility = 4
+        self.max_health = 9
         self.is_knight = True
         self.block_rdy = True
 
@@ -24,9 +25,10 @@ class Wizard(Player):
     def __init__(self):
         super().__init__()
         self.initative = 6
-        self.endurance = 5
+        self.health = 5
         self.attack = 9
         self.agility = 5
+        self.max_health = 5
         self.is_wizard = True
 
     def escape_roll(self):
@@ -43,9 +45,10 @@ class Thief(Player):
     def __init__(self):
         super().__init__()
         self.initative = 7
-        self.endurance = 5
+        self.health = 5
         self.attack = 5
         self.agility = 7
+        self.max_health = 5
         self.is_thief = True
 
     def attack_roll(attack_stat):
