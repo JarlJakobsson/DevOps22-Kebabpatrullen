@@ -1,11 +1,12 @@
 from Characters import Character
+from random import randint
 
 
 class Player(Character):
     def __init__(self, position):
         super().__init__()
         self.treasure_value = 0
-        self.current_position = position
+        self.position = position
 
     def get_treasure(self, treasure):
         self.treasure_value += treasure
@@ -24,3 +25,15 @@ class Player(Character):
 
     def set_position(self, position):
         self.current_position = position
+
+    def escape_roll(self):
+        escape = randint(1, 100)
+        if escape <= 10 * self.agility:
+            print("I escaped...")
+            return True
+        else:
+            print("Never lucky...")
+            return False
+
+    def move(self):
+        pass
