@@ -56,7 +56,7 @@ Please feel free to edit everything around here. No need to ask for permission. 
 ```mermaid
 gantt
 dateFormat  YYYY-MM-DD
-title Keabpatrullen
+title Kebabpatrullen
 
 section Start of project
 Planning                  :         des1, 2022-12-05, 2d
