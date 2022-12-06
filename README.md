@@ -1,7 +1,6 @@
 # Kebabpatrullen Agile Devops 2022
 
-**Kebab** ON!
-Let the kebab hunt begin!
+Let the search for the lost kebab begin!
 
 <p align = "right">
 <img src="img/kebab.jpeg" width=30% >
@@ -16,9 +15,19 @@ Don't forget it's about the journey, not the destination.
 
 ---
 
-[Trello Board](https://trello.com/invite/devops22gruppx/ATTI617b37ffc515008b88814c6b8f61e9ea09E661C5)
+## Shortcuts, Tips & Tricks
 
-[Zoom](https://zoom.us/j/97302349928?pwd=aFRwdVZNY3Ryekk4TnVPYnprNldUdz09)
+[**TODO**](stuff/todo.md)
+
+[**Links**](stuff/links.md)
+
+[**Tips & Tricks**](stuff/howto.md)
+
+[**Story & Design**](stuff/story.md)
+
+[**Trello Board**](https://trello.com/b/ATTI617b37ffc515008b88814c6b8f61e9ea09E661C5)
+
+[**Zoom Meeting**](https://zoom.us/j/97302349928?pwd=aFRwdVZNY3Ryekk4TnVPYnprNldUdz09)
 
 ---
 
@@ -42,16 +51,15 @@ Don't forget it's about the journey, not the destination.
 
 ---
 
-## Good Stuff
+## Kanban Board
 
-[**TODO**](stuff/todo.md)
-
-[**Links**](stuff/links.md)
+<p align = "center">
+<img src="img/kanban.png" width=90% >
 
 ## Flowchart
 
 <p align = "center">
-<img src="img/flowchart.png" width=80% >
+<img src="img/flowchart.png" width=90% >
 
 ## Project Timeline
 
@@ -70,18 +78,3 @@ Presentation              :         des4, after des3, 3d
 ```
 
 ---
-
-## Fun Diagrams
-
----
-
-```mermaid
-graph TD
-A[Good morning sunshine] --> B[Chech Github & Trello]
-B --> C
-C --> D[Take a deep breath]
-D --> E[Start coding]
-E --> F[Commit and push]
-F --> G[Coffee break]
-G --> C[Open VS Code]
-```
