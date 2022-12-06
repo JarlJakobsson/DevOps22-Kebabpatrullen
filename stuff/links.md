@@ -26,3 +26,7 @@ Here we will collect links to resources that we find useful for Agile.
 - [Draw.io](https://app.diagrams.net/)
 - [PlantUML](https://plantuml.com/)
 - [Agile Project Management](https://en.wikipedia.org/wiki/Agile_software_development)
+
+---
+
+Back to [Frontpage](../README.md)

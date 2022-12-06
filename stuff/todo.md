@@ -21,7 +21,7 @@ Things from to do can be moved around. Any suggestions are welcome.
 - [ ] Trying to play the AGILE game
 - [ ] Github repo
 - [ ] Planning
-- [ ] Having fun!
+- [x] Having fun!
 
 ---
 
@@ -54,3 +54,7 @@ Sprint 1                  :         des2, 2022-12-07, 6d
 Sprint 2                  :         des3, after des2, 6d
 Presentation              :         des4, after des3, 2d
 ```
+
+---
+
+Back to [Frontpage](../README.md)
