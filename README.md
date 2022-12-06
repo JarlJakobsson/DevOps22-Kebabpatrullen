@@ -51,7 +51,7 @@ Don't forget it's about the journey, not the destination.
 ## Flowchart
 
 <p align = "center">
-<img src="img/flowchart.png" width=90% >
+<img src="img/flowchart.png" width=80% >
 
 ## Project Timeline
 
