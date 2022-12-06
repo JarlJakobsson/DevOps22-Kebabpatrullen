@@ -19,7 +19,8 @@ Here we will collect links to resources that we find useful for Agile.
 ## Tech Stuff
 
 - [**Our Trello Board** *for planning and tracking progress*](https://trello.com/invite/devops22gruppx/ATTI617b37ffc515008b88814c6b8f61e9ea09E661C5)
-- [Project PDF](stuff/dungeon_run.pdf)
+- [Our **Zoom** Meeting](https://zoom.us/j/97302349928?pwd=aFRwdVZNY3Ryekk4TnVPYnprNldUdz09)
+- [Project **PDF**](dungeon_run.pdf)
 - [Mermaid](https://mermaid-js.github.io/mermaid/#/)
 - [Lucidchart](https://www.lucidchart.com/)
 - [Draw.io](https://app.diagrams.net/)
