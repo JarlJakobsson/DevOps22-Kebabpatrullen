@@ -4,7 +4,7 @@
 Let the kebab hunt begin!
 
 <p align = "right">
-<img src="img/kebab.jpeg" width=20% >
+<img src="img/kebab.jpeg" width=30% >
 
 ---
 
@@ -16,28 +16,27 @@ Don't forget it's about the journey, not the destination.
 
 ---
 
-[**Our Trello Board** *for planning and tracking progress*](https://trello.com/invite/devops22gruppx/ATTI617b37ffc515008b88814c6b8f61e9ea09E661C5)
+[Trello Board](https://trello.com/invite/devops22gruppx/ATTI617b37ffc515008b88814c6b8f61e9ea09E661C5)
+
+[Zoom](https://zoom.us/j/97302349928?pwd=aFRwdVZNY3Ryekk4TnVPYnprNldUdz09)
 
 ---
 
 ## Dev Team
 
-Please take the descriptions of the roles as a **joke**. We are all in this together and we will all do our best to make this project a success.
-Please feel free to edit everything around here. No need to ask for permission. Any suggestions are welcome. This will NOT be our project README(*for now*). Just a fun front page.
+[*Frida*](https://github.com/fridalundstroms)
 
-[*Frida*](https://github.com/fridalundstroms) - Team Lead
+[*Mandana*](https://github.com/Manibadani)
 
-[*Mandana*](https://github.com/Manibadani) - Scrum Master
+[*Raffi*](https://github.com/raffiavakian)
 
-[*Raffi*](https://github.com/raffiavakian) - Researcher, Designer & Story Writer
+[*Jarl*](https://github.com/JarlJakobsson)
 
-[*Jarl*](https://github.com/JarlJakobsson) - Lead Developer & Tech Lead
-
-[*Alex*](https://github.com/AlexRoman777) - almost junior Developer
+[*Alex*](https://github.com/AlexRoman777)
 
 ---
 
-## Product Owner
+## Support Team
 
 [Robert WESTIN](https://github.com/robert-alfwar)
 
@@ -48,6 +47,11 @@ Please feel free to edit everything around here. No need to ask for permission. 
 [**TODO**](stuff/todo.md)
 
 [**Links**](stuff/links.md)
+
+## Flowchart
+
+<p align = "center">
+<img src="img/flowchart.png" width=90% >
 
 ## Project Timeline
 
