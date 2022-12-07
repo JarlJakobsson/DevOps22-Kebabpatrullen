@@ -25,7 +25,7 @@ Don't forget it's about the journey, not the destination.
 
 [**Story & Design**](stuff/story.md)
 
-[**Trello Board**](https://trello.com/b/ATTI617b37ffc515008b88814c6b8f61e9ea09E661C5)
+[**Trello Board**](https://trello.com/b/qFWLiZ49/kebabspelet)
 
 [**Zoom Meeting**](https://zoom.us/j/97302349928?pwd=aFRwdVZNY3Ryekk4TnVPYnprNldUdz09)
 
@@ -79,3 +79,39 @@ Deadline                 :         des4, after des3, 3d
 ```
 
 ---
+
+## Agile roles
+
+### **Roles**
+
+We have to decide on the roles for the project.
+
+- **Product Owner** - *Robert*
+- **Scrum Master** - *Alla*
+- **Development Team** - *Alla*
+
+---
+
+## Mermaid from Flowchart
+
+---
+
+### Redoing the flowchart with mermaid
+
+Work in progress 🚧
+
+---
+
+```mermaid
+graph TD
+A[Start] --> B[Create new user or login]
+B --> C[Input name]
+B --> D[Get data from file]
+C --> E[Input role]
+E --> F[Input start position]
+F --> G[Input map size]
+D --> G[Get data from file]
+G --> H[Create player, map, room]
+H --> I[Try to move]
+I --> J[Check if monster]
+```
