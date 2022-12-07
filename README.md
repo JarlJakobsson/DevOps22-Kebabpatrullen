@@ -71,10 +71,11 @@ dateFormat  YYYY-MM-DD
 title Kebabpatrullen
 
 section Start of project
-Planning                  :         des1, 2022-12-05, 2d
-Sprint 1                  :         des2, 2022-12-07, 6d
-Sprint 2                  :         des3, after des2, 6d
-Presentation              :         des4, after des3, 3d
+Planning                 :         des1, 2022-12-05, 3d
+Sprint 1                 :         des2, 2022-12-07, 6d
+Planning                 :         des4, 2022-12-12, 3d
+Sprint 2                 :         des3, after des2, 6d
+Deadline                 :         des4, after des3, 3d
 ```
 
 ---
