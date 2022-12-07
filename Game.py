@@ -2,7 +2,7 @@ from PlayerRoles import Knight, Wizard, Thief
 from Map import Map
 import Room
 import random
-import Enemies
+import Mosters
 
 
 class Game:
