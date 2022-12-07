@@ -82,15 +82,13 @@ Deadline                 :         des4, after des3, 3d
 
 ## Agile roles
 
-### **Scrum Roles**
+### **Roles**
 
-- **Product Owner** - *Mandana*
-- **Scrum Master** - *Frida*
-- **Development Team** - *Raffi, Jarl, Alex*
-- **Support Team** - *Robert*
-- **Stakeholders** - *Robert*
+We have to decide on the roles for the project.
 
-### **Agile Roles**
+- **Product Owner** - *Robert*
+- **Scrum Master** - *Alla*
+- **Development Team** - *Alla*
 
 ---
 
