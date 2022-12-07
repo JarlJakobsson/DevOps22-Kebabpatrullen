@@ -5,7 +5,7 @@ import random
 class Knight(Player):
     def __init__(self):
         super().__init__()
-        self.initative = 5
+        self.initiative = 5
         self.health = 9
         self.attack = 6
         self.agility = 4
@@ -24,7 +24,7 @@ def set_block(self):
 class Wizard(Player):
     def __init__(self):
         super().__init__()
-        self.initative = 6
+        self.initiative = 6
         self.health = 5
         self.attack = 9
         self.agility = 5
@@ -44,7 +44,7 @@ class Wizard(Player):
 class Thief(Player):
     def __init__(self):
         super().__init__()
-        self.initative = 7
+        self.initiative = 7
         self.health = 5
         self.attack = 5
         self.agility = 7
