@@ -110,7 +110,7 @@ B --> D[Get data from file]
 C --> E[Input role]
 E --> F[Input start position]
 F --> G[Input map size]
-D --> G[Get data from file]
+D --> G[Input map size]
 G --> H[Create player, map, room]
 H --> I[Try to move]
 I --> J[Check if monster]
@@ -126,8 +126,8 @@ I --> J[Check if monster]
 
 | ID | User Story | Priority | Estimate | Difficulty | Status |
 | --- | --- | --- | --- | --- | --- |
-| 01 | Task 01 | 3 | 1 hour | Easy | Done |
-| 02 | Task 02 | 4 | 10 hours | Very Easy | WiP |
-| 03 | Task 03 | 5 | 10 days | Medium | - |
-| 04 | Task 04 | 2 | 10 months | Hard | - |
-| 05 | Task 05 | 1 | 1 eternity | Impossible | - |
+| 01 | Task 01 | 1 | 1 hour | Easy | Done |
+| 02 | Task 02 | 2 | 10 hours | Very Easy | 🚧 |
+| 03 | Task 03 | 4 | 10 days | Medium | ⁉ |
+| 04 | Task 04 | 3 | 10 months | Hard | - |
+| 05 | Task 05 | 99 | 1 eternity | Impossible | ∞ |
