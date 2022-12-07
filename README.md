@@ -79,3 +79,6 @@ Deadline                 :         des4, after des3, 3d
 ```
 
 ---
+
+## Agile roles
+
