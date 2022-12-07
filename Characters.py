@@ -14,6 +14,7 @@ class Character:
     def roll_die(self):
         return random.randint(1, 6)
 
+    # eventuell en generisk roll för allt
     def roll(self, value):
         sum = 0
         for i in range(value):

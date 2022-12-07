@@ -3,7 +3,7 @@ from random import randint
 
 
 class Player(Character):
-    def __init__(self, position):
+    def __init__(self, position = (0, 0)):
         super().__init__()
         self.treasure_value = 0
         self.position = position
