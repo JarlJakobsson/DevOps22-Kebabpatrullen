@@ -31,7 +31,7 @@ class Map:
     def print_map(self):
         for row in self.map:
             print(row)
-        print("\n -------------------\n")
+        print("-------------------")
 
     def move_player(self, position):
         x, y = position
