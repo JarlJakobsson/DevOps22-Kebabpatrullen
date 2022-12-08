@@ -15,6 +15,12 @@ Don't forget it's about the journey, not the destination.
 
 ---
 
+## GUI - *Graphical User Interface* 🚧
+
+[*Dungeon Run* **GUI**](stuff/gui.md)
+
+---
+
 ## Shortcuts, Tips & Tricks
 
 [**TODO**](stuff/todo.md)
