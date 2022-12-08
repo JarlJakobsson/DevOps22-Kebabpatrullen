@@ -122,7 +122,7 @@ I --> J[Check if monster]
 
 ---
 
-### Backlog
+### Backlog (User Stories)
 
 | ID | User Story | Priority | Estimate | Difficulty | Status |
 | --- | --- | --- | --- | --- | --- |
@@ -137,7 +137,7 @@ I --> J[Check if monster]
 | Name | Day 01 | Day 02 | Day 03 | Day 04 | Day 05 |
 | --- | --- | --- | --- | --- | --- |
 | Frida | 2h | 5h | 5h | 5h | 5h |
-| MAndana | 2h | 5h | 5h | 5h | 5h |
+| Mandana | 2h | 5h | 5h | 5h | 5h |
 | Raffi | 2h | 5h | 5h | 5h | 5h |
 | Jarl | 2h | 5h | 5h | 5h | 5h |
 | Alex | 2h | 5h | 5h | 5h | 5h |
@@ -148,7 +148,7 @@ I --> J[Check if monster]
 | Name | Day 01 | Day 02 | Day 03 | Day 04 | Day 05 |
 | --- | --- | --- | --- | --- | --- |
 | Frida | 2h | 5h | 5h | 5h | 5h |
-| MAndana | 2h | 5h | 5h | 5h | 5h |
+| Mandana | 2h | 5h | 5h | 5h | 5h |
 | Raffi | 2h | 5h | 5h | 5h | 5h |
 | Jarl | 2h | 5h | 5h | 5h | 5h |
 | Alex | 2h | 5h | 5h | 5h | 5h |
