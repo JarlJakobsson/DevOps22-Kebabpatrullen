@@ -122,7 +122,7 @@ I --> J[Check if monster]
 
 ---
 
-### Backlog
+### Backlog (User Stories)
 
 | ID | User Story | Priority | Estimate | Difficulty | Status |
 | --- | --- | --- | --- | --- | --- |
@@ -131,3 +131,25 @@ I --> J[Check if monster]
 | 03 | Task 03 | 4 | 10 days | Medium | ⁉ |
 | 04 | Task 04 | 3 | 10 months | Hard | - |
 | 05 | Task 05 | 99 | 1 eternity | Impossible | ∞ |
+
+## Sprintperiod 1
+
+| Name | Day 01 | Day 02 | Day 03 | Day 04 | Day 05 |
+| --- | --- | --- | --- | --- | --- |
+| Frida | 2h | 5h | 5h | 5h | 5h |
+| Mandana | 2h | 5h | 5h | 5h | 5h |
+| Raffi | 2h | 5h | 5h | 5h | 5h |
+| Jarl | 2h | 5h | 5h | 5h | 5h |
+| Alex | 2h | 5h | 5h | 5h | 5h |
+| Total | 10h | 25h | 25h | 25h | 25h |
+
+## Sprintperiod 2
+
+| Name | Day 01 | Day 02 | Day 03 | Day 04 | Day 05 |
+| --- | --- | --- | --- | --- | --- |
+| Frida | 2h | 5h | 5h | 5h | 5h |
+| Mandana | 2h | 5h | 5h | 5h | 5h |
+| Raffi | 2h | 5h | 5h | 5h | 5h |
+| Jarl | 2h | 5h | 5h | 5h | 5h |
+| Alex | 2h | 5h | 5h | 5h | 5h |
+| Total | 10h | 25h | 25h | 25h | 25h |
