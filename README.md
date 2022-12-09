@@ -15,6 +15,12 @@ Don't forget it's about the journey, not the destination.
 
 ---
 
+## GUI - *Graphical User Interface* 🚧
+
+[*Dungeon Run* **GUI**](stuff/gui.md)
+
+---
+
 ## Shortcuts, Tips & Tricks
 
 [**TODO**](stuff/todo.md)
@@ -55,6 +61,11 @@ Don't forget it's about the journey, not the destination.
 
 <p align = "center">
 <img src="img/kanban.png" width=90% >
+
+## Trello Sprint Backlog
+
+<p align = "center">
+<img src="img/sprint_backlog.png" width=90% >
 
 ## Flowchart
 
