@@ -28,10 +28,6 @@ class Move_menu:
 
         while True:
             if not self.direction:
-                self.direction = self.move_menu()
+                self.direction = self.run_menu()
             else:
                 break
-
-
-direction = 0, 1
-print(direction)

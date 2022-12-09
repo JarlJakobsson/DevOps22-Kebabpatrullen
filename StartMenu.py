@@ -15,6 +15,13 @@ class Start_menu:
 
     def choose_name(self):
         self.name = input(NAME_TEXT)
+        while True:
+            if self.name == "":
+                print("[GAME] Thats not a valid name...")
+                self.wait_for_user()
+                self.choose_name()
+            else:
+                break
 
     def choose_role(self):
         self.choice = input(ROLE_TEXT)
@@ -24,6 +31,9 @@ class Start_menu:
             self.role = 2
         elif self.choice == "3":
             self.role = 3
+        elif self.choice == "":
+            self.role = 4
+            print("Thats not a valid choice...")
         else:
             self.role = 4
             print("Thats not a valid choice...")
@@ -45,9 +55,13 @@ class Start_menu:
     def run_menu(self):
         self.keep_going = True
         while self.keep_going:
-            print(MAIN_MENU_TEXT)
-            choice = self.user_choice()
-            self.menu_commands(choice)
+            self.input = input(MAIN_MENU_TEXT)
+            while True:
+                if self.input == "":
+                    self.input = input(MAIN_MENU_TEXT)
+                else:
+                    break
+            self.menu_commands(self.input)
             print(self.name)
             print(self.role)
             break

@@ -27,13 +27,14 @@ class Game:
     def check_room(self, position):
         # Splits position into x and y
         x, y = position
+
         # Check if self.map.map[x][y].monster is True. If True prints the monster name and battle menu
         if self.map.map[x][y].monster:
             print(f"{self.player.name}: There is a {self.map.map[x][y].monster.name}")
             self.battle(position)
-        # If false prints that no monsters in room
         else:
             print(f"\n{self.player.name}: ...No monsters in here...\n")
+
         # After battle, Player loots treasure, monster get removed from room, treasure get removed from room
         self.player.get_treasure(self.map.map[x][y].treasure)
         self.map.map[x][y].monster = 0
@@ -58,6 +59,7 @@ class Game:
         a, b = self.map.player_position
         a += x
         b += y
+        
         # Checks if new room exists
         if a == -1 or a > self.map.size - 1 or b == -1 or b > self.map.size - 1:
             print(f"{self.player.name}: Ouch... There is a wall there...")
@@ -83,7 +85,7 @@ class Game:
             while True:
                 self.map.print_map()
                 self.move_menu.run_menu()
-                if self.check_room_exist(self.move_menu.direction):
+                if self.move_player(self.move_menu.direction):
                     break
 
 
