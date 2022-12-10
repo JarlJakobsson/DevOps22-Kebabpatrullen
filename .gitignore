@@ -1,3 +1,14 @@
+# Custom rules for the project by Alex
+*.pyc
+__pychache__
+.DS_Store
+test.py
+.vscode/settings.json
+.venv
+.vscode
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
