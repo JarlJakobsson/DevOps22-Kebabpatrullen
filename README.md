@@ -20,6 +20,8 @@ Let the search for the lost kebab begin!
 
 [Journals](#journal)
 
+[Alex being Kebabmaster for a day](stuff/alex_agile.md)
+
 ---
 
 ## **Dungeon Run** - *In the search of the Lost Kebab*
