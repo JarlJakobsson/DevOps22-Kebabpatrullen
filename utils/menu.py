@@ -438,8 +438,9 @@ def load_game():
     print(f"The player is a {player_character.upper()}")
     print(f"The map size is {board_size} by {board_size}")
     print(f"The board style (for some extra feature) is {board_style.upper()}")
-    input("Press enter to return to the main menu...")
-    starting_menu()
+    input("Press enter to close the game...")
+    clear()
+    outro_screen()
 
 
 def starting_menu():
