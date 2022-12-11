@@ -37,9 +37,13 @@ class Map:
         x, y = position
 
 
+    def give_player_position(self, current):  # pragma: no cover
+        pass
+        
 # x = Map()
 # # x.print_map()
 # move = (0,0)
 # x.mark_player_position(move)
 # x.print_map()
 # x.mark_visited_room(0,0)
+
