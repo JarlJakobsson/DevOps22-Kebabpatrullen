@@ -1,7 +1,7 @@
 
 # Kebabpatrullen Agile Devops 2022
 
-<p2>Let the search for the lost kebab begin!</p2>
+Let the search for the lost kebab begin!
 
 <p align = "center">
 <img src="img/dungeon art artwork.png" width=50% >
@@ -12,14 +12,15 @@
 
 - For *Jarl*:
 
-<p1>Please update the main branch with the latest code, so we can start [testing](stuff/testing.md)</p1>
+Please update the main branch with the latest code, so we can start [testing](stuff/testing.md)
 
 ---
+
 ## **Dungeon Run** - *In the search of the Lost Kebab*
 
 Agile Project Management - DevOps22 - Team 5
 
-<p2>Don't forget it's about the journey, not the destination.</p2>
+Don't forget it's about the journey, not the destination.
 
 ---
 
@@ -199,28 +200,3 @@ I --> J[Check if monster]
 ## Timeline PDF - by *Frida*
 
 [**Timeline PDF**](stuff/sprint1.pdf)
-
-<style>
-
-p1 {
-  color: red;
-  font-size: 22px;
-}
-
-p2 {
-  color: tomato;
-  font-size: 22px;
-}
-
-h2 {
-  color: lightblue;
-}
-
-td {
-  color: white;
-}
-
-th {
-  color: tomato;
-}
-</style>
