@@ -39,7 +39,7 @@ Example:
 
 Or in our case:
 
->Given *i am a player* when *i start the game* then *i get a menu*.
+>Given *i am a player* when *i start the game* then *i get a menu (next thing in flowchart is the menu)*.
 
 ---
 
@@ -70,6 +70,10 @@ For example:
 >As a *player* i want to *choose a character(hero)* so that *i can play the game as that character(hero)*.
 
 Then we have to provide a screenshot of the running game where the user can choose a character.
+
+<p align = "center">
+<img src="../img/character.png" width=20% >
+</p>
 
 And we have to do this for every user story that we will write.
 
