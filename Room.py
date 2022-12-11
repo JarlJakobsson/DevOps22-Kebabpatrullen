@@ -1,5 +1,6 @@
-from Enemies import Giantspider, Skeleton, Orc, Troll
 import random
+
+from Enemies import Giantspider, Orc, Skeleton, Troll
 
 
 class Room:
@@ -7,8 +8,9 @@ class Room:
         self.visited = False
         self.monster = 0
         self.room_index = room_index
+        self.treasure = 0
 
-    def summon_monster(self):
+    def summon_monster(self):  # pragma: no cover
         if not self.visited:
             monster_roll = random.randint(1, 100)
             if monster_roll in range(1, 20):
@@ -22,7 +24,7 @@ class Room:
             if self.monster:
                 print(f"There is a {self.monster.name} in here.")
 
-    def create_treasure(self):
+    def create_treasure(self):  # pragma: no cover
         if not self.visited:
             treasure_roll = random.randint(1, 100)
             if treasure_roll in range(1, 40):

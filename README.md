@@ -1,17 +1,25 @@
+
 # Kebabpatrullen Agile Devops 2022
 
-Let the search for the lost kebab begin!
+<p2>Let the search for the lost kebab begin!</p2>
 
-<p align = "right">
-<img src="img/kebab.jpeg" width=30% >
+<p align = "center">
+<img src="img/dungeon art artwork.png" width=50% >
 
 ---
 
+## Important Notes
+
+- For *Jarl*:
+
+<p1>Please update the main branch with the latest code, so we can start [testing](stuff/testing.md)</p1>
+
+---
 ## **Dungeon Run** - *In the search of the Lost Kebab*
 
 Agile Project Management - DevOps22 - Team 5
 
-Don't forget it's about the journey, not the destination.
+<p2>Don't forget it's about the journey, not the destination.</p2>
 
 ---
 
@@ -33,6 +41,12 @@ Don't forget it's about the journey, not the destination.
 
 ---
 
+## Play in terminal - *Coming soon* ⏳
+
+[*Dungeon Run* **Terminal**](stuff/terminal.md)
+
+---
+
 ## Shortcuts, Tips & Tricks
 
 [**TODO**](stuff/todo.md)
@@ -46,6 +60,50 @@ Don't forget it's about the journey, not the destination.
 [**Trello Board**](https://trello.com/b/qFWLiZ49/kebabspelet)
 
 [**Zoom Meeting**](https://zoom.us/j/97302349928?pwd=aFRwdVZNY3Ryekk4TnVPYnprNldUdz09)
+
+---
+
+## Sprintperiod 1
+
+Sprint Period 1 - Project Dungeon Run
+
+| Name | 07-Dec | 08-Dec | 09-Dec | 12-Dec | 13-Dec |
+| --- | --- | --- | --- | --- | --- |
+| Frida | 3h | 4h | 7h | 5h | 5h |
+| Mandana | 3h | 4h | 7h | 5h | 5h |
+| Raffi | 3h | 4h | 7h | 5h | 5h |
+| Jarl | 3h | 4h | 7h | 5h | 5h |
+| Alex | 3h | 4h | 7h | 5h | 5h |
+| Total | 15h | 20h | 35h | 25h | 25h |
+
+---
+
+## Sprintperiod 2
+
+| Name | Day 01 | Day 02 | Day 03 | Day 04 | Day 05 |
+| --- | --- | --- | --- | --- | --- |
+| Frida | - | - | - | - | - |
+| Mandana | - | - | - | - | - |
+| Raffi | - | - | - | - | - |
+| Jarl | - | - | - | - | - |
+| Alex | - | - | - | - | - |
+| Total | - | - | - | - | - |
+
+---
+
+## Journal
+
+Daily journal for the project. (All team members)
+
+| Date | Description | Time |
+| --- | --- | --- |
+| 2022-12-05 | Start of project. Info. Got the task | 8h |
+| 2022-12-06 | Planning. Trello. Flowchart | 8h |
+| 2022-12-07 | Sprint 1. Backlog. Todo. Cod for terminal version. Code for GUI | 1h |
+| 2022-12-08 | Sprint 1. Timeplaning. Fibonaci. Standup | 4h |
+| 2022-12-09 | Sprint 1. Standing. Show code. Team(pair) coding | 7h |
+| 2022-12-10 | Sprint 1. Weekend. Pdf with timeplaning. New menu for terminal(proposition) | 4h |
+| 2022-12-11 | Sprint 1. Weekend. Testing with unittest and pytest.  | 4h |
 
 ---
 
@@ -72,17 +130,17 @@ Don't forget it's about the journey, not the destination.
 ## Kanban Board
 
 <p align = "center">
-<img src="img/kanban.png" width=90% >
+<img src="img/kanban.png" width=50% >
 
 ## Trello Sprint Backlog
 
 <p align = "center">
-<img src="img/sprint_backlog.png" width=90% >
+<img src="img/sprint_backlog.png" width=50% >
 
 ## Flowchart
 
 <p align = "center">
-<img src="img/flowchart.png" width=90% >
+<img src="img/flowchart.png" width=50% >
 
 ## Project Timeline
 
@@ -95,10 +153,11 @@ title Kebabpatrullen
 
 section Start of project
 Planning                 :         des1, 2022-12-05, 3d
-Sprint 1                 :         des2, 2022-12-07, 6d
+Sprint 1                 :         des2, 2022-12-07, 7d
+Demo                     :         des3, 2022-12-14, 1d
 Planning                 :         des4, 2022-12-12, 3d
-Sprint 2                 :         des3, after des2, 6d
-Deadline                 :         des4, after des3, 3d
+Sprint 2                 :         des3, after des2, 7d
+Deadline                 :         des4, after des3, 2d
 ```
 
 ---
@@ -110,12 +169,8 @@ Deadline                 :         des4, after des3, 3d
 We have to decide on the roles for the project.
 
 - **Product Owner** - *Robert*
-- **Scrum Master** - *Alla*
+- **Scrum Master** - *Mandana*
 - **Development Team** - *Alla*
-
----
-
-## Mermaid from Flowchart
 
 ---
 
@@ -141,38 +196,31 @@ I --> J[Check if monster]
 
 ---
 
-## Product Backlog
+## Timeline PDF - by *Frida*
 
----
+[**Timeline PDF**](stuff/sprint1.pdf)
 
-### Backlog (User Stories)
+<style>
 
-| ID | User Story | Priority | Estimate | Difficulty | Status |
-| --- | --- | --- | --- | --- | --- |
-| 01 | Task 01 | 1 | 1 hour | Easy | Done |
-| 02 | Task 02 | 2 | 10 hours | Very Easy | 🚧 |
-| 03 | Task 03 | 4 | 10 days | Medium | ⁉ |
-| 04 | Task 04 | 3 | 10 months | Hard | - |
-| 05 | Task 05 | 99 | 1 eternity | Impossible | ∞ |
+p1 {
+  color: red;
+  font-size: 22px;
+}
 
-## Sprintperiod 1
+p2 {
+  color: tomato;
+  font-size: 22px;
+}
 
-| Name | Day 01 | Day 02 | Day 03 | Day 04 | Day 05 |
-| --- | --- | --- | --- | --- | --- |
-| Frida | 2h | 5h | 5h | 5h | 5h |
-| Mandana | 2h | 5h | 5h | 5h | 5h |
-| Raffi | 2h | 5h | 5h | 5h | 5h |
-| Jarl | 2h | 5h | 5h | 5h | 5h |
-| Alex | 2h | 5h | 5h | 5h | 5h |
-| Total | 10h | 25h | 25h | 25h | 25h |
+h2 {
+  color: lightblue;
+}
 
-## Sprintperiod 2
+td {
+  color: white;
+}
 
-| Name | Day 01 | Day 02 | Day 03 | Day 04 | Day 05 |
-| --- | --- | --- | --- | --- | --- |
-| Frida | 2h | 5h | 5h | 5h | 5h |
-| Mandana | 2h | 5h | 5h | 5h | 5h |
-| Raffi | 2h | 5h | 5h | 5h | 5h |
-| Jarl | 2h | 5h | 5h | 5h | 5h |
-| Alex | 2h | 5h | 5h | 5h | 5h |
-| Total | 10h | 25h | 25h | 25h | 25h |
+th {
+  color: tomato;
+}
+</style>

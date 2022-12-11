@@ -12,5 +12,5 @@ class Map:
     def mark_visited_room(self, pos1, pos2):
         self.map[pos1][pos2] = "0"
 
-    def give_player_position(self, current):
+    def give_player_position(self, current):  # pragma: no cover
         pass

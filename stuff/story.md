@@ -1,5 +1,12 @@
 # Design
 
+## New splash screen
+
+<p align = "center">
+<img src="../img/dungeon art artwork.png" width=80% >
+
+---
+
 ## Heroes
 
 <p align = "center">
@@ -25,5 +32,12 @@ You are an adventurer, who has been hired by the king to find the lost kebab. Th
       Som svarvar kebaben för din skull "    
 
                                             - Kebabpatrullen's Hungry Artist
+
+---
+
+## First logo
+
+<p align = "center">
+<img src="../img/kebab.jpeg" width=30% >
 
 Back to [Frontpage](../README.md)
