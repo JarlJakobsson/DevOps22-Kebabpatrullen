@@ -8,11 +8,17 @@ Let the search for the lost kebab begin!
 
 ---
 
-## Important Notes
+## What's new?
 
-- For *Jarl*:
+[Robert's Sprint Demo Checklist](stuff/sprint_demo_checklist.md)
 
-Please update the main branch with the latest code, so we can start [testing](stuff/testing.md)
+[*Dungeon Run* **Testing**](stuff/testing.md)
+
+[*Dungeon Run* **Terminal Menu**](stuff/terminal_menu.md)
+
+[Sprintperiod 1](#sprintperiod-1)
+
+[Journals](#journal)
 
 ---
 
@@ -20,7 +26,7 @@ Please update the main branch with the latest code, so we can start [testing](st
 
 Agile Project Management - DevOps22 - Team 5
 
-Don't forget it's about the journey, not the destination.
+Don't forget *it's about the journey, not the destination*.
 
 ---
 
@@ -64,6 +70,10 @@ Don't forget it's about the journey, not the destination.
 
 ---
 
+[Back to top](#kebabpatrullen-agile-devops-2022)
+
+---
+
 ## Sprintperiod 1
 
 Sprint Period 1 - Project Dungeon Run
@@ -94,17 +104,19 @@ Sprint Period 1 - Project Dungeon Run
 
 ## Journal
 
-Daily journal for the project. (All team members)
+Daily journal for the project. (All team members) 🚧
 
 | Date | Description | Time |
 | --- | --- | --- |
 | 2022-12-05 | Start of project. Info. Got the task | 8h |
 | 2022-12-06 | Planning. Trello. Flowchart | 8h |
-| 2022-12-07 | Sprint 1. Backlog. Todo. Cod for terminal version. Code for GUI | 1h |
+| 2022-12-07 | Sprint 1. Backlog. Todo. Code for terminal version. Code for GUI | 1h |
 | 2022-12-08 | Sprint 1. Timeplaning. Fibonaci. Standup | 4h |
 | 2022-12-09 | Sprint 1. Standing. Show code. Team(pair) coding | 7h |
-| 2022-12-10 | Sprint 1. Weekend. Pdf with timeplaning. New menu for terminal(proposition) | 4h |
-| 2022-12-11 | Sprint 1. Weekend. Testing with unittest and pytest.  | 4h |
+| 2022-12-10 | Sprint 1. **Weekend**. PDF with timeplaning. New menu for terminal(proposition) | 4h |
+| 2022-12-11 | Sprint 1. **Weekend**. Testing with unittest and pytest.  | 4h |
+
+[Back to top](#kebabpatrullen-agile-devops-2022)
 
 ---
 
@@ -128,24 +140,39 @@ Daily journal for the project. (All team members)
 
 ---
 
+[Back to top](#kebabpatrullen-agile-devops-2022)
+
+---
+
 ## Kanban Board
 
 <p align = "center">
 <img src="img/kanban.png" width=50% >
+
+[Back to top](#kebabpatrullen-agile-devops-2022)
+
+---
 
 ## Trello Sprint Backlog
 
 <p align = "center">
 <img src="img/sprint_backlog.png" width=50% >
 
+[Back to top](#kebabpatrullen-agile-devops-2022)
+
+---
+
 ## Flowchart
 
 <p align = "center">
 <img src="img/flowchart.png" width=50% >
 
-## Project Timeline
+[Back to top](#kebabpatrullen-agile-devops-2022)
 
 ---
+
+## Project Timeline - 🚧 *work in progress* 🚧
+
 
 ```mermaid
 gantt
@@ -161,6 +188,8 @@ Sprint 2                 :         des3, after des2, 7d
 Deadline                 :         des4, after des3, 2d
 ```
 
+[Back to top](#kebabpatrullen-agile-devops-2022)
+
 ---
 
 ## Agile roles
@@ -173,11 +202,13 @@ We have to decide on the roles for the project.
 - **Scrum Master** - *Mandana*
 - **Development Team** - *Alla*
 
+[Back to top](#kebabpatrullen-agile-devops-2022)
+
 ---
 
 ### Redoing the flowchart with mermaid
 
-Work in progress 🚧
+🚧 *work in progress* 🚧
 
 ---
 
@@ -195,8 +226,12 @@ H --> I[Try to move]
 I --> J[Check if monster]
 ```
 
+[Back to top](#kebabpatrullen-agile-devops-2022)
+
 ---
 
 ## Timeline PDF - by *Frida*
 
-[**Timeline PDF**](stuff/sprint1.pdf)
+[**Timeline PDF**](stuff/sprint1_frida.pdf)
+
+---
