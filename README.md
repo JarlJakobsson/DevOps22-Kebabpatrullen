@@ -27,6 +27,12 @@ Don't forget it's about the journey, not the destination.
 
 ---
 
+## New terminal menu 🚧
+
+[*Dungeon Run* **Terminal Menu**](stuff/terminal_menu.md)
+
+---
+
 ## Shortcuts, Tips & Tricks
 
 [**TODO**](stuff/todo.md)
