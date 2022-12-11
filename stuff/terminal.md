@@ -1,6 +1,4 @@
-# Dungeon Run - Playthrought
-
-## Playthrought
+# Dungeon Run - Playthrough
 
 Coming soon...
 
