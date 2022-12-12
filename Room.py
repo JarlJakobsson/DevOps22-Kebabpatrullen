@@ -1,5 +1,6 @@
-from Monsters import Giantspider, Orc, Skeleton, Troll
 import random
+
+from Monsters import Giantspider, Orc, Skeleton, Troll
 
 
 class Room:
@@ -23,9 +24,9 @@ class Room:
                 self.monster = Skeleton()
             elif monster_roll in range(37, 47):
                 self.monster = Orc()
-            elif monster_roll in range(48, 53):  # 53
+            elif monster_roll in range(48, 53):
                 self.monster = Troll()
-            print("*** MONSTER CREATED ***")
+            # print("*** MONSTER CREATED ***")
 
     def create_treasure(self):
         if not self.visited:
@@ -40,7 +41,7 @@ class Room:
                 self.treasure = 14
             elif treasure_roll in range(89, 94):
                 self.treasure = 20
-            print("*** TREASURE CREATED ***")
+            # print("*** TREASURE CREATED ***")
 
     def __repr__(self):
         return self.name
@@ -53,3 +54,7 @@ class Room:
 
     def remove_treasure(self):
         self.treasure = 0
+
+
+if __name__ == "__main__":
+    pass

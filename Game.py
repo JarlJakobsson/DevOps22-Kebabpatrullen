@@ -1,7 +1,6 @@
 from Map import Map
-from PlayerRoles import Knight, Thief, Wizard
-
 from MoveMenu import Move_menu
+from PlayerRoles import Knight, Thief, Wizard
 from StartMenu import Start_menu
 
 
@@ -138,5 +137,10 @@ class Game:
                         break
 
 
-game = Game()
-game.main()
+def main():
+    game = Game()
+    game.main()
+
+
+if __name__ == "__main__":
+    main()

@@ -1,5 +1,6 @@
-from Characters import Character
 from random import randint
+
+from Characters import Character
 
 
 class Player(Character):
@@ -15,12 +16,12 @@ class Player(Character):
             print(f"{self.name}: Sweet! I found a Pouch of gold coins...")
         elif treasure == 10:
             print(f"{self.name}: Cool! I found some Golden Jewlery...")
-        elif treasure == 6:
-            print(f"{self.name}: Nice! I found a rare Gem")
-        elif treasure == 6:
-            print(f"{self.name}: WOW! I found a Treasure!")
-        else:
-            print(f"{self.name}: ...Nothing in here...")
+        # elif treasure == 6:
+        #     print(f"{self.name}: Nice! I found a rare Gem")
+        # elif treasure == 6:
+        #     print(f"{self.name}: WOW! I found a Treasure!")
+        # else:
+        #     print(f"{self.name}: ...Nothing in here...")
 
         self.treasure_value += treasure
 
