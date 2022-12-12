@@ -1,6 +1,5 @@
 from Room import Room
 
-
 ## There probably is a better way but, I create a map template with "X"s and then replace all the "X"s with room objects
 ## and give them the correct room_index
 class Map:
@@ -35,11 +34,3 @@ class Map:
 
     def move_player(self, position):
         x, y = position
-
-
-# x = Map()
-# # x.print_map()
-# move = (0,0)
-# x.mark_player_position(move)
-# x.print_map()
-# x.mark_visited_room(0,0)
