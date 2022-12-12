@@ -31,7 +31,7 @@ class Game:
         # Check if self.map.map[x][y].monster is True. If True prints the monster name and battle menu
         if self.map.map[x][y].monster:
             print(f"{self.player.name}: There is a {self.map.map[x][y].monster.name}")
-            self.battle(position)
+            #self.battle_method(position)
         else:
             print(f"\n{self.player.name}: ...No monsters in here...\n")
 
@@ -41,8 +41,7 @@ class Game:
         self.map.map[x][y].treasure = 0
         self.wait_input()
 
-    def battle(self, position):
-        # Compares player initiative roll against monster initiative roll and sets the winner as initiator
+    def initiative_method(self, position):
         if (
             self.player.initative_roll()
             >= self.map.map[position[0]][position[1]].monster.initative_roll()
@@ -53,13 +52,44 @@ class Game:
             print("[GAME] Monster initatitve")
         self.wait_input()
 
+    def battle_method(self, position):
+        self.initiative_method(position)
+        if self.initiatior:
+            self.first = self.player
+            self.second = self.map.map[position[0]][position[1]].monster
+        else:
+            self.first = self.map.map[position[0]][position[1]].monster
+            self.second = self.player
+        while True:
+            if self.first.attack_roll() >= self.second.dodge_roll():
+                self.second.take_dmg()
+                print(f"{self.first.name} attacks connects.")
+                if self.second.health == 0:
+                    print(f"\n*** {self.first} killed {self.second}! ***")
+                    self.wait_input()
+                    break
+                else:
+                    if self.second.attack_roll() >= self.first.dodge_roll():
+                        self.first.take_dmg()
+                        print(f"{self.second.name} attacks connects.")
+                        self.wait_input()
+                        if self.first.max_health == 0:
+                            print(f"\n*** {self.second} killed {self.first}! ***")
+                            self.wait_input()
+                            break
+                    else:
+                        print(f"\n*** {self.first} dodged the attack! ***")
+                        self.wait_input()
+            else:
+                print(f"\n*** {self.second} dodged the attack! ***")
+
     def move_player(self, direction):
         # Splits direction and player positon
         x, y = direction
         a, b = self.map.player_position
         a += x
         b += y
-        
+
         # Checks if new room exists
         if a == -1 or a > self.map.size - 1 or b == -1 or b > self.map.size - 1:
             print(f"{self.player.name}: Ouch... There is a wall there...")
@@ -81,7 +111,7 @@ class Game:
         self.map = Map()
         self.map.mark_player_position(self.map.player_position)
         while True:
-            self.move_player(self.map.player_position)
+            self.check_room(self.map.player_position)
             while True:
                 self.map.print_map()
                 self.move_menu.run_menu()
