@@ -1,11 +1,15 @@
-from PlayerRoles import Knight, Wizard, Thief
 from Map import Map
+from PlayerRoles import Knight, Thief, Wizard
+
 from MoveMenu import Move_menu
 from StartMenu import Start_menu
 
 
+
 class Game:
     def __init__(self):
+        self.map = 0
+        self.player = 0
         self.start_menu = Start_menu()
         self.move_menu = Move_menu()
         self.initiatior = 0

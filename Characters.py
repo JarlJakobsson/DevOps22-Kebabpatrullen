@@ -21,6 +21,7 @@ class Character:
         sum = 0
         for i in range(value):
             sum += self.roll_dice()
+        print(f"{self.name}I try something! (Rolled {sum})")
         print(f"{self.name}: I try something! (Rolled {sum})")
         return sum
 
@@ -29,13 +30,20 @@ class Character:
         attack = 0
         for i in range(self.attack):
             attack += self.roll_dice()
-        print(f"{self.name}: I try attack! ({attack} attack roll)")
+        print(f"{self.name}: I try attack! ({attack} attack roll")
         return attack
 
     def initative_roll(self):
         initative = 0
         for i in range(self.initiative):
             initative += self.roll_dice()
+        print(f"{self.name}I try initiate! ({initative} initiative roll")
+        return initative
+
+    def death(self):
+        self.is_alive = False
+        print("I died!")
+
         print(f"{self.name}: I try initiate! ({initative} initative roll)")
         return initative
 
@@ -43,7 +51,7 @@ class Character:
         dodge = 0
         for i in range(self.agility):
             dodge += self.roll_dice()
-        print(f"{self.name}: I try dodge! ({dodge} dodge roll)")
+        print(f"{self.name}: I try dodge! ({dodge} dodge roll")
         return dodge
 
     def death(self):

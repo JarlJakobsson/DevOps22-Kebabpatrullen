@@ -1,5 +1,6 @@
-from Player import Player
 import random
+
+from Player import Player
 
 
 class Knight(Player):
@@ -15,7 +16,7 @@ class Knight(Player):
 
 
 def set_block(self):
-    if self.block_rdy == True:
+    if self.block_rdy is True:
         self.block = False
     else:
         self.block_rdy = False
