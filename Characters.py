@@ -29,7 +29,7 @@ class Character:
         attack = 0
         for i in range(self.attack):
             attack += self.roll_dice()
-        print(f"{self.name}: I try attack! ({attack} attack roll")
+        print(f"{self.name}: I try attack! ({attack} attack roll)")
         return attack
 
     def initative_roll(self):
@@ -43,7 +43,7 @@ class Character:
         dodge = 0
         for i in range(self.agility):
             dodge += self.roll_dice()
-        print(f"{self.name}: I try dodge! ({dodge} dodge roll")
+        print(f"{self.name}: I try dodge! ({dodge} dodge roll)")
         return dodge
 
     def death(self):
@@ -59,3 +59,6 @@ class Character:
     # Method to heal monsters if player escapes or if player loads a character
     def heal(self):
         self.health = self.max_health
+
+    def __repr__(self):
+        return self.name
