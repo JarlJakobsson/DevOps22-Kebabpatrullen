@@ -72,7 +72,7 @@ For example:
 Then we have to provide a screenshot of the running game where the user can choose a character.
 
 <p align = "center">
-<img src="../img/character.png" width=20% >
+<img src="../img/character.png" width=40% >
 </p>
 
 And we have to do this for every user story that we will write.
