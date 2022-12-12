@@ -34,11 +34,3 @@ class Map:
 
     def move_player(self, position):
         x, y = position
-
-
-# x = Map()
-# # x.print_map()
-# move = (0,0)
-# x.mark_player_position(move)
-# x.print_map()
-# x.mark_visited_room(0,0)

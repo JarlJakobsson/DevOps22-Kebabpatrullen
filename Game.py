@@ -5,7 +5,6 @@ from MoveMenu import Move_menu
 from StartMenu import Start_menu
 
 
-
 class Game:
     def __init__(self):
         self.map = 0
@@ -35,7 +34,8 @@ class Game:
         # Check if self.map.map[x][y].monster is True. If True prints the monster name and battle menu
         if self.map.map[x][y].monster:
             print(f"{self.player.name}: There is a {self.map.map[x][y].monster.name}")
-            #self.battle_method(position)
+            self.knight_block()
+            self.battle_method(position)
         else:
             print(f"\n{self.player.name}: ...No monsters in here...\n")
 
@@ -45,6 +45,10 @@ class Game:
         self.map.map[x][y].treasure = 0
         self.wait_input()
 
+    def knight_block(self):
+        if self.player.role == "Knight":
+            self.block = True
+
     def initiative_method(self, position):
         if (
             self.player.initative_roll()
@@ -53,7 +57,14 @@ class Game:
             self.initiatior = 1
             print("[GAME] Player takes initative")
         else:
-            print("[GAME] Monster initatitve")
+            print("[GAME] Monster takes initatitve")
+            self.initiatior = 0
+        if self.initiatior:
+            self.first = self.player
+            self.second = self.map.map[position[0]][position[1]].monster
+        else:
+            self.first = self.map.map[position[0]][position[1]].monster
+            self.second = self.player
         self.wait_input()
 
     def battle_method(self, position):
@@ -67,15 +78,16 @@ class Game:
         while True:
             if self.first.attack_roll() >= self.second.dodge_roll():
                 self.second.take_dmg()
-                print(f"{self.first.name} attacks connects.")
+                print(f"\n*** {self.first.name} attack connects! ***\n")
+                self.wait_input()
                 if self.second.health == 0:
-                    print(f"\n*** {self.first} killed {self.second}! ***")
+                    print(f"\n*** {self.first} killed {self.second}! ***\n")
                     self.wait_input()
                     break
                 else:
                     if self.second.attack_roll() >= self.first.dodge_roll():
                         self.first.take_dmg()
-                        print(f"{self.second.name} attacks connects.")
+                        print(f"\n*** {self.second.name} attack connects! ***\n")
                         self.wait_input()
                         if self.first.max_health == 0:
                             print(f"\n*** {self.second} killed {self.first}! ***")
@@ -108,19 +120,22 @@ class Game:
             return True
 
     def main(self):
-        self.start_menu.run_menu()
-        print(self.start_menu.role)
-        self.create_player(self.start_menu.role)
-        self.player.name = self.start_menu.name
-        self.map = Map()
-        self.map.mark_player_position(self.map.player_position)
         while True:
-            self.check_room(self.map.player_position)
+            self.start_menu.run_menu()
+            print(self.start_menu.role)
+            self.create_player(self.start_menu.role)
+            self.player.name = self.start_menu.name
+            self.map = Map()
+            self.map.mark_player_position(self.map.player_position)
             while True:
-                self.map.print_map()
-                self.move_menu.run_menu()
-                if self.move_player(self.move_menu.direction):
+                self.check_room(self.map.player_position)
+                if self.player.health == 0:
                     break
+                while True:
+                    self.map.print_map()
+                    self.move_menu.run_menu()
+                    if self.move_player(self.move_menu.direction):
+                        break
 
 
 game = Game()

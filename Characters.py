@@ -11,6 +11,7 @@ class Character:
         self.agility = 0
         self.name = ""
         self.max_health = 0
+        self.role = ""
 
     # Method to roll 6 sided dice
     def roll_dice(self):
@@ -30,28 +31,21 @@ class Character:
         attack = 0
         for i in range(self.attack):
             attack += self.roll_dice()
-        print(f"{self.name}: I try attack! ({attack} attack roll")
+        print(f"{self.name}: I try attack! ({attack} attack roll)")
         return attack
 
     def initative_roll(self):
         initative = 0
         for i in range(self.initiative):
             initative += self.roll_dice()
-        print(f"{self.name}I try initiate! ({initative} initiative roll")
-        return initative
-
-    def death(self):
-        self.is_alive = False
-        print("I died!")
-
-        print(f"{self.name}: I try initiate! ({initative} initative roll)")
+        print(f"{self.name}I try initiate! ({initative} initiative roll)")
         return initative
 
     def dodge_roll(self):
         dodge = 0
         for i in range(self.agility):
             dodge += self.roll_dice()
-        print(f"{self.name}: I try dodge! ({dodge} dodge roll")
+        print(f"{self.name}: I try dodge! ({dodge} dodge roll)")
         return dodge
 
     def death(self):
@@ -63,6 +57,8 @@ class Character:
         self.health -= 1
         if self.health == 0:
             self.death()
+        else:
+            print(f"{self.name}: Ouch!\n {self.name} have {self.health} HP remaining.")
 
     # Method to heal monsters if player escapes or if player loads a character
     def heal(self):
