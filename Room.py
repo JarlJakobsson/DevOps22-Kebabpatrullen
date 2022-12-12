@@ -1,7 +1,5 @@
-from Mosters import Giantspider, Skeleton, Orc, Troll
+from Monsters import Giantspider, Orc, Skeleton, Troll
 import random
-
-from Enemies import Giantspider, Orc, Skeleton, Troll
 
 
 class Room:
