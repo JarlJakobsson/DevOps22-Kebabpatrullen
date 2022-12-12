@@ -51,11 +51,11 @@ class Thief(Player):
         self.max_health = 5
         self.is_thief = True
 
-    def attack_roll(attack_stat):
-        atk_value = random.randint(0, 6) * attack_stat
-        thief_atk = random.randint(0, 100)
-        if thief_atk >= 75:
-            print("THIEF: Haiyyaa")
-            atk_value = atk_value * 2
-        print(f"THIEF: i try attack ({atk_value} attack roll")
-        return atk_value
+    # def attack_roll(attack_stat):
+    #     atk_value = random.randint(0, 6) * attack_stat
+    #     thief_atk = random.randint(0, 100)
+    #     if thief_atk >= 75:
+    #         print("THIEF: Haiyyaa")
+    #         atk_value = atk_value * 2
+    #     print(f"THIEF: i try attack ({atk_value} attack roll")
+    #     return atk_value
