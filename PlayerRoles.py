@@ -23,7 +23,7 @@ def set_block(self):
 
 
 def take_dmg(self):
-    if self.block == True:
+    if self.block is True:
         self.block = False
         print(f"\n{self.name}: Easy Block!")
     else:
@@ -73,3 +73,7 @@ class Thief(Player):
             attack = attack * 2
         print(f"{self.name}: I try attack! ({attack} attack roll")
         return attack
+
+
+if __name__ == '__main__':
+    pass

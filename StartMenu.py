@@ -31,12 +31,10 @@ class Start_menu:
             self.role = 2
         elif self.choice == "3":
             self.role = 3
-        elif self.choice == "":
-            self.role = 4
-            print("Thats not a valid choice...")
         else:
             self.role = 4
             print("Thats not a valid choice...")
+            # self.wait_for_user()
 
     def menu_commands(self, choice):
         if choice == "1":
