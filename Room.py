@@ -1,4 +1,4 @@
-from Mosters import Giantspider, Skeleton, Orc, Troll
+from Monsters import Giantspider, Skeleton, Orc, Troll
 import random
 
 
@@ -14,32 +14,30 @@ class Room:
         self.create_treasure()
 
     def summon_monster(self):
-        if not self.visited:
-            monster_roll = random.randint(1, 100)
-            if monster_roll in range(1, 20):
-                self.monster = Giantspider()
-            elif monster_roll in range(21, 36):
-                self.monster = Skeleton()
-            elif monster_roll in range(37, 47):
-                self.monster = Orc()
-            elif monster_roll in range(48, 53):  # 53
-                self.monster = Troll()
-            print("*** MONSTER CREATED ***")
+        monster_roll = random.randint(1, 100)
+        if monster_roll in range(1, 20):
+            self.monster = Giantspider()
+        elif monster_roll in range(21, 36):
+            self.monster = Skeleton()
+        elif monster_roll in range(37, 47):
+            self.monster = Orc()
+        elif monster_roll in range(48, 53):
+            self.monster = Troll()
+        print("*** MONSTER CREATED ***")
 
     def create_treasure(self):
-        if not self.visited:
-            treasure_roll = random.randint(1, 100)
-            if treasure_roll in range(1, 40):
-                self.treasure = 2
-            elif treasure_roll in range(41, 61):
-                self.treasure = 6
-            elif treasure_roll in range(62, 77):
-                self.treasure = 10
-            elif treasure_roll in range(78, 88):
-                self.treasure = 14
-            elif treasure_roll in range(89, 94):
-                self.treasure = 20
-            print("*** TREASURE CREATED ***")
+        treasure_roll = random.randint(1, 100)
+        if treasure_roll in range(1, 40):
+            self.treasure = 2
+        elif treasure_roll in range(41, 61):
+            self.treasure = 6
+        elif treasure_roll in range(62, 77):
+            self.treasure = 10
+        elif treasure_roll in range(78, 88):
+            self.treasure = 14
+        elif treasure_roll in range(89, 94):
+            self.treasure = 20
+        print("*** TREASURE CREATED ***")
 
     def __repr__(self):
         return self.name
