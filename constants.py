@@ -5,7 +5,6 @@ MAIN_MENU_TEXT = """
 [3] Quit
 ############################
 """
-
 NAME_TEXT = """
 ############################
 Choose your name
