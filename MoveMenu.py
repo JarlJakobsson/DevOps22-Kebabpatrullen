@@ -13,17 +13,17 @@ class Move_menu:
         self.choice = input(MOVE_MENU_TEXT)  # Jarl version
         # self.choice = input(USER_MOVE_VARIANT_3) # Alex version
 
-        if self.choice == "1" or self.choice == "w":
+        if self.choice == "w":
             self.direction = (-1, 0)
 
-        elif self.choice == "2" or self.choice == "s":
+        elif self.choice == "s":
             self.direction = (1, 0)
 
-        elif self.choice == "3" or self.choice == "a":
+        elif self.choice == "a":
             self.direction = (0, -1)
 
-        elif self.choice == "4" or self.choice == "d":
-            self.direction = (0, 1)
+        elif self.choice == "d":
+            return (-1, 0)
         else:
             print("Thats not a direction...\n")
             input("Press any key")
