@@ -14,22 +14,17 @@ class Knight(Player):
         self.role = "Knight"
         self.block = True
 
-
-def set_block(self):
-    if self.block_rdy is True:
-        self.block_rdy = False
-    else:
-        self.block_rdy = False
-
-
-def take_dmg(self):
-    if self.block is True:
-        self.block = False
-        print(f"\n{self.name}: Easy Block!")
-    else:
-        self.health -= 1
-        if self.health == 0:
-            self.death()
+    def take_dmg(self):
+        if self.block:
+            self.block = False
+            print(f"\n{self.name}: Easy Block!")
+        else:
+            print(f"{self.name}: Ouch, my shield is not working...")
+            self.health -= 1
+            if self.health == 0:
+                self.death()
+            else:
+                print(f"{self.name} have {self.health} HP remaining.")
 
 
 class Wizard(Player):
@@ -67,7 +62,7 @@ class Thief(Player):
         thief_atk = random.randint(1, 100)
         for i in range(self.attack):
             attack += self.roll_dice()
-            thief_atk = random.randint(0, 100)
+            thief_atk = random.randint(1, 100)
         if thief_atk >= 75:
             print("THIEF: Haiyyaa")
             attack = attack * 2

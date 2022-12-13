@@ -73,8 +73,8 @@ ascii_wizard = """
 ascii_battle = """
 ██████   █████  ████████ ████████ ██      ███████ 
 ██   ██ ██   ██    ██       ██    ██      ██      
-██████  ███████    ██       ██    ██      █████   
-██   ██ ██   ██    ██       ██    ██      ██      
+██████  ███████    ██       ██    ██      █████
+██   ██ ██   ██    ██       ██    ██      ██    
 ██████  ██   ██    ██       ██    ███████ ███████ 
                                                   
 """
@@ -91,40 +91,14 @@ ascii_won = """
 ascii_lost = """
 ██    ██  ██████  ██    ██     ██       ██████  ███████ ████████ 
  ██  ██  ██    ██ ██    ██     ██      ██    ██ ██         ██    
-  ████   ██    ██ ██    ██     ██      ██    ██ ███████    ██    
-   ██    ██    ██ ██    ██     ██      ██    ██      ██    ██    
-   ██     ██████   ██████      ███████  ██████  ███████    ██    
-                                                                 
+  ████   ██    ██ ██    ██     ██      ██    ██ ███████    ██
+   ██    ██    ██ ██    ██     ██      ██    ██      ██    ██
+   ██     ██████   ██████      ███████  ██████  ███████    ██
+                                                              
 """
 
 
 USER_MOVE_VARIANT = "\n\tUp(W)\n Left(A)\tRight(D) \n\tDown(S)\n\r> "
-
-
-USER_MOVE_VARIANT_2 = """
-                                ############# MOVE #############
-                                          
-                                             UP / W
-                                                |
-                                                |
-                                LEFT / A  - DOWN / S - RIGHT / D
-
-                                ################################
-                                
-                                Direction: """
-
-
-USER_MOVE_VARIANT_3 = """
-                                ############# MOVE #############
-                                                                 
-                                                W
-                                                ^
-                                                |
-                                        A  <--- S ---> D
-
-                                ################################
-                                                                           
-                                Direction: """
 
 
 def clear():
@@ -132,7 +106,7 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-def loading_bar():
+def loading_bar():  # Pragma: no cover
     """Prints a loading bar, just to fake a loading time"""
     print("\nLoading...")
     for i in range(0, 105, 5):
@@ -141,19 +115,19 @@ def loading_bar():
         sys.stdout.flush()
 
 
-def intro_screen():
+def intro_screen():  # Pragma: no cover
     """Prints the intro screen, one of the ascii art above"""
     clear()
     print(ascii_03)
     print("Welcome to Dungeon Run!")
 
 
-def sleep(x):
+def sleep(x):  # Pragma: no cover
     """Sleeps for x seconds, just to give the player time to read the text"""
     time.sleep(x)
 
 
-def instruction_short():
+def instruction_short():  # Pragma: no cover
     instructions = """
 
 This is a text-based adventure game. You will be presented with a series of choices.
@@ -174,7 +148,7 @@ They are nice people. You find them by this name:
     clear()
 
 
-def outro_screen():
+def outro_screen():  # Pragma: no cover
     """Prints the outro screen, at the end of the game"""
     clear()
     print("Thank you for playing ")
@@ -182,21 +156,21 @@ def outro_screen():
     exit()
 
 
-def knight_art():
+def knight_art():   # Pragma: no cover
     """Prints the knight ascii art"""
     clear()
     print(ascii_knight)
     sleep(1)
 
 
-def thief_art():
+def thief_art():   # Pragma: no cover
     """Prints the thief ascii art"""
     clear()
     print(ascii_thief)
     sleep(1)
 
 
-def wizard_art():
+def wizard_art():  # Pragma: no cover
     """Prints the wizard ascii art"""
     clear()
     print(ascii_wizard)
