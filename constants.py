@@ -4,13 +4,13 @@ MAIN_MENU_TEXT = """
                                 [2] Load hero
                                 [3] Quit
                                 ################################
-                                
+
                                 Enter your choice:  """
 NAME_TEXT = """
                                 ######### ENTER NAME ###########
                                 Plase enter your name
                                 ################################
-                                
+
                                 Enter your name: """
 ROLE_TEXT = """
                                 ####### CHOOSE ROLE ############
@@ -18,7 +18,7 @@ ROLE_TEXT = """
                                 [2] Wizard
                                 [3] Thief
                                 ################################
-                                                         
+
                                 Enter your choice: """
 MOVE_MENU_TEXT = """
                                 ############# MOVE #############
@@ -27,5 +27,5 @@ MOVE_MENU_TEXT = """
                                 [3] - LEFT / A
                                 [4] - RIGHT / D
                                 ################################
-                                
+
                                 Direction: """

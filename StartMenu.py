@@ -1,5 +1,6 @@
 from constants import MAIN_MENU_TEXT, NAME_TEXT, ROLE_TEXT
-from utils.visuals import ascii_02, clear
+from utils.visuals import (ascii_02, ascii_knight, ascii_thief, ascii_wizard,
+                           clear)
 
 # from SaveLoad import Load
 
@@ -36,10 +37,16 @@ class Start_menu:
         self.choice = input(ROLE_TEXT)
         if self.choice == "1":
             self.role = 1
+            clear()
+            print(ascii_knight)
         elif self.choice == "2":
             self.role = 2
+            clear()
+            print(ascii_wizard)
         elif self.choice == "3":
             self.role = 3
+            clear()
+            print(ascii_thief)
         else:
             self.role = 4
             print("Thats not a valid choice...")
