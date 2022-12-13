@@ -68,3 +68,7 @@ class Thief(Player):
             attack = attack * 2
         print(f"{self.name}: I try attack! ({attack} attack roll")
         return attack
+
+
+if __name__ == '__main__':
+    pass

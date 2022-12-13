@@ -1,6 +1,7 @@
-from Characters import Character
 from random import randint
 from BattleMenu import Battle_menu
+
+from Characters import Character
 
 
 class Player(Character):

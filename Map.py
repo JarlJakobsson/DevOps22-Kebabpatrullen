@@ -1,8 +1,9 @@
 from Room import Room
 import random
 
-## There probably is a better way but, I create a map template with "X"s and then replace all the "X"s with room objects
-## and give them the correct room_index
+
+# There probably is a better way but, I create a map template with "X"s and then replace all the "X"s with room objects
+# and give them the correct room_index
 class Map:
     def __init__(self, size=4, player_position=(0, 0)):
         self.map = [["X"] * size for i in range(size)]

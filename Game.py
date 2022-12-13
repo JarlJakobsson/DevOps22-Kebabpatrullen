@@ -1,5 +1,9 @@
+from utils.visuals import ascii_02, clear, intro_screen, loading_bar
+
 from Map import Map
+from MoveMenu import Move_menu
 from PlayerRoles import Knight, Thief, Wizard
+
 from MoveMenu import Move_menu
 from StartMenu import Start_menu
 from constants import EXIT_TEXT
@@ -143,6 +147,8 @@ class Game:
 
     def main(self):
         while True:
+            clear()
+            print(ascii_02)
             self.start_menu.run_menu()
             self.create_player(self.start_menu.role)
             self.player.name = self.start_menu.name
@@ -150,11 +156,7 @@ class Game:
             self.map.mark_player_position(self.map.player_position)
             while True:
                 self.check_room(self.map.player_position)
-                if not self.player.health:
-                    print("\n*** GAME OVER ***\n")
-                    break
-                self.check_exit(self.map.player_position)
-                if self.player.exits:
+                if self.player.health == 0:
                     break
                 while True:
                     self.map.print_map()
@@ -163,5 +165,12 @@ class Game:
                         break
 
 
-game = Game()
-game.main()
+def main():
+    intro_screen()
+    loading_bar()
+    game = Game()
+    game.main()
+
+
+if __name__ == "__main__":
+    main()

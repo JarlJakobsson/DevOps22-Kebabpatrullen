@@ -68,3 +68,7 @@ class Character:
     # Method to represent the object as self.name
     def __repr__(self):
         return self.name
+
+
+if __name__ == "__main__":
+    print("This is a module, not a program")  # Joking, trying to keep code from running when imported
