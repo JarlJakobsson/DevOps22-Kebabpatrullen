@@ -1,5 +1,5 @@
 from constants import MAIN_MENU_TEXT, NAME_TEXT, ROLE_TEXT
-
+from SaveLoad import Load
 
 class Start_menu:
     def __init__(self):
@@ -21,6 +21,7 @@ class Start_menu:
                 self.wait_for_user()
                 self.choose_name()
             else:
+                
                 break
 
     def choose_role(self):

@@ -1,15 +1,22 @@
 MAIN_MENU_TEXT = """
-###### START MENU #########
+######## START MENU ########
 [1] Create a new hero
 [2] Load hero
 [3] Quit
 ############################
 """
 NAME_TEXT = """
-############################
-Choose your name
+########## NAME ############
+[1] New Player
+[2] Returning Player
 ############################
 """
+LOAD_NAME = """
+########### LOAD ###########
+Enter your name:
+############################
+"""
+
 ROLE_TEXT = """
 ####### CHOOSE ROLE ########
 [1] Knight
@@ -18,10 +25,10 @@ ROLE_TEXT = """
 ############################
 """
 MOVE_MENU_TEXT = """
-########## MOVE ###########
-[1] - UP
-[2] - DOWN
-[3] - LEFT
-[4] - RIGHT
-###########################
+########### MOVE ###########
+[1] - UP / W
+[2] - DOWN / S
+[3] - LEFT / A
+[4] - RIGHT / D
+############################
 """
