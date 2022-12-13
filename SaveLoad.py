@@ -1,37 +1,34 @@
-# When the game finish, the game will save the game data to the file
-# The game data is the player's name, player's character and the score(amount of money)
-
-import json
+# Use csv to save and load data
 
 
 class Save:
+    def __init__(self, name, character, score):
+        self.name = name
+        self.character = character
+        self.score = score
 
-    def __init__(self):
-        self.save_data = None
-        self.save_file = 'save_data.json'
-
-    def save_game(self, player):
-        self.save_data = {
-            'name': player.name,
-            'character': player.character,
-            'score': player.score
-        }
-        with open(self.save_file, 'w') as file:
-            json.dump(self.save_data, file)
-
-    def load_game(self):
-        with open(self.save_file, 'r') as file:
-            self.save_data = json.load(file)
-        return self.save_data
+# Save on a new line in the csv file
+    def save_data(self):
+        with open("save_data.csv", "a") as f:
+            f.write(f"{self.name},{self.character},{self.score}\n")
 
 
+# Load a name from the csv file if that name exists in the file
 class Load:
+    def __init__(self, name):
+        self.name = name
 
-    def __init__(self):
-        self.load_data = None
-        self.load_file = 'save_data.json'
-
-    def load_game(self):
-        with open(self.load_file, 'r') as file:
-            self.load_data = json.load(file)
-        return self.load_data
+# Looked in the csv file for the name, if it exists, load the data
+    def load_data(self):
+        with open("save_data.csv", "r") as f:
+            try:
+                f.readline()
+                for line in f.readlines():
+                    data = line.split(",")
+                    if data[0] == self.name:
+                        self.name = data[0]
+                        self.character = data[1]
+                        self.score = data[2]
+                        break
+            except IndexError:
+                print("Name not found")
