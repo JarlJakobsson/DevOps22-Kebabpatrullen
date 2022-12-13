@@ -3,9 +3,9 @@ import random
 
 
 class Room:
-    def __init__(self, room_index):
+    def __init__(self):
         self.visited = False
-        self.room_index = room_index
+        # self.room_index = room_index
         self.treasure = 0
         self.have_exit = False
         self.name = "X"
@@ -25,7 +25,6 @@ class Room:
                 self.monster = Orc()
             elif monster_roll in range(48, 53):  # 53
                 self.monster = Troll()
-            print("*** MONSTER CREATED ***")
 
     def create_treasure(self):
         if not self.visited:
@@ -40,7 +39,6 @@ class Room:
                 self.treasure = 14
             elif treasure_roll in range(89, 94):
                 self.treasure = 20
-            print("*** TREASURE CREATED ***")
 
     def __repr__(self):
         return self.name

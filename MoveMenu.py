@@ -10,16 +10,16 @@ class Move_menu:
         self.direction = (0,)
         self.choice = input(MOVE_MENU_TEXT)
 
-        if self.choice == "1":
+        if self.choice == "w":
             self.direction = (-1, 0)
 
-        elif self.choice == "2":
+        elif self.choice == "s":
             self.direction = (1, 0)
 
-        elif self.choice == "3":
+        elif self.choice == "a":
             self.direction = (0, -1)
 
-        elif self.choice == "4":
+        elif self.choice == "d":
             self.direction = (0, 1)
         else:
             print("Thats not a direction...\n")

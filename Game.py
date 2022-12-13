@@ -1,8 +1,9 @@
 from Map import Map
 from PlayerRoles import Knight, Thief, Wizard
-
 from MoveMenu import Move_menu
 from StartMenu import Start_menu
+from constants import EXIT_TEXT
+from BattleMenu import Battle_menu
 
 
 class Game:
@@ -11,6 +12,7 @@ class Game:
         self.player = 0
         self.start_menu = Start_menu()
         self.move_menu = Move_menu()
+        self.battle_menu = Battle_menu()
         self.initiatior = 0
 
     def wait_input(self):
@@ -34,20 +36,23 @@ class Game:
         # Check if self.map.map[x][y].monster is True. If True prints the monster name and battle menu
         if self.map.map[x][y].monster:
             print(f"{self.player.name}: There is a {self.map.map[x][y].monster.name}")
+            # self.knight_block()
             self.knight_block()
             self.battle_method(position)
         else:
             print(f"\n{self.player.name}: ...No monsters in here...\n")
 
         # After battle, Player loots treasure, monster get removed from room, treasure get removed from room
-        self.player.get_treasure(self.map.map[x][y].treasure)
-        self.map.map[x][y].monster = 0
-        self.map.map[x][y].treasure = 0
-        self.wait_input()
+        if self.player.health:
+            self.player.get_treasure(self.map.map[x][y].treasure)
+            self.map.map[x][y].monster = 0
+            self.map.map[x][y].treasure = 0
+            self.wait_input()
 
     def knight_block(self):
         if self.player.role == "Knight":
-            self.block = True
+            self.player.block = True
+            print("Block is ready again!")
 
     def initiative_method(self, position):
         if (
@@ -76,28 +81,27 @@ class Game:
             self.first = self.map.map[position[0]][position[1]].monster
             self.second = self.player
         while True:
-            if self.first.attack_roll() >= self.second.dodge_roll():
-                self.second.take_dmg()
-                print(f"\n*** {self.first.name} attack connects! ***\n")
-                self.wait_input()
-                if self.second.health == 0:
-                    print(f"\n*** {self.first} killed {self.second}! ***\n")
+            if self.first.health and self.second.health:
+                if self.first.attack_roll() >= self.second.dodge_roll() and not 0:
+                    self.second.take_dmg()
+                    print(f"\n*** {self.first.name} attack connects! ***\n")
                     self.wait_input()
-                    break
+                    if not self.first.health or not self.second.health:
+                        break
                 else:
-                    if self.second.attack_roll() >= self.first.dodge_roll():
-                        self.first.take_dmg()
-                        print(f"\n*** {self.second.name} attack connects! ***\n")
-                        self.wait_input()
-                        if self.first.max_health == 0:
-                            print(f"\n*** {self.second} killed {self.first}! ***")
-                            self.wait_input()
-                            break
-                    else:
-                        print(f"\n*** {self.first} dodged the attack! ***")
-                        self.wait_input()
+                    print(f"\n*** {self.second} dodged the attack! ***")
+                    self.wait_input()
+                if self.second.attack_roll() >= self.first.dodge_roll():
+                    self.first.take_dmg()
+                    print(f"\n*** {self.second.name} attack connects! ***\n")
+                    self.wait_input()
+                    if not self.first.health and not self.second.health:
+                        break
+                else:
+                    print(f"\n*** {self.first} dodged the attack! ***")
+                    self.wait_input()
             else:
-                print(f"\n*** {self.second} dodged the attack! ***")
+                break
 
     def move_player(self, direction):
         # Splits direction and player positon
@@ -119,17 +123,38 @@ class Game:
             self.map.mark_player_position((a, b))
             return True
 
+    def check_exit(self, position):
+        if self.map.map[position[0]][position[1]].have_exit:
+            self.choice = input(EXIT_TEXT)
+            if self.choice == "1":
+                return False
+            elif self.choice == "2":
+                print(
+                    f"\n*** YOU ESCAPED WITH TREASURES WORTH {self.player.treasure_value}"
+                )
+                self.wait_input()
+                self.player.exits = True
+                return True
+            else:
+                print("Thats not a choice...")
+                self.check_exit(position)
+        else:
+            return False
+
     def main(self):
         while True:
             self.start_menu.run_menu()
-            print(self.start_menu.role)
             self.create_player(self.start_menu.role)
             self.player.name = self.start_menu.name
             self.map = Map()
             self.map.mark_player_position(self.map.player_position)
             while True:
                 self.check_room(self.map.player_position)
-                if self.player.health == 0:
+                if not self.player.health:
+                    print("\n*** GAME OVER ***\n")
+                    break
+                self.check_exit(self.map.player_position)
+                if self.player.exits:
                     break
                 while True:
                     self.map.print_map()

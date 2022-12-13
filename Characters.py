@@ -38,7 +38,7 @@ class Character:
         initative = 0
         for i in range(self.initiative):
             initative += self.roll_dice()
-        print(f"{self.name}I try initiate! ({initative} initiative roll)")
+        print(f"{self.name}: I try initiate! ({initative} initiative roll)")
         return initative
 
     def dodge_roll(self):
@@ -54,15 +54,17 @@ class Character:
 
     # Method to take damage
     def take_dmg(self):
+        print(f"{self.name}: Ouch!")
         self.health -= 1
         if self.health == 0:
             self.death()
         else:
-            print(f"{self.name}: Ouch!\n {self.name} have {self.health} HP remaining.")
+            print(f"*** {self.name} have {self.health} HP remaining. ***")
 
     # Method to heal monsters if player escapes or if player loads a character
     def heal(self):
         self.health = self.max_health
 
+    # Method to represent the object as self.name
     def __repr__(self):
         return self.name
