@@ -1,9 +1,10 @@
+from utils.visuals import ascii_02, clear, intro_screen, loading_bar
+
 from Map import Map
 from MoveMenu import Move_menu
 from PlayerRoles import Knight, Thief, Wizard
-from SaveLoad import Save
+# from SaveLoad import Save
 from StartMenu import Start_menu
-from visuals import clear, intro_screen, loading_bar, ascii_02
 
 
 class Game:
