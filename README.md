@@ -1,58 +1,72 @@
-
 # Kebabpatrullen Agile Devops 2022
 
-Let the search for the lost kebab begin!
+## **Dungeon Run** - _In the search of the Lost Kebab_
+
+Agile Project Management - DevOps22 - Team 5
 
 <p align = "center">
 <img src="img/dungeon art artwork.png" width=50% >
+
+<p align = "center">Let the search for the lost kebab begin!</p>
 
 ---
 
 ## What's new?
 
-[Robert's Sprint Demo Checklist](stuff/sprint_demo_checklist.md)
+- DevOps22 [**Betygskriterier**](stuff/betygskriterier.md)
 
-[*Dungeon Run* **Testing**](stuff/testing.md)
+- Game is now *playable in terminal* - Run `Game.py`
 
-[*Dungeon Run* **Terminal Menu**](stuff/terminal_menu.md)
+- Info about Agile [**Ceremonies**](stuff/ceremonies.md)
 
-[Sprintperiod 1](#sprintperiod-1)
+- Robert's [**Sprint Demo Checklist**](stuff/sprint_demo_checklist.md)
 
-[Journals](#journal)
-
-[Alex being Kebabmaster for a day](stuff/alex_agile.md)
+- Dungeon Run [**New Updated Testing**](stuff/testing.md)
 
 ---
 
-## **Dungeon Run** - *In the search of the Lost Kebab*
+## What's in plan for today?
 
-Agile Project Management - DevOps22 - Team 5
-
-Don't forget *it's about the journey, not the destination*.
-
----
-
-## GUI - *Graphical User Interface* 🚧
-
-[*Dungeon Run* **GUI**](stuff/gui.md)
-
----
-
-## Testing - *Unit Testing* 🚧
-
-[*Dungeon Run* **Testing**](stuff/testing.md)
+- [ ] **Sprint Game Demo** - _Demo of the game in terminal_
+- [ ] **Sprint Demo** - _Describing the project, Process, Ceremonies, Trello Board, Roles, User Stories, Code_
+- [ ] [Journals](#journal) - _Daily journal for the project._
+- [ ] DevOps22 [**Betygskriterier**](stuff/betygskriterier.md)
+- [ ] Info about Agile [**Ceremonies**](stuff/ceremonies.md)
+- [ ] Ideas for presentation - _What to show and how to show it_
+- [ ] We might need to speak for one hour about the project and the process. - _We need to prepare for this_
+- [ ] Who will do the presentation? - _We need to show Trello, some pdf, powerpoint or a github page and the code/game_
 
 ---
 
-## New terminal menu 🚧
+## Already reviewed
 
-[*Dungeon Run* **Terminal Menu**](stuff/terminal_menu.md)
+- [Alex being Kebabmaster for a day](stuff/alex_agile.md)
+
+- [Sprintperiod 1](#sprintperiod-1)
+
+- [Journals](#journal) - _Daily journal for the project._ -
 
 ---
 
-## Play in terminal - *Coming soon* ⏳
+## Stuff we will not use (at least for Sprint 1)
 
-[*Dungeon Run* **Terminal**](stuff/terminal.md)
+[_Dungeon Run_ **GUI**](stuff/gui.md)
+
+[_Dungeon Run_ **Terminal Menu**](stuff/terminal_menu.md)
+
+[_Dungeon Run_ **Testing**](stuff/testing.md)
+
+---
+
+## Testing - _Unit Testing_ 🚧
+
+[_Dungeon Run_ **Testing**](stuff/testing.md)
+
+---
+
+## Play in terminal - _Coming soon_ ⏳
+
+[_Dungeon Run_ **Terminal Demo**](stuff/terminal.md)
 
 ---
 
@@ -80,43 +94,44 @@ Don't forget *it's about the journey, not the destination*.
 
 Sprint Period 1 - Project Dungeon Run
 
-| Name | 07-Dec | 08-Dec | 09-Dec | 12-Dec | 13-Dec |
-| --- | --- | --- | --- | --- | --- |
-| Frida | 3h | 4h | 7h | 5h | 5h |
-| Mandana | 3h | 4h | 7h | 5h | 5h |
-| Raffi | 3h | 4h | 7h | 5h | 5h |
-| Jarl | 3h | 4h | 7h | 5h | 5h |
-| Alex | 3h | 4h | 7h | 5h | 5h |
-| Total | 15h | 20h | 35h | 25h | 25h |
+| Name    | 07-Dec | 08-Dec | 09-Dec | 12-Dec | 13-Dec |
+| ------- | ------ | ------ | ------ | ------ | ------ |
+| Frida   | 3h     | 4h     | 7h     | 8h     | 5h     |
+| Mandana | 3h     | 4h     | 7h     | 8h     | 5h     |
+| Raffi   | 3h     | 4h     | 7h     | 8h     | 5h     |
+| Jarl    | 3h     | 4h     | 7h     | 8h     | 5h     |
+| Alex    | 3h     | 4h     | 7h     | 8h     | 5h     |
+| Total   | 15h    | 20h    | 35h    | 40h    | 25h    |
 
 ---
 
 ## Sprintperiod 2
 
-| Name | Day 01 | Day 02 | Day 03 | Day 04 | Day 05 |
-| --- | --- | --- | --- | --- | --- |
-| Frida | - | - | - | - | - |
-| Mandana | - | - | - | - | - |
-| Raffi | - | - | - | - | - |
-| Jarl | - | - | - | - | - |
-| Alex | - | - | - | - | - |
-| Total | - | - | - | - | - |
+| Name    | Day 01 | Day 02 | Day 03 | Day 04 | Day 05 |
+| ------- | ------ | ------ | ------ | ------ | ------ |
+| Frida   | -      | -      | -      | -      | -      |
+| Mandana | -      | -      | -      | -      | -      |
+| Raffi   | -      | -      | -      | -      | -      |
+| Jarl    | -      | -      | -      | -      | -      |
+| Alex    | -      | -      | -      | -      | -      |
+| Total   | -      | -      | -      | -      | -      |
 
 ---
 
 ## Journal
 
-Daily journal for the project. (All team members) 🚧
+Daily journal for the project. (All team members) 🚧 We must redo this for each memmber or we can just have one journal for the whole team. 🚧
 
-| Date | Description | Time |
-| --- | --- | --- |
-| 2022-12-05 | Start of project. Info. Got the task | 8h |
-| 2022-12-06 | Planning. Trello. Flowchart | 8h |
-| 2022-12-07 | Sprint 1. Backlog. Todo. Code for terminal version. Code for GUI | 1h |
-| 2022-12-08 | Sprint 1. Timeplaning. Fibonaci. Standup | 4h |
-| 2022-12-09 | Sprint 1. Standing. Show code. Team(pair) coding | 7h |
-| 2022-12-10 | Sprint 1. **Weekend**. PDF with timeplaning. New menu for terminal(proposition) | 4h |
-| 2022-12-11 | Sprint 1. **Weekend**. Testing with unittest and pytest.  | 4h |
+| Date       | Description                                                                                 | Time |
+| ---------- | ------------------------------------------------------------------------------------------- | ---- |
+| 2022-12-05 | Start of project. Info. Got the task                                                        | 8h   |
+| 2022-12-06 | Planning. Trello. Flowchart                                                                 | 8h   |
+| 2022-12-07 | Sprint 1. Backlog. Todo. Code for terminal version. Code for GUI                            | 1h   |
+| 2022-12-08 | Sprint 1. Timeplaning. Fibonaci. Standup                                                    | 4h   |
+| 2022-12-09 | Sprint 1. Standing. Show code. Team(pair) coding                                            | 7h   |
+| 2022-12-10 | Sprint 1. **Weekend**. PDF with timeplaning. New menu for terminal(proposition)             | 4h   |
+| 2022-12-11 | Sprint 1. **Weekend**. Testing with unittest and pytest.                                    | 4h   |
+| 2022-12-12 | Sprint 1. In class. User stories, Trello, Code Debuging. Redone Testing to the updated code | 4h   |
 
 [Back to top](#kebabpatrullen-agile-devops-2022)
 
@@ -124,15 +139,15 @@ Daily journal for the project. (All team members) 🚧
 
 ## Dev Team
 
-[*Frida*](https://github.com/fridalundstroms)
+[_Frida_](https://github.com/fridalundstroms)
 
-[*Mandana*](https://github.com/Manibadani)
+[_Mandana_](https://github.com/Manibadani)
 
-[*Raffi*](https://github.com/raffiavakian)
+[_Raffi_](https://github.com/raffiavakian)
 
-[*Jarl*](https://github.com/JarlJakobsson)
+[_Jarl_](https://github.com/JarlJakobsson)
 
-[*Alex*](https://github.com/AlexRoman777)
+[_Alex_](https://github.com/AlexRoman777)
 
 ---
 
@@ -173,8 +188,7 @@ Daily journal for the project. (All team members) 🚧
 
 ---
 
-## Project Timeline - 🚧 *work in progress* 🚧
-
+## Project Timeline - 🚧 _work in progress_ 🚧
 
 ```mermaid
 gantt
@@ -200,9 +214,9 @@ Deadline                 :         des4, after des3, 2d
 
 We have to decide on the roles for the project.
 
-- **Product Owner** - *Robert*
-- **Scrum Master** - *Mandana*
-- **Development Team** - *Alla*
+- **Product Owner** - _Robert_
+- **Scrum Master** - _Mandana_
+- **Development Team** - _Alla_
 
 [Back to top](#kebabpatrullen-agile-devops-2022)
 
@@ -210,7 +224,7 @@ We have to decide on the roles for the project.
 
 ### Redoing the flowchart with mermaid
 
-🚧 *work in progress* 🚧
+🚧 _work in progress_ 🚧
 
 ---
 
@@ -232,8 +246,10 @@ I --> J[Check if monster]
 
 ---
 
-## Timeline PDF - by *Frida*
+## Timeline PDF - by _Frida_
 
 [**Timeline PDF**](stuff/sprint1_frida.pdf)
 
 ---
+
+<p align = "right">Don't forget it's about the journey, not the destination.</p>
