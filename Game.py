@@ -1,6 +1,9 @@
+from utils.visuals import ascii_02, clear, intro_screen, loading_bar
+
 from Map import Map
 from MoveMenu import Move_menu
 from PlayerRoles import Knight, Thief, Wizard
+# from SaveLoad import Save
 from StartMenu import Start_menu
 
 
@@ -120,6 +123,8 @@ class Game:
 
     def main(self):
         while True:
+            clear()
+            print(ascii_02)
             self.start_menu.run_menu()
             print(self.start_menu.role)
             self.create_player(self.start_menu.role)
@@ -129,6 +134,8 @@ class Game:
             while True:
                 self.check_room(self.map.player_position)
                 if self.player.health == 0:
+                    # Save the player's stats
+                    # Save(self.player)
                     break
                 while True:
                     self.map.print_map()
@@ -138,6 +145,8 @@ class Game:
 
 
 def main():
+    intro_screen()
+    loading_bar()
     game = Game()
     game.main()
 
