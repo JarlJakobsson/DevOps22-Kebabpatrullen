@@ -1,4 +1,4 @@
-from visuals import (clear, instruction_short, intro_screen, knight_art,
+from utils.visuals import (clear, instruction_short, intro_screen, knight_art,
                      loading_bar, outro_screen, sleep, thief_art, wizard_art)
 
 player_name = ""
