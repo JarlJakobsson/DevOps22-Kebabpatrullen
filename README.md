@@ -17,6 +17,8 @@ Agile Project Management - DevOps22 - Team 5
 
 - **Sprint 1 Demo** - [**Sprint Review**](stuff/sprint_review.md)
 
+- **Sprint 1 Demo** - [**PDF**](stuff/sprint_review.pdf)
+
 ---
 
 - DevOps22 [**Betygskriterier**](stuff/betygskriterier.md)
