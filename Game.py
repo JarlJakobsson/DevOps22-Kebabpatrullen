@@ -1,13 +1,10 @@
-from utils.visuals import ascii_02, clear, intro_screen, loading_bar
-
+from BattleMenu import Battle_menu
+from constants import EXIT_TEXT
 from Map import Map
 from MoveMenu import Move_menu
 from PlayerRoles import Knight, Thief, Wizard
-
-from MoveMenu import Move_menu
 from StartMenu import Start_menu
-from constants import EXIT_TEXT
-from BattleMenu import Battle_menu
+from utils.visuals import ascii_02, clear, intro_screen, loading_bar
 
 
 class Game:
