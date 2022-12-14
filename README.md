@@ -13,6 +13,12 @@ Agile Project Management - DevOps22 - Team 5
 
 ## What's new?
 
+---
+
+- **Sprint 1 Demo** - [**Sprint Review**](stuff/sprint_review.md)
+
+---
+
 - DevOps22 [**Betygskriterier**](stuff/betygskriterier.md)
 
 - Game is now *playable in terminal* - Run `Game.py`
@@ -131,7 +137,9 @@ Daily journal for the project. (All team members) 🚧 We must redo this for eac
 | 2022-12-09 | Sprint 1. Standing. Show code. Team(pair) coding                                            | 7h   |
 | 2022-12-10 | Sprint 1. **Weekend**. PDF with timeplaning. New menu for terminal(proposition)             | 4h   |
 | 2022-12-11 | Sprint 1. **Weekend**. Testing with unittest and pytest.                                    | 4h   |
-| 2022-12-12 | Sprint 1. In class. User stories, Trello, Code Debuging. Redone Testing to the updated code | 4h   |
+| 2022-12-12 | Sprint 1. In class. User stories, Trello, Code Debuging. Redone Testing | 8h   |
+| 2022-12-13 | Sprint 1. On zoom. Acceptance Criteria, Trello updateting, Code Debuging. Add more testing to the updated code | 5h   |
+| 2022-12-14 | End Sprint 1. In class. Demo - Sprint Review | 4h   |
 
 [Back to top](#kebabpatrullen-agile-devops-2022)
 

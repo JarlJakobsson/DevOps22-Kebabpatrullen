@@ -11,24 +11,71 @@ Agile Project Management - DevOps22 - Team 5
 
 ---
 
-Because of lack of knowledge about _Agile Development_, we started with a waterfall approach. We created a flowchart, kanban board and a project timeline. We also created a README.md and used github to collaborate on code and documentation.
+## Table of Contents
 
-But more we learned we realized that we needed to change our approach. We created a product backlog, a sprint backlog, user stories and a sprint review and retrospective. We used Trello to create the kanban board and to keep track of our progress. We used Miro, Lucid and Mermaid to create the flowchart and the project timeline. We used github to collaborate on code, link sharing, updates and documentation.
+- [Sprint Review (Demo) - Kebabpatrullen Agile Devops 2022](#sprint-review-demo---kebabpatrullen-agile-devops-2022)
+  - [**Dungeon Run** - _In the search of the Lost Kebab_](#dungeon-run---in-the-search-of-the-lost-kebab)
+  - [Table of Contents](#table-of-contents)
+  - [Short summary of the project](#short-summary-of-the-project)
+    - [What we did](#what-we-did)
+  - [Kanban boards](#kanban-boards)
+    - [First Kanban board](#first-kanban-board)
+    - [Start of Sprint 1](#start-of-sprint-1)
+    - [End of Sprint 1](#end-of-sprint-1)
+  - [Flowcharts](#flowcharts)
+    - [First Flowchart - using Lucidchart](#first-flowchart---using-lucidchart)
+    - [Second Flowchart - using Miro](#second-flowchart---using-miro)
+    - [Third Flowchart - using Mermaid 🚧](#third-flowchart---using-mermaid-)
+  - [Project Timeline](#project-timeline)
+    - [Timeline - using Mermaid](#timeline---using-mermaid)
+  - [Agile roles](#agile-roles)
+    - [Stakeholder - **_Robert_**](#stakeholder---robert)
+    - [Scrum Master - **_Mandana_**](#scrum-master---mandana)
+    - [Product Owner - **_Frida_**](#product-owner---frida)
+    - [Development Team - **_Jarl, Raffi, Alex_**](#development-team---jarl-raffi-alex)
+  - [Product Backlog](#product-backlog)
+  - [User Stories](#user-stories)
+  - [Sprint Backlog](#sprint-backlog)
+  - [Sprint Review](#sprint-review)
+  - [Sprint Retrospective](#sprint-retrospective)
+  - [Sprint 1](#sprint-1)
+    - [Sprint 1 - using Mermaid](#sprint-1---using-mermaid)
+  - [Sprint 1 Retrospective](#sprint-1-retrospective)
+    - [What we did well](#what-we-did-well)
+    - [What we could have done better](#what-we-could-have-done-better)
+  - [Dayly Scrum Meeting](#dayly-scrum-meeting)
+    - [Questions for the daily scrum meetings](#questions-for-the-daily-scrum-meetings)
+  - [Sprint 2](#sprint-2)
+    - [Sprint 2 - using Mermaid](#sprint-2---using-mermaid)
+  - [Time](#time)
+  - [Journal](#journal)
+  - [Screenshots](#screenshots)
+    - [Splash Screen](#splash-screen)
+    - [Main Menu](#main-menu)
+    - [TDD - Test Driven Development](#tdd---test-driven-development)
+    - [Code](#code)
+    - [User Story \& Acceptance Criteria](#user-story--acceptance-criteria)
+    - [In file documentation](#in-file-documentation)
+  - [Fun and Games](#fun-and-games)
 
 ---
 
 ## Short summary of the project
 
+We created a product backlog, a sprint backlog, user stories and a sprint review and retrospective. We used Trello to create the kanban board and to keep track of our progress. We used Miro, Lucid and Mermaid to create the flowchart and the project timeline. We used github to collaborate on code, link sharing, updates and documentation.
+
 ### What we did
 
 - [x] Created a flowchart following the game design document
 - [x] Created a project timeline
-- [x] Created a README.md a short summary of the project and updates
+- [x] Created a README.md with a short summary of the project and updates
 - [x] Created a product backlog
 - [x] Created a sprint backlog
 - [x] Created user stories
 - [x] Created a sprint review
 - [x] Created a sprint retrospective
+- [x] Created a sprint 1
+- [x] Stand up meetings every day at 10:00
 
 ---
 
@@ -41,6 +88,8 @@ But more we learned we realized that we needed to change our approach. We create
 <p align = "center">
 <img src="../img/kanban.png" width=90% >
 
+[Back to TOC](#table-of-contents)
+
 ---
 
 ### Start of Sprint 1
@@ -48,12 +97,16 @@ But more we learned we realized that we needed to change our approach. We create
 <p align = "center">
 <img src="../img/sprint_backlog.png" width=90% >
 
+[Back to TOC](#table-of-contents)
+
 ---
 
 ### End of Sprint 1
 
 <p align = "center">
 <img src="../img/end_sprint_1.png" width=90% >
+
+[Back to TOC](#table-of-contents)
 
 ---
 
@@ -66,12 +119,16 @@ But more we learned we realized that we needed to change our approach. We create
 <p align = "center">
 <img src="../img/flowchart.png" width=90% >
 
+[Back to TOC](#table-of-contents)
+
 ---
 
 ### Second Flowchart - using Miro
 
 <p align = "center">
 <img src="../img/Kebabpatrullen.jpg" width=90% >
+
+[Back to TOC](#table-of-contents)
 
 ---
 
@@ -91,6 +148,8 @@ H --> I[Try to move]
 I --> J[Check if monster]
 ```
 
+[Back to TOC](#table-of-contents)
+
 ---
 
 ## Project Timeline
@@ -109,6 +168,8 @@ Demo                     :         des3, 2022-12-14, 1d
 Sprint 2                 :         des4, after des2, 6d
 Deadline                 :         des5, after des4, 1d
 ```
+
+[Back to TOC](#table-of-contents)
 
 ---
 
@@ -146,6 +207,8 @@ We also decided:
 
 ### Development Team - **_Jarl, Raffi, Alex_**
 
+[Back to TOC](#table-of-contents)
+
 ---
 
 ## Product Backlog
@@ -168,6 +231,8 @@ We also decided:
 
 - The sprint retrospective will be a short summary of what we have done well and what we could have done better and will be created by the Scrum Master, Product Owner and Dev Team after the sprint review.
 
+[Back to TOC](#table-of-contents)
+
 ---
 
 ## Sprint 1
@@ -184,6 +249,8 @@ Planning                 :         des1, 2022-12-05, 3d
 Sprint 1                 :         des2, 2022-12-08, 6d
 Demo                     :         des3, 2022-12-14, 1d
 ```
+
+[Back to TOC](#table-of-contents)
 
 ---
 
@@ -249,8 +316,9 @@ Demo                     :         des3, 2022-12-14, 1d
 
 - Is the time estimation correct?
 
----
+[Back to TOC](#table-of-contents)
 
+---
 
 ## Sprint 2
 
@@ -265,3 +333,150 @@ section Sprint 2
 Sprint 2                 :         des2, 2022-12-15, 6d
 Retrospective                 :         des3, after des2, 1d
 ```
+
+---
+
+[Back to TOC](#table-of-contents)
+
+---
+
+## Time
+
+Sprint Period 1 - Project Dungeon Run
+
+| Name    | 07-Dec | 08-Dec | 09-Dec | 12-Dec | 13-Dec |
+| ------- | ------ | ------ | ------ | ------ | ------ |
+| Frida   | 3h     | 4h     | 7h     | 8h     | 5h     |
+| Mandana | 3h     | 4h     | 7h     | 8h     | 5h     |
+| Raffi   | 3h     | 4h     | 7h     | 8h     | 5h     |
+| Jarl    | 3h     | 4h     | 7h     | 8h     | 5h     |
+| Alex    | 3h     | 4h     | 7h     | 8h     | 5h     |
+| Total   | 15h    | 20h    | 35h    | 40h    | 25h    |
+
+---
+
+## Journal
+
+Daily journal for the project.
+
+| Date       | Description                                                                                 | Time |
+| ---------- | ------------------------------------------------------------------------------------------- | ---- |
+| 2022-12-05 | Start of project. Info. Got the task                                                        | 8h   |
+| 2022-12-06 | Planning. Trello. Flowchart                                                                 | 8h   |
+| 2022-12-07 | Sprint 1. Backlog. Todo. Code for terminal version. Code for GUI                            | 1h   |
+| 2022-12-08 | Sprint 1. Timeplaning. Fibonaci. Standup                                                    | 4h   |
+| 2022-12-09 | Sprint 1. Standing. Show code. Team(pair) coding                                            | 7h   |
+| 2022-12-10 | Sprint 1. **Weekend**. PDF with timeplaning. New menu for terminal(proposition)             | 4h   |
+| 2022-12-11 | Sprint 1. **Weekend**. Testing with unittest and pytest.                                    | 4h   |
+| 2022-12-12 | Sprint 1. In class. User stories, Trello, Code Debuging. Redone Testing | 8h   |
+| 2022-12-13 | Sprint 1. On zoom. Acceptance Criteria, Trello updateting, Code Debuging. Add more testing to the updated code | 5h   |
+| 2022-12-14 | End Sprint 1. In class. Demo - Sprint Review | 4h   |
+
+---
+
+[Back to TOC](#table-of-contents)
+
+---
+
+## Screenshots
+
+---
+
+### Splash Screen
+
+<p align = "center">
+<img src="../img/dungeon art artwork.png" width=70% >
+
+---
+
+### Main Menu
+
+<p align = "center">
+<img src="../img/main_menu.png" width=30% >
+
+<p align = "center">
+<img src="../img/character.png" width=30% >
+
+<p align = "center">
+<img src="../img/map_size.png" width=30% >
+
+---
+
+### TDD - Test Driven Development
+
+<p align = "center">
+<img src="../img/coverage.png" width=70% >
+
+``` python
+def test_get_user_input(self):
+    """Test get user input."""
+    with patch("builtins.input", return_value="test"):
+        assert self.game.get_user_input() == "test"
+```
+
+[Back to TOC](#table-of-contents)
+
+---
+
+### Code
+
+```python
+class Giantspider(Character):
+    def __init__(self):
+        super().__init__()
+        self.initiative = 7
+        self.health = 1
+        self.attack = 2
+        self.agility = 3
+        self.max_health = 1
+        self.name = "Giant Spider"
+```
+
+---
+
+### User Story & Acceptance Criteria
+
+```gherkin
+As a customer i want to order a kebab so that i can eat it.
+```
+
+```gherkin
+Given i am a customer when i order a kebab then i get a kebab.
+```
+
+---
+
+### In file documentation
+
+```python
+def get_user_input(self):
+    """Get user input from the terminal.
+
+    Returns:
+        str: The user input.
+    """
+    return input()
+```
+
+```python
+def clear():
+    """Clears the screen in terminal, works on all OS"""
+    os.system('cls' if os.name == 'nt' else 'clear')
+```
+
+---
+
+## Fun and Games
+
+<p align = "center">
+<img src="../img/you_won.png" width=70% >
+
+[Story](story.md)
+
+---
+
+[Back to TOC](#table-of-contents)
+
+---
+
+[Back to the main page](../README.md)
