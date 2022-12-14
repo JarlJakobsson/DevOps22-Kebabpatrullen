@@ -1,5 +1,6 @@
 from utils.visuals import (clear, instruction_short, intro_screen, knight_art,
-                     loading_bar, outro_screen, sleep, thief_art, wizard_art)
+                           loading_bar, outro_screen, sleep, thief_art,
+                           wizard_art)
 
 player_name = ""
 player_character = ""
@@ -8,8 +9,6 @@ board_size = 4
 
 
 class Menu:
-    """ A 'simple' (clear looking) menu. I 'lost' a lot of time on it some months ago, it's OOP.
-    Now we have an overcomplicated menu :) If you like it, use it. If not, no biggie. """
 
     def __init__(self, title, options, actions, exit=False, back=False):
         self.title = title

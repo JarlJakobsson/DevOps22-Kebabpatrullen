@@ -1,6 +1,7 @@
 
 class Save:
     """Save data to a csv file. For keep it simple, i'm using a csv file instead of a database."""
+
     def __init__(self, name, character, score):
         self.name = name
         self.character = character

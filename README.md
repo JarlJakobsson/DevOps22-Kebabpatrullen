@@ -13,14 +13,6 @@ Agile Project Management - DevOps22 - Team 5
 
 ## What's new?
 
----
-
-- **Sprint 1 Demo** - [**Sprint Review**](stuff/sprint_review.md)
-
-- **Sprint 1 Demo** - [**PDF**](stuff/sprint_review.pdf)
-
----
-
 - DevOps22 [**Betygskriterier**](stuff/betygskriterier.md)
 
 - Game is now *playable in terminal* - Run `Game.py`
@@ -35,14 +27,9 @@ Agile Project Management - DevOps22 - Team 5
 
 ## What's in plan for today?
 
-- [ ] **Sprint Game Demo** - _Demo of the game in terminal_
-- [ ] **Sprint Demo** - _Describing the project, Process, Ceremonies, Trello Board, Roles, User Stories, Code_
-- [ ] [Journals](#journal) - _Daily journal for the project._
+- [ ] _Daily journal for the project._
 - [ ] DevOps22 [**Betygskriterier**](stuff/betygskriterier.md)
 - [ ] Info about Agile [**Ceremonies**](stuff/ceremonies.md)
-- [ ] Ideas for presentation - _What to show and how to show it_
-- [ ] We might need to speak for one hour about the project and the process. - _We need to prepare for this_
-- [ ] Who will do the presentation? - _We need to show Trello, some pdf, powerpoint or a github page and the code/game_
 
 ---
 
@@ -52,7 +39,11 @@ Agile Project Management - DevOps22 - Team 5
 
 - [Sprintperiod 1](#sprintperiod-1)
 
-- [Journals](#journal) - _Daily journal for the project._ -
+- [Journals](#journal) - _Daily journal for the project._ 
+
+- **Sprint Game Demo** - _Demo of the game in terminal_
+
+- **Sprint Demo** - _Describing the project, Process, Ceremonies, Trello Board, Roles, User Stories, Code_
 
 ---
 
@@ -61,12 +52,6 @@ Agile Project Management - DevOps22 - Team 5
 [_Dungeon Run_ **GUI**](stuff/gui.md)
 
 [_Dungeon Run_ **Terminal Menu**](stuff/terminal_menu.md)
-
-[_Dungeon Run_ **Testing**](stuff/testing.md)
-
----
-
-## Testing - _Unit Testing_ 🚧
 
 [_Dungeon Run_ **Testing**](stuff/testing.md)
 
@@ -124,24 +109,6 @@ Sprint Period 1 - Project Dungeon Run
 | Alex    | -      | -      | -      | -      | -      |
 | Total   | -      | -      | -      | -      | -      |
 
----
-
-## Journal
-
-Daily journal for the project. (All team members) 🚧 We must redo this for each memmber or we can just have one journal for the whole team. 🚧
-
-| Date       | Description                                                                                 | Time |
-| ---------- | ------------------------------------------------------------------------------------------- | ---- |
-| 2022-12-05 | Start of project. Info. Got the task                                                        | 8h   |
-| 2022-12-06 | Planning. Trello. Flowchart                                                                 | 8h   |
-| 2022-12-07 | Sprint 1. Backlog. Todo. Code for terminal version. Code for GUI                            | 1h   |
-| 2022-12-08 | Sprint 1. Timeplaning. Fibonaci. Standup                                                    | 4h   |
-| 2022-12-09 | Sprint 1. Standing. Show code. Team(pair) coding                                            | 7h   |
-| 2022-12-10 | Sprint 1. **Weekend**. PDF with timeplaning. New menu for terminal(proposition)             | 4h   |
-| 2022-12-11 | Sprint 1. **Weekend**. Testing with unittest and pytest.                                    | 4h   |
-| 2022-12-12 | Sprint 1. In class. User stories, Trello, Code Debuging. Redone Testing | 8h   |
-| 2022-12-13 | Sprint 1. On zoom. Acceptance Criteria, Trello updateting, Code Debuging. Add more testing to the updated code | 5h   |
-| 2022-12-14 | End Sprint 1. In class. Demo - Sprint Review | 4h   |
 
 [Back to top](#kebabpatrullen-agile-devops-2022)
 
@@ -172,15 +139,6 @@ Daily journal for the project. (All team members) 🚧 We must redo this for eac
 ---
 
 ## Kanban Board
-
-<p align = "center">
-<img src="img/kanban.png" width=50% >
-
-[Back to top](#kebabpatrullen-agile-devops-2022)
-
----
-
-## Trello Sprint Backlog
 
 <p align = "center">
 <img src="img/sprint_backlog.png" width=50% >
@@ -215,50 +173,6 @@ Deadline                 :         des4, after des3, 2d
 ```
 
 [Back to top](#kebabpatrullen-agile-devops-2022)
-
----
-
-## Agile roles
-
-### **Roles**
-
-We have to decide on the roles for the project.
-
-- **Product Owner** - _Robert_
-- **Scrum Master** - _Mandana_
-- **Development Team** - _Alla_
-
-[Back to top](#kebabpatrullen-agile-devops-2022)
-
----
-
-### Redoing the flowchart with mermaid
-
-🚧 _work in progress_ 🚧
-
----
-
-```mermaid
-graph TD
-A[Start] --> B[Create new user or login]
-B --> C[Input name]
-B --> D[Get data from file]
-C --> E[Input role]
-E --> F[Input start position]
-F --> G[Input map size]
-D --> G[Input map size]
-G --> H[Create player, map, room]
-H --> I[Try to move]
-I --> J[Check if monster]
-```
-
-[Back to top](#kebabpatrullen-agile-devops-2022)
-
----
-
-## Timeline PDF - by _Frida_
-
-[**Timeline PDF**](stuff/sprint1_frida.pdf)
 
 ---
 

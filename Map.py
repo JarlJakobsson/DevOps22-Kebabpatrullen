@@ -1,7 +1,6 @@
 import random
 
 from Room import Room
-import random
 
 
 # There probably is a better way but, I create a map template with "X"s and then replace all the "X"s with room objects
