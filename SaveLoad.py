@@ -1,5 +1,6 @@
 
 class Save:
+    """Save data to a csv file. For keep it simple, i'm using a csv file instead of a database."""
     def __init__(self, name, character, score):
         self.name = name
         self.character = character
@@ -25,5 +26,5 @@ class Load:
                         self.character = data[1]
                         self.score = data[2]
                         break
-            except IndexError:
+            except AttributeError:
                 print("Name not found")
