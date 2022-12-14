@@ -5,7 +5,7 @@
 Agile Project Management - DevOps22 - Team 5
 
 <p align = "center">
-<img src="img/dungeon art artwork.png" width=50% >
+<img src="img/dungeon art artwork.png" width=30% >
 
 <p align = "center">Let the search for the lost kebab begin!</p>
 
@@ -15,35 +15,13 @@ Agile Project Management - DevOps22 - Team 5
 
 - DevOps22 [**Betygskriterier**](stuff/betygskriterier.md)
 
-- Game is now *playable in terminal* - Run `Game.py`
+- Game is now *playable in terminal* - Run `game.py` or `main.py`
 
 - Info about Agile [**Ceremonies**](stuff/ceremonies.md)
 
 - Robert's [**Sprint Demo Checklist**](stuff/sprint_demo_checklist.md)
 
 - Dungeon Run [**New Updated Testing**](stuff/testing.md)
-
----
-
-## What's in plan for today?
-
-- [ ] _Daily journal for the project._
-- [ ] DevOps22 [**Betygskriterier**](stuff/betygskriterier.md)
-- [ ] Info about Agile [**Ceremonies**](stuff/ceremonies.md)
-
----
-
-## Already reviewed
-
-- [Alex being Kebabmaster for a day](stuff/alex_agile.md)
-
-- [Sprintperiod 1](#sprintperiod-1)
-
-- [Journals](#journal) - _Daily journal for the project._ 
-
-- **Sprint Game Demo** - _Demo of the game in terminal_
-
-- **Sprint Demo** - _Describing the project, Process, Ceremonies, Trello Board, Roles, User Stories, Code_
 
 ---
 
@@ -68,8 +46,6 @@ Agile Project Management - DevOps22 - Team 5
 [**TODO**](stuff/todo.md)
 
 [**Links**](stuff/links.md)
-
-[**Tips & Tricks**](stuff/howto.md)
 
 [**Story & Design**](stuff/story.md)
 
@@ -108,7 +84,6 @@ Sprint Period 1 - Project Dungeon Run
 | Jarl    | -      | -      | -      | -      | -      |
 | Alex    | -      | -      | -      | -      | -      |
 | Total   | -      | -      | -      | -      | -      |
-
 
 [Back to top](#kebabpatrullen-agile-devops-2022)
 
@@ -156,7 +131,7 @@ Sprint Period 1 - Project Dungeon Run
 
 ---
 
-## Project Timeline - 🚧 _work in progress_ 🚧
+## Project Timeline
 
 ```mermaid
 gantt
@@ -167,7 +142,7 @@ section Start of project
 Planning                 :         des1, 2022-12-05, 3d
 Sprint 1                 :         des2, 2022-12-07, 7d
 Demo                     :         des3, 2022-12-14, 1d
-Planning                 :         des4, 2022-12-12, 3d
+Planning                 :         des4, 2022-12-14, 2d
 Sprint 2                 :         des3, after des2, 7d
 Deadline                 :         des4, after des3, 2d
 ```
