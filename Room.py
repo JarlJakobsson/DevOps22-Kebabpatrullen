@@ -27,7 +27,6 @@ class Room:
             elif monster_roll in range(48, 53):
                 self.monster = Troll()
 
-
     def create_treasure(self):
         if not self.visited:
             treasure_roll = random.randint(1, 100)
@@ -53,7 +52,3 @@ class Room:
 
     def remove_treasure(self):
         self.treasure = 0
-
-
-if __name__ == "__main__":
-    pass
