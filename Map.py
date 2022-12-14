@@ -1,3 +1,5 @@
+import random
+
 from Room import Room
 import random
 
