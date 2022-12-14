@@ -1,4 +1,5 @@
 import random
+from utils import visuals
 
 
 class Character:
@@ -17,6 +18,9 @@ class Character:
     def roll_dice(self):
         return random.randint(1, 6)
 
+    def wait_input(self):
+        input("\nPress any key...\n")
+
     # Generic method for all roll mechanics (not used atm)
     def roll(self, value):
         sum = 0
@@ -28,38 +32,41 @@ class Character:
 
     # Rolls a dice for each attack_value of character
     def attack_roll(self):
-        attack = 0
+        self.atk_value = 0
         for i in range(self.attack):
-            attack += self.roll_dice()
-        print(f"{self.name}: I try attack! ({attack} attack roll)")
-        return attack
+            self.atk_value += self.roll_dice()
+        print(f"{self.name} Tries to attack! ({self.atk_value} attack roll)")
+        return self.atk_value
 
     def initative_roll(self):
         initative = 0
         for i in range(self.initiative):
             initative += self.roll_dice()
-        print(f"{self.name}: I try initiate! ({initative} initiative roll)")
+        print(f"{self.name} tries to take initiative ({initative} initiative roll)")
         return initative
 
     def dodge_roll(self):
         dodge = 0
         for i in range(self.agility):
             dodge += self.roll_dice()
-        print(f"{self.name}: I try dodge! ({dodge} dodge roll)")
+        print(f"{self.name} tries to dodge ({dodge} dodge roll)")
         return dodge
 
     def death(self):
         self.is_alive = False
-        print(f"{self.name}: im death gg")
+        print(f"{self.name} died...")
+        self.wait_input()
+        visuals.clear()
 
     # Method to take damage
     def take_dmg(self):
-        print(f"{self.name}: Ouch!")
+        print(f"\n{self.name}: Ouch!")
         self.health -= 1
         if self.health == 0:
             self.death()
         else:
-            print(f"*** {self.name} have {self.health} HP remaining. ***")
+            print(f"\n*** {self.name} have {self.health} HP remaining. ***")
+            self.wait_input()
 
     # Method to heal monsters if player escapes or if player loads a character
     def heal(self):

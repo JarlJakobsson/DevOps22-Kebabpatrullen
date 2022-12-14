@@ -4,16 +4,19 @@ from MoveMenu import Move_menu
 from StartMenu import Start_menu
 from constants import EXIT_TEXT
 from BattleMenu import Battle_menu
+from utils import visuals
 
 
 class Game:
     def __init__(self):
-        self.map = 0
-        self.player = 0
         self.start_menu = Start_menu()
         self.move_menu = Move_menu()
         self.battle_menu = Battle_menu()
+        self.map = 0
+        self.player = 0
         self.initiatior = 0
+        self.old_position = (0,)
+        self.escaped = False
 
     def wait_input(self):
         input("\nPress any key...\n")
@@ -28,31 +31,49 @@ class Game:
             self.player = Wizard()
         elif role == 3:
             self.player = Thief()
+        self.player.name = self.start_menu.name
+
+    # After battle, Player loots treasure, monster get removed from room, treasure get removed from room
+    def post_combat(self, x, y):
+        if self.player.health:
+            self.player.get_treasure(self.map.map[x][y].treasure)
+            self.remove_treasure_and_moster((x, y))
+            self.wait_input()
+
+    def remove_treasure_and_moster(self, position):
+        self.map.map[position[0]][position[1]].monster = 0
+        self.map.map[position[0]][position[1]].treasure = 0
 
     def check_room(self, position):
         # Splits position into x and y
         x, y = position
-
+        visuals.clear()
+        self.map.print_map()
         # Check if self.map.map[x][y].monster is True. If True prints the monster name and battle menu
         if self.map.map[x][y].monster:
-            print(f"{self.player.name}: There is a {self.map.map[x][y].monster.name}")
-            # self.knight_block()
+            print(
+                f"\n{self.player.name}: There is a {self.map.map[x][y].monster.name} in here ...\n"
+            )
             self.knight_block()
             self.battle_method(position)
         else:
             print(f"\n{self.player.name}: ...No monsters in here...\n")
+        if self.escaped:
+            self.move_back()
+        else:
+            self.post_combat(x, y)
 
-        # After battle, Player loots treasure, monster get removed from room, treasure get removed from room
-        if self.player.health:
-            self.player.get_treasure(self.map.map[x][y].treasure)
-            self.map.map[x][y].monster = 0
-            self.map.map[x][y].treasure = 0
-            self.wait_input()
+    def move_back(self):
+        self.map.mark_visited_room(self.map.player_position)
+        self.map.player_position = self.old_position
+        self.map.mark_player_position(self.old_position)
+        print(f"\n*** {self.player.name} managed to escape to the previous room! ***\n")
+        self.wait_input()
+        self.escaped = False
 
     def knight_block(self):
         if self.player.role == "Knight":
             self.player.block = True
-            print("Block is ready again!")
 
     def initiative_method(self, position):
         if (
@@ -60,10 +81,13 @@ class Game:
             >= self.map.map[position[0]][position[1]].monster.initative_roll()
         ):
             self.initiatior = 1
-            print("[GAME] Player takes initative")
+            print(f"\n***  {self.player.name} takes initative! ***")
         else:
-            print("[GAME] Monster takes initatitve")
+            print(
+                f"\n*** {self.map.map[position[0]][position[1]].monster.name} takes initatitve! ***"
+            )
             self.initiatior = 0
+
         if self.initiatior:
             self.first = self.player
             self.second = self.map.map[position[0]][position[1]].monster
@@ -74,39 +98,38 @@ class Game:
 
     def battle_method(self, position):
         self.initiative_method(position)
-        if self.initiatior:
-            self.first = self.player
-            self.second = self.map.map[position[0]][position[1]].monster
-        else:
-            self.first = self.map.map[position[0]][position[1]].monster
-            self.second = self.player
         while True:
-            if self.first.health and self.second.health:
-                if self.first.attack_roll() >= self.second.dodge_roll() and not 0:
+            visuals.clear()
+            if self.first.attack_roll():
+                if self.first.atk_value >= self.second.dodge_roll():
                     self.second.take_dmg()
-                    print(f"\n*** {self.first.name} attack connects! ***\n")
-                    self.wait_input()
-                    if not self.first.health or not self.second.health:
+                    if not self.second.health:
                         break
                 else:
                     print(f"\n*** {self.second} dodged the attack! ***")
                     self.wait_input()
-                if self.second.attack_roll() >= self.first.dodge_roll():
-                    self.first.take_dmg()
-                    print(f"\n*** {self.second.name} attack connects! ***\n")
-                    self.wait_input()
-                    if not self.first.health and not self.second.health:
-                        break
+                if self.second.attack_roll():
+                    if self.second.atk_value >= self.first.dodge_roll():
+                        self.first.take_dmg()
+                        if not self.first.health:
+                            break
+                    else:
+                        print(f"\n*** {self.first} dodged the attack! ***")
+                        self.wait_input()
                 else:
-                    print(f"\n*** {self.first} dodged the attack! ***")
-                    self.wait_input()
+                    self.map.map[position[0]][position[1]].monster.heal()
+                    self.escaped = True
+                    break
             else:
+                self.map.map[position[0]][position[1]].monster.heal()
+                self.escaped = True
                 break
 
     def move_player(self, direction):
         # Splits direction and player positon
         x, y = direction
         a, b = self.map.player_position
+        self.old_position = self.map.player_position
         a += x
         b += y
 
@@ -118,7 +141,6 @@ class Game:
         # If exists, Marks current room as visited, Updates player location, Marks new room as currently in
         else:
             self.map.mark_visited_room(self.map.player_position)
-            print(f"*** {a,b} ***")
             self.map.player_position = (a, b)
             self.map.mark_player_position((a, b))
             return True
@@ -130,8 +152,11 @@ class Game:
                 return False
             elif self.choice == "2":
                 print(
-                    f"\n*** YOU ESCAPED WITH TREASURES WORTH {self.player.treasure_value}"
+                    f"\n*** YOU ESCAPED WITH TREASURES WORTH {self.player.treasure_value} KEBABS ***"
                 )
+                self.wait_input()
+                visuals.clear()
+                print(f"Thank you for playing\n{visuals.ascii_02}\n")
                 self.wait_input()
                 self.player.exits = True
                 return True
@@ -143,15 +168,21 @@ class Game:
 
     def main(self):
         while True:
+            visuals.clear()
             self.start_menu.run_menu()
+            if not self.start_menu.keep_going:
+                break
             self.create_player(self.start_menu.role)
-            self.player.name = self.start_menu.name
             self.map = Map()
             self.map.mark_player_position(self.map.player_position)
+            self.remove_treasure_and_moster(self.map.player_position)
             while True:
                 self.check_room(self.map.player_position)
                 if not self.player.health:
+                    visuals.clear()
                     print("\n*** GAME OVER ***\n")
+                    print(visuals.ascii_02)
+                    self.wait_input()
                     break
                 self.check_exit(self.map.player_position)
                 if self.player.exits:
@@ -163,5 +194,6 @@ class Game:
                         break
 
 
-game = Game()
-game.main()
+if __name__ == "__main__":
+    game = Game()
+    game.main()

@@ -1,5 +1,7 @@
 from Room import Room
 import random
+import time
+from utils import visuals
 
 ## There probably is a better way but, I create a map template with "X"s and then replace all the "X"s with room objects
 ## and give them the correct room_index
@@ -33,9 +35,9 @@ class Map:
                     self.map[row][room].name = "0"
 
     def print_map(self):
+        visuals.clear()
+        print("\n     MAP")
+        print("############")
         for row in self.map:
             print(row)
-        print("-------------------")
-
-    def move_player(self, position):
-        x, y = position
+        print("############")

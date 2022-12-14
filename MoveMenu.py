@@ -1,4 +1,5 @@
 from constants import MOVE_MENU_TEXT
+from utils import visuals
 
 
 class Move_menu:
@@ -6,7 +7,6 @@ class Move_menu:
         pass
 
     def run_menu(self):
-        self.choosing = True
         self.direction = (0,)
         self.choice = input(MOVE_MENU_TEXT)
 
@@ -23,7 +23,7 @@ class Move_menu:
             self.direction = (0, 1)
         else:
             print("Thats not a direction...\n")
-            input("Press any key")
+            input("Press any key...")
             self.direction = 0
 
         while True:
