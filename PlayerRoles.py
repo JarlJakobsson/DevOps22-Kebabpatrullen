@@ -5,6 +5,7 @@ from Player import Player
 class Knight(Player):
     def __init__(self):
         super().__init__()
+        self.name = ""
         self.initiative = 5
         self.health = 9
         self.attack = 6
@@ -13,6 +14,8 @@ class Knight(Player):
         self.role = "Knight"
         self.block = True
 
+    # Knight overrides the take_dmg method, to a block check and unique phrase for taking dmg
+    # If block is ready it will change block to false and ignore the first damage
     def take_dmg(self):
         if self.block:
             self.block = False
@@ -29,6 +32,7 @@ class Knight(Player):
 class Wizard(Player):
     def __init__(self):
         super().__init__()
+        self.name = ""
         self.initiative = 6
         self.health = 5
         self.attack = 9
@@ -36,6 +40,7 @@ class Wizard(Player):
         self.max_health = 5
         self.role = "Wizard"
 
+    # Overrides the normal escape method
     def escape_roll(self):
         wizard_escape = random.randint(1, 100)
         if wizard_escape >= 20:
@@ -49,6 +54,7 @@ class Wizard(Player):
 class Thief(Player):
     def __init__(self):
         super().__init__()
+        self.name = ""
         self.initiative = 7
         self.health = 5
         self.attack = 5
@@ -56,6 +62,7 @@ class Thief(Player):
         self.max_health = 5
         self.role = "Thief"
 
+    # Overrides the normal attack method
     def attack_roll(self):
         self.atk_value = 0
         if self.battle_menu.run_menu():
