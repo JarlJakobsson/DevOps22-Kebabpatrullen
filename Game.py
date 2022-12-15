@@ -4,6 +4,7 @@ from MoveMenu import Move_menu
 from StartMenu import Start_menu
 from constants import EXIT_TEXT
 from BattleMenu import Battle_menu
+import json
 from utils import visuals
 
 
@@ -25,13 +26,14 @@ class Game:
         self.map = Map(int(input("Enter size: ")))
 
     def create_player(self, role):
-        if role == 1:
+        if role == "Knight":
             self.player = Knight()
-        elif role == 2:
+        elif role == "Wizard":
             self.player = Wizard()
-        elif role == 3:
+        elif role == "Thief":
             self.player = Thief()
         self.player.name = self.start_menu.name
+        self.player.score = self.start_menu.score
 
     # After battle, Player loots treasure, monster get removed from room, treasure get removed from room
     def post_combat(self, x, y):
@@ -152,12 +154,13 @@ class Game:
                 return False
             elif self.choice == "2":
                 print(
-                    f"\n*** YOU ESCAPED WITH TREASURES WORTH {self.player.treasure_value} KEBABS ***"
+                    f"\n*** YOU ESCAPED WITH TREASURES WORTH {self.player.score} KEBABS ***"
                 )
                 self.wait_input()
                 visuals.clear()
                 print(f"Thank you for playing\n{visuals.ascii_02}\n")
                 self.wait_input()
+                self.save_method()
                 self.player.exits = True
                 return True
             else:
@@ -166,6 +169,14 @@ class Game:
         else:
             return False
 
+    def save_method(self):
+        with open("save_data.json", "w+") as f:
+            self.start_menu.data[self.player.name]["score"] = self.player.score
+            new_data = json.dumps(self.start_menu.data)
+            f.write(new_data)
+            print("\n*** Character saved ***")
+            self.wait_input()
+
     def main(self):
         while True:
             visuals.clear()
@@ -173,14 +184,18 @@ class Game:
             if not self.start_menu.keep_going:
                 break
             self.create_player(self.start_menu.role)
-            self.map = Map()
+            self.map = Map(self.start_menu.size, self.start_menu.start)
             self.map.mark_player_position(self.map.player_position)
             self.remove_treasure_and_moster(self.map.player_position)
             while True:
                 self.check_room(self.map.player_position)
                 if not self.player.health:
                     visuals.clear()
-                    print("\n*** GAME OVER ***\n")
+                    self.start_menu.data.pop(self.player.name)
+                    print("\n*** GAME OVER - YOUR CHARACTER IS NO MORE ***\n")
+                    with open("save_data.json", "w+") as f:
+                        new_data = json.dumps(self.start_menu.data)
+                        f.write(new_data)
                     print(visuals.ascii_02)
                     self.wait_input()
                     break
