@@ -1,7 +1,7 @@
 MAIN_MENU_TEXT = """
-###### START MENU #########
+####### START MENU ########
 [1] - Create a new hero
-[2] - Load hero ( WORK IN PROGRESS )
+[2] - Load hero
 [3] - Quit
 ############################
 """
@@ -35,6 +35,27 @@ BATTLE_TEXT = """
 [2] - Try Escape
 ###########################
 """
+SIZE_TEXT = """
+####### CHOOSE SIZE ########
+[1] - Small (4X4)
+[2] - Medium (5X5)
+[3] - Large (8X8)
+############################
+"""
+START_TEXT = """
+#### CHOOSE START LOCATION #####
+[1] - Top left
+[2] - Top right
+[3] - Bottom left
+[4] - Bottom right
+################################
+"""
+LOAD_TEXT = """
+############### LOAD HERO ##################
+Enter the name of the hero you want to load
+Enter q to exit
+"""
+
 ascii_01 = """
 ██████  ██    ██ ███    ██  ██████  ███████  ██████  ███    ██     ██████  ██    ██ ███    ██ 
 ██   ██ ██    ██ ████   ██ ██       ██      ██    ██ ████   ██     ██   ██ ██    ██ ████   ██ 
