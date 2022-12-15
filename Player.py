@@ -32,14 +32,14 @@ class Player(Character):
             )
 
     def escape_roll(self):
-        if randint(1, 100) <= 10 * self.agility:
+        if randint(1, 100) <= (10 * self.agility):
             return True
         else:
-            print(f"\n*** Never lucky...Escape attempt failed***\n")
+            print(f"\n*** Never lucky...Escape attempt failed ***\n")
             self.wait_input()
             return False
 
-    def attack_roll(self):  ##### FIX BATTLE MENU:
+    def attack_roll(self):
         self.atk_value = 0
         if self.battle_menu.run_menu():
             for i in range(self.attack):

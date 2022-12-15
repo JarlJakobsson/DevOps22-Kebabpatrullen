@@ -1,7 +1,7 @@
 MAIN_MENU_TEXT = """
 ###### START MENU #########
 [1] - Create a new hero
-[2] - Load hero
+[2] - Load hero ( WORK IN PROGRESS )
 [3] - Quit
 ############################
 """

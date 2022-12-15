@@ -14,6 +14,8 @@ class Map:
 
         rand_row = random.randint(0, 3)
         rand_col = random.randint(0, 3)
+        self.map[rand_row][rand_col].monster = 0
+        self.map[rand_row][rand_col].treasure = 0
         self.map[rand_row][rand_col].have_exit = True
         self.map[rand_row][rand_col].name = "E"  # REMOVE LATER
         self.is_start = True
