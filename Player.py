@@ -6,7 +6,7 @@ from BattleMenu import Battle_menu
 class Player(Character):
     def __init__(self, name="Kebabhunter"):
         super().__init__()
-        self.treasure_value = 0
+        self.score = 0
         self.name = name
         self.exits = False
         self.battle_menu = Battle_menu()
@@ -25,10 +25,10 @@ class Player(Character):
         else:
             print(f"{self.name}: ...No treasures in here...")
 
-        self.treasure_value += treasure
+        self.score += treasure
         if treasure:
             print(
-                f"\n{self.name}: I have collected treasures worth {self.treasure_value} kebabs."
+                f"\n{self.name}: I have collected treasures worth {self.score} kebabs."
             )
 
     def escape_roll(self):
