@@ -66,7 +66,6 @@ class Character:
             self.death()
         else:
             print(f"\n*** {self.name} have {self.health} HP remaining. ***")
-            self.wait_input()
 
     # Method to heal monsters if player escapes or if player loads a character
     def heal(self):
