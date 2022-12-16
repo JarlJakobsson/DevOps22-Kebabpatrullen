@@ -18,6 +18,7 @@ class Game:
         self.initiatior = 0
         self.old_position = (0,)
         self.escaped = False
+        self.wall_count = 0
 
     def wait_input(self):
         input("\nPress any key...\n")
@@ -96,11 +97,11 @@ class Game:
         else:
             self.first = self.map.map[position[0]][position[1]].monster
             self.second = self.player
-        self.wait_input()
 
     def battle_method(self, position):
         self.initiative_method(position)
         while True:
+            self.wait_input()
             visuals.clear()
             if self.first.attack_roll():
                 if self.first.atk_value >= self.second.dodge_roll():
@@ -109,19 +110,9 @@ class Game:
                         break
                 else:
                     print(f"\n*** {self.second} dodged the attack! ***")
-                    self.wait_input()
-                if self.second.attack_roll():
-                    if self.second.atk_value >= self.first.dodge_roll():
-                        self.first.take_dmg()
-                        if not self.first.health:
-                            break
-                    else:
-                        print(f"\n*** {self.first} dodged the attack! ***")
-                        self.wait_input()
-                else:
-                    self.map.map[position[0]][position[1]].monster.heal()
-                    self.escaped = True
-                    break
+                temp = self.second
+                self.second = self.first
+                self.first = temp
             else:
                 self.map.map[position[0]][position[1]].monster.heal()
                 self.escaped = True
@@ -129,22 +120,32 @@ class Game:
 
     def move_player(self, direction):
         # Splits direction and player positon
-        x, y = direction
-        a, b = self.map.player_position
+        x = self.map.player_position[0] + direction[0]
+        y = self.map.player_position[1] + direction[1]
+        # x, y = direction
+        # a, b = self.map.player_position
         self.old_position = self.map.player_position
-        a += x
-        b += y
+        # a += x
+        # b += y
 
         # Checks if new room exists
-        if a == -1 or a > self.map.size - 1 or b == -1 or b > self.map.size - 1:
+        if x == -1 or x > self.map.size - 1 or y == -1 or y > self.map.size - 1:
             print(f"{self.player.name}: Ouch... There is a wall there...")
+            self.wall_count += 1
+            if self.wall_count == 2:
+                self.player.take_dmg()
+                self.wall_count = 0
+                if not self.player.health:
+                    print(f"*** {self.player.name} was killed by a wall ***")
+                    self.wait_input()
+                    return True
             self.wait_input()
             return False
         # If exists, Marks current room as visited, Updates player location, Marks new room as currently in
         else:
             self.map.mark_visited_room(self.map.player_position)
-            self.map.player_position = (a, b)
-            self.map.mark_player_position((a, b))
+            self.map.player_position = (x, y)
+            self.map.mark_player_position(self.map.player_position)
             return True
 
     def check_exit(self, position):
@@ -177,6 +178,16 @@ class Game:
             print("\n*** Character saved ***")
             self.wait_input()
 
+    def game_over_method(self):
+        visuals.clear()
+        self.start_menu.data.pop(self.player.name)
+        print("\n*** GAME OVER - YOUR CHARACTER IS NO MORE ***\n")
+        with open("save_data.json", "w+") as f:
+            new_data = json.dumps(self.start_menu.data)
+            f.write(new_data)
+        print(visuals.ascii_02)
+        self.wait_input()
+
     def main(self):
         while True:
             visuals.clear()
@@ -188,16 +199,12 @@ class Game:
             self.map.mark_player_position(self.map.player_position)
             self.remove_treasure_and_moster(self.map.player_position)
             while True:
+                if not self.player.health:
+                    self.game_over_method()
+                    break
                 self.check_room(self.map.player_position)
                 if not self.player.health:
-                    visuals.clear()
-                    self.start_menu.data.pop(self.player.name)
-                    print("\n*** GAME OVER - YOUR CHARACTER IS NO MORE ***\n")
-                    with open("save_data.json", "w+") as f:
-                        new_data = json.dumps(self.start_menu.data)
-                        f.write(new_data)
-                    print(visuals.ascii_02)
-                    self.wait_input()
+                    self.game_over_method()
                     break
                 self.check_exit(self.map.player_position)
                 if self.player.exits:
