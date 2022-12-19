@@ -1,4 +1,4 @@
-from Monsters import Giantspider, Orc, Skeleton, Troll
+from Monsters import Giantspider, Orc, Skeleton, Troll, Death
 import random
 
 
@@ -22,6 +22,8 @@ class Room:
             self.monster = Orc()
         elif monster_roll in range(48, 53):
             self.monster = Troll()
+        elif monster_roll is 100:
+            self.monster = Death()
 
     def create_treasure(self):
         treasure_roll = random.randint(1, 100)

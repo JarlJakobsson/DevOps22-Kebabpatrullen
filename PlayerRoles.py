@@ -21,7 +21,7 @@ class Knight(Player):
             self.block = False
             print(f"\n*** {self.name}: Easy Block! [KNIGHT SPECIAL] ***\n")
         else:
-            print(f"{self.name}: Ouch, my shield is not working...")
+            print(f"\n{self.name}: Ouch, my shield is not working...\n")
             self.health -= 1
             if self.health == 0:
                 self.death()

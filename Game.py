@@ -6,10 +6,10 @@ from constants import EXIT_TEXT, ascii_02
 from BattleMenu import Battle_menu
 import json
 from utils import visuals
-from constants import RAIDERS
+from constants import RAIDERS, KEBAB
 from playsound import playsound
 from threading import Thread
-
+from Monsters import Death
 
 
 class Game:
@@ -21,6 +21,7 @@ class Game:
         self.player = 0
         self.old_position = (0,)
         self.escaped = False
+        self. secret = False
         self.wall_count = 0
 
     def wait_input(self):
@@ -56,15 +57,18 @@ class Game:
             print(self.map.map[position[0]][position[1]].monster.ascii)
             self.wait_input()
             self.knight_block()
-            self.battle_method(position)
+            self.initiative_method(position)
+            self.battle_method()
         else:
             print(f"\n{self.player.name}: ...No monsters in here...\n")
         if self.escaped:
+            self.map.map[position[0]][position[1]].monster.heal()
             self.move_back()
         else:
             self.post_combat(position)
             if self.map.map[position[0]][position[1]].have_secret:
-                print(f"{self.player.name}: I smell Kebab... And evil...")
+                print(f"{self.player.name}: This room smell of Kebab... And evil...")
+                self.wait_input()
 
     # Method to move player back to previous room (used after succesful escape)
     def move_back(self):
@@ -96,8 +100,7 @@ class Game:
             self.second = self.player
 
     # Calls initative method to check who starts, if atk_value >= dodge, second takes dmg
-    def battle_method(self, position):
-        self.initiative_method(position)
+    def battle_method(self):
         while True:
             self.wait_input()
             visuals.clear()
@@ -114,22 +117,22 @@ class Game:
                 self.first = temp
             else:
                 # Heals monster if player escape
-                self.map.map[position[0]][position[1]].monster.heal()
                 self.escaped = True
                 break
 
     def move_player(self, direction, position):
         # Adds direction to player position and saves old player position (incase of Move back after battle escape)
-        x = self.map.player_position[0] + direction[0]
-        y = self.map.player_position[1] + direction[1]
-        self.old_position = self.map.player_position
+        x = position[0] + direction[0]
+        y = position[1] + direction[1]
+        self.old_position = position
 
         # Checks if new room exists. Adds a counter for moving into a wall, calls take_dmg if counter reaches 2
         # And checks if players health is not 0
         if x == -1 or x > self.map.size - 1 or y == -1 or y > self.map.size - 1:
-            if self.map.map[position[0]][position[1]].have_exit:
-                self.map.map[position[0]][position[1]].have_exit = False
-                return "secret"
+            if self.map.map[position[0]][position[1]].have_secret:
+                self.map.map[position[0]][position[1]].have_secret = False
+                self.secret = True
+                return True
             print(f"{self.player.name}: Ouch... There is a wall there...")
             self.wall_count += 1
             if self.wall_count == 2:
@@ -143,7 +146,7 @@ class Game:
             return False
         # If exists, Marks current room as visited, Updates player location, Marks new room as currently in
         else:
-            self.map.mark_visited_room(self.map.player_position)
+            self.map.mark_visited_room(position)
             self.map.player_position = (x, y)
             self.map.mark_player_position(self.map.player_position)
             return True
@@ -159,7 +162,7 @@ class Game:
                 )
                 self.wait_input()
                 visuals.clear()
-                print(f"Thank you for playing\n{visuals.ascii_02}\n")
+                print(f"Thank you for playing\n{RAIDERS}\n")
                 self.wait_input()
                 self.save_method()
                 self.player.exits = True
@@ -169,6 +172,28 @@ class Game:
                 self.check_exit(position)
         else:
             return False
+
+    def secret_battle(self):
+        self.secret = False
+        death = Death()
+        print(death.ascii)
+        self.wait_input()
+        self.first = self.player
+        self.second = death
+        self.battle_method()
+        if self.player.health:
+            visuals.clear()
+            print(
+                "*** The smell of Evil is gone, but not the smell of Kebab... ***"
+            )
+            self.wait_input()
+            print(
+                f"*** {self.player.name} looks around and cannot believe it ***"
+            )
+            self.wait_input()
+            visuals.clear()
+            print(KEBAB)
+            self.wait_input()
 
     def save_method(self):
         with open("save_data.json", "w+") as f:
@@ -192,7 +217,7 @@ class Game:
         playsound("music.mp3")
 
     def main(self):
-        self.music= Thread(target=self.play_music, args=()).start()
+        # self.music = Thread(target=self.play_music, args=()).start()
         while True:
             visuals.clear()
             print(RAIDERS)
@@ -224,10 +249,12 @@ class Game:
                     self.move_menu.run_menu()
                     if self.move_menu.quit == True:
                         break
-                    if self.move_player(self.move_menu.direction) == "secret":
-                        self.battle_method()
-                    elif self.move_player(self.move_menu.direction) == True:
+                    if self.move_player(self.move_menu.direction, self.map.player_position):
+                        if self.secret == True:
+                            self.secret_battle()
                         break
+                    # elif self.move_player(self.move_menu.direction, self.map.player_position):
+                    #     break
 
 
 if __name__ == "__main__":

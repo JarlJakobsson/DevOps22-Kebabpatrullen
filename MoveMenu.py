@@ -1,5 +1,4 @@
 from constants import MOVE_MENU_TEXT
-from utils import visuals
 
 
 class Move_menu:
