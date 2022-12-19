@@ -6,8 +6,21 @@ Agile Project Management - DevOps22 - Team 5
 
 <p align = "center">
 <img src="img/dungeon art artwork.png" width=30% >
-
-<p align = "center">Let the search for the lost kebab begin!</p>
+  
+### <p align = "center">Kebab Intro Song:  
+<p align = "center">Nånting händer
+<p align = "center">Det är nåt skumt på gång
+<p align = "center">Men våra vänner
+<p align = "center">De grillar dagen lång
+<p align = "center">Och de finns i trakten här omkring
+<p align = "center">Vill du ha kebab så ring
+<p align = "center">Här kommer kebabpatrullen...e på språng nu
+<p align = "center">Här kommer kebabpatrullen...varje gång nu
+<p align = "center">Här kommer världens bästa kebabpatrull
+<p align = "center">Som svarvar kebaben för din skull
+  
+  
+<p align = "center">Let the search for the lost kebab begin!</p> 
 
 ---
 
