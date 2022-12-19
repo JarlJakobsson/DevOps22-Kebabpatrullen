@@ -1,6 +1,6 @@
 # Kebabpatrullen Agile Devops 2022
 
-## **Dungeon Run** - _In the search of the Lost Kebab_
+## **Raiders Of The Lost Kebab** - _In the search of the Lost Kebab_
 
 Agile Project Management - DevOps22 - Team 5
 
@@ -21,23 +21,23 @@ Agile Project Management - DevOps22 - Team 5
 
 - Robert's [**Sprint Demo Checklist**](stuff/sprint_demo_checklist.md)
 
-- Dungeon Run [**New Updated Testing**](stuff/testing.md)
+- Raiders Of The Lost Kebab [**New Updated Testing**](stuff/testing.md)
 
 ---
 
 ## Stuff we will not use (at least for Sprint 1)
 
-[_Dungeon Run_ **GUI**](stuff/gui.md)
+[_Raiders Of The Lost Kebab_ **GUI**](stuff/gui.md)
 
-[_Dungeon Run_ **Terminal Menu**](stuff/terminal_menu.md)
+[_Raiders Of The Lost Kebab_ **Terminal Menu**](stuff/terminal_menu.md)
 
-[_Dungeon Run_ **Testing**](stuff/testing.md)
+[_Raiders Of The Lost Kebab_ **Testing**](stuff/testing.md)
 
 ---
 
 ## Play in terminal - _Coming soon_ ⏳
 
-[_Dungeon Run_ **Terminal Demo**](stuff/terminal.md)
+[_Raiders Of The Lost Kebab_ **Terminal Demo**](stuff/terminal.md)
 
 ---
 
