@@ -74,7 +74,7 @@ Agile Project Management - DevOps22 - Team 5
 
 ## Sprintperiod 1
 
-Sprint Period 1 - Project Dungeon Run
+Sprint Period 1 - Project Raiders Of The Lost Kebab
 
 | Name    | 07-Dec | 08-Dec | 09-Dec | 12-Dec | 13-Dec |
 | ------- | ------ | ------ | ------ | ------ | ------ |
