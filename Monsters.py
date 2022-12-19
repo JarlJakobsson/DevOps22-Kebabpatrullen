@@ -54,7 +54,7 @@ class Death(Character):
     def __init__(self):
         super().__init__()
         self.initiative = 1
-        self.health = 1
+        self.health = 10
         self.attack = 5
         self.agility = 4
         self.max_health = 10
