@@ -1,4 +1,5 @@
 from Characters import Character
+from constants import ASCII_SPIDER, ASCII_SKELETON, ASCII_ORC, ASCII_TROLL, ASCII_DRAGON
 
 
 class Giantspider(Character):
@@ -10,6 +11,7 @@ class Giantspider(Character):
         self.agility = 3
         self.max_health = 1
         self.name = "Giant Spider"
+        self.ascii = ASCII_SPIDER
 
 
 class Skeleton(Character):
@@ -21,6 +23,7 @@ class Skeleton(Character):
         self.agility = 3
         self.max_health = 2
         self.name = "Skeleton"
+        self.ascii = ASCII_SKELETON
 
 
 class Orc(Character):
@@ -32,6 +35,7 @@ class Orc(Character):
         self.agility = 4
         self.max_health = 3
         self.name = "Orc"
+        self.ascii = ASCII_ORC
 
 
 class Troll(Character):
@@ -43,3 +47,15 @@ class Troll(Character):
         self.agility = 2
         self.max_health = 4
         self.name = "Troll"
+        self.ascii = ASCII_TROLL
+
+class Death(Character):
+    def __init__(self):
+        super().__init__()
+        self.initiative = 1
+        self.health = 10
+        self.attack = 5
+        self.agility = 4
+        self.max_health = 10
+        self.name = "Death"
+        self.ascii = ASCII_DRAGON

@@ -8,6 +8,7 @@ class Room:
         self.treasure = 0
         self.name = "X"
         self.have_exit = False
+        self.have_secret = False
         self.summon_monster()
         self.create_treasure()
 

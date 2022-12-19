@@ -4,7 +4,7 @@ from utils import visuals
 
 class Move_menu:
     def __init__(self):
-        pass
+        self.quit = False
 
     def run_menu(self):
         self.direction = (0,)
@@ -21,6 +21,9 @@ class Move_menu:
 
         elif self.choice == "d":
             self.direction = (0, 1)
+        elif self.choice == "q":
+            self.choice = "q"
+            self.quit = True
         else:
             print("Thats not a direction...\n")
             input("Press any key...")

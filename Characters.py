@@ -13,6 +13,7 @@ class Character:
         self.name = ""
         self.max_health = 0
         self.role = ""
+        self.ascii = ""
 
     # Method to roll 6 sided dice
     def roll_dice(self):

@@ -5,10 +5,14 @@ from constants import (
     SIZE_TEXT,
     START_TEXT,
     LOAD_TEXT,
+    ASCII_WIZARD,
+    ASCII_KNIGHT,
+    ASCII_THIEF
 )
 from utils import visuals
 import json
-
+import textwrap
+import shutil
 
 class Start_menu:
     def __init__(self):
@@ -19,6 +23,7 @@ class Start_menu:
         self.score = 0
         with open("save_data.json", "r") as f:
             self.data = json.loads(f.read())
+
 
     def print_saved_characters(self):
         visuals.clear()
@@ -57,6 +62,8 @@ class Start_menu:
                 self.choose_name()
             else:
                 break
+    def wait_input(self):
+        input("Press Enter...")
 
     def art_and_load(self, art):
         visuals.clear()
@@ -66,6 +73,12 @@ class Start_menu:
         visuals.clear()
 
     def choose_role(self):
+        print(ASCII_KNIGHT)
+        self.wait_input()
+        print(ASCII_WIZARD)
+        self.wait_input()
+        print(ASCII_THIEF)
+        self.wait_input()
         self.choice = input(ROLE_TEXT)
         if self.choice == "1":
             # self.art_and_load(visuals.ascii_knight)
