@@ -78,12 +78,12 @@ Sprint Period 1 - Project Dungeon Run
 
 | Name    | 14-Dec | 15-Dec | 16-Dec | 19-Dec | 20-Dec |
 | ------- | ------ | ------ | ------ | ------ | ------ |
-| Frida   | 6h     | -      | -      | -      | -      |
-| Mandana | 6h     | -      | -      | -      | -      |
-| Raffi   | 6h     | -      | -      | -      | -      |
-| Jarl    | 6h     | -      | -      | -      | -      |
-| Alex    | 6h     | -      | -      | -      | -      |
-| Total   | 30h    | -      | -      | -      | -      |
+| Frida   | 6h     | 3h     | 4h     | 5h     | -      |
+| Mandana | 6h     | 3h     | 4h     | 5h     | -      |
+| Raffi   | 6h     | 3h     | 4h     | 5h     | -      |
+| Jarl    | 6h     | 3h     | 4h     | 5h     | -      |
+| Alex    | 6h     | 3h     | 4h     | 5h     | -      |
+| Total   | 30h    | 15h    | 4h     | 25h    | -      |
 
 [Back to top](#kebabpatrullen-agile-devops-2022)
 
