@@ -68,9 +68,8 @@ class Start_menu:
     def art_and_load(self, art):
         visuals.clear()
         print(art)
-        visuals.loading_bar()
+        self.wait_input()
         print("")
-        visuals.clear()
 
     def choose_role(self):
         print(ASCII_KNIGHT)
@@ -81,13 +80,13 @@ class Start_menu:
         self.wait_input()
         self.choice = input(ROLE_TEXT)
         if self.choice == "1":
-            # self.art_and_load(visuals.ascii_knight)
+            self.art_and_load(ASCII_KNIGHT)
             self.role = "Knight"
         elif self.choice == "2":
-            # self.art_and_load(visuals.ascii_wizard)
+            self.art_and_load(ASCII_WIZARD)
             self.role = "Wizard"
         elif self.choice == "3":
-            # self.art_and_load(visuals.ascii_thief)
+            self.art_and_load(ASCII_THIEF)
             self.role = "Thief"
         else:
             self.role = 0

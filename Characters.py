@@ -36,7 +36,7 @@ class Character:
         self.atk_value = 0
         for i in range(self.attack):
             self.atk_value += self.roll_dice()
-        print(f"{self.name} Tries to attack! ({self.atk_value} attack roll)")
+        print(f"\n{self.name} Tries to attack! ({self.atk_value} attack roll)")
         return self.atk_value
 
     def initative_roll(self):

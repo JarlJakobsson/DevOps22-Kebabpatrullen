@@ -41,7 +41,8 @@ class Player(Character):
 
     def attack_roll(self):
         self.atk_value = 0
-        if self.battle_menu.run_menu():
+        self.battle_menu.run_menu()
+        if self.battle_menu.choice:
             for i in range(self.attack):
                 self.atk_value += self.roll_dice()
             print(f"{self.name} tries to ({self.atk_value} attack roll)")

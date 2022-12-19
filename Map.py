@@ -11,17 +11,21 @@ class Map:
             for col in range(size):
                 self.map[row][col] = Room()
 
-        rand_row = randint(0, size - 1)
-        rand_col = randint(0, size - 1)
-        self.map[rand_row][rand_col].monster = 0
-        self.map[rand_row][rand_col].treasure = 0
-        self.map[rand_row][rand_col].have_exit = True
+        exit_row = randint(0, size - 1)
+        exit_col = randint(0, size - 1)
+        self.map[exit_row][exit_col].monster = 0
+        self.map[exit_row][exit_col].treasure = 0
+        self.map[exit_row][exit_col].have_exit = True
         # self.map[rand_row][rand_col].name = "E"  # REMOVE LATER
-        secret_row = [0, size - 1]
-        secret_col = [0, size - 1]
-        secret_rand_row = choice(secret_row)
-        secret_rand_col = choice(secret_col)
-        self.map[secret_rand_row][secret_rand_col].have_secret = True
+        
+        # secret_row = [0, size - 1]
+        # secret_col = [0, size - 1]
+        # secret_rand_row = choice(secret_row)
+        # secret_rand_col = choice(secret_col)
+        secret_row = choice([0, size-1])
+        secret_col = choice([1, size-2])
+        self.map[secret_row][secret_col].have_secret = True
+        self.map[secret_row][secret_col].name = "S"
         self.is_start = True
         self.size = size
         self.player_position = player_position

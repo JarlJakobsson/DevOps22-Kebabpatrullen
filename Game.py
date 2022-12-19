@@ -2,14 +2,15 @@ from Map import Map
 from PlayerRoles import Knight, Thief, Wizard
 from MoveMenu import Move_menu
 from StartMenu import Start_menu
-from constants import EXIT_TEXT, ascii_02
+from constants import EXIT_TEXT
 from BattleMenu import Battle_menu
 import json
 from utils import visuals
-from constants import RAIDERS, KEBAB
+from constants import RAIDERS, KEBAB, BATTLE_TEXT, ASCII_WALL
 from playsound import playsound
 from threading import Thread
 from Monsters import Death
+import os
 
 
 class Game:
@@ -57,12 +58,10 @@ class Game:
             print(self.map.map[position[0]][position[1]].monster.ascii)
             self.wait_input()
             self.knight_block()
-            self.initiative_method(position)
-            self.battle_method()
+            self.battle_method(self.map.map[position[0]][position[1]].monster)
         else:
             print(f"\n{self.player.name}: ...No monsters in here...\n")
         if self.escaped:
-            self.map.map[position[0]][position[1]].monster.heal()
             self.move_back()
         else:
             self.post_combat(position)
@@ -84,26 +83,30 @@ class Game:
             self.player.block = True
 
     # Method to check compare initative rolls and decide who starts the battle
-    def initiative_method(self, position):
-        if (
-            self.player.initative_roll()
-            >= self.map.map[position[0]][position[1]].monster.initative_roll()
-        ):
+    def initiative_method(self, monster):
+        if self.player.initative_roll() >= monster.initative_roll():
             self.first = self.player
-            self.second = self.map.map[position[0]][position[1]].monster
+            self.second = monster
             print(f"\n***  {self.player.name} takes initative! ***")
         else:
-            print(
-                f"\n*** {self.map.map[position[0]][position[1]].monster.name} takes initatitve! ***"
-            )
-            self.first = self.map.map[position[0]][position[1]].monster
+            print(f"\n*** {monster.name} takes initatitve! ***")
+            self.first = monster
             self.second = self.player
 
+    def battle_art(self, monster):
+        self.wait_input()
+        visuals.clear()
+        print(monster.ascii)
+        print(monster.name + " : " + "[]" * monster.health)
+        print("")
+        print(self.player.name + " : " + "[]" * self.player.health)
+        print(BATTLE_TEXT)
+
     # Calls initative method to check who starts, if atk_value >= dodge, second takes dmg
-    def battle_method(self):
+    def battle_method(self, monster):
+        self.initiative_method(monster)
         while True:
-            self.wait_input()
-            visuals.clear()
+            self.battle_art(monster)
             if self.first.attack_roll():
                 if self.first.atk_value >= self.second.dodge_roll():
                     self.second.take_dmg()
@@ -117,6 +120,7 @@ class Game:
                 self.first = temp
             else:
                 # Heals monster if player escape
+                monster.heal()
                 self.escaped = True
                 break
 
@@ -133,16 +137,21 @@ class Game:
                 self.map.map[position[0]][position[1]].have_secret = False
                 self.secret = True
                 return True
+            print(ASCII_WALL)
+            self.wait_input()
             print(f"{self.player.name}: Ouch... There is a wall there...")
+            self.wait_input()
             self.wall_count += 1
             if self.wall_count == 2:
                 self.player.take_dmg()
                 self.wall_count = 0
+                self.wait_input()
                 if not self.player.health:
                     print(f"*** {self.player.name} was killed by a wall ***")
                     self.wait_input()
+                    print(ASCII_WALL)
+                    self.wait_input()
                     return True
-            self.wait_input()
             return False
         # If exists, Marks current room as visited, Updates player location, Marks new room as currently in
         else:
@@ -175,20 +184,21 @@ class Game:
 
     def secret_battle(self):
         self.secret = False
-        death = Death()
-        print(death.ascii)
+        print("\n*** You found a secret door! ***\n")
         self.wait_input()
+        death = Death()
         self.first = self.player
         self.second = death
-        self.battle_method()
-        if self.player.health:
+        self.battle_method(death)
+        if self.player.health and self.escaped == False:
             visuals.clear()
-            print("*** The smell of Evil is gone, but not the smell of Kebab... ***")
+            print("*** The smell of Evil is gone, but the smell of Kebab is not... ***")
             self.wait_input()
             print(f"*** {self.player.name} looks around and cannot believe it ***")
             self.wait_input()
             visuals.clear()
             print(KEBAB)
+            print("*** THE LOST KEBAB ***")
             self.wait_input()
 
     def save_method(self):
@@ -206,11 +216,17 @@ class Game:
             new_data = json.dumps(self.start_menu.data)
             f.write(new_data)
         print(RAIDERS)
-        print("          *** GAME OVER - YOUR CHARACTER IS NO MORE... literally ***\n")
+        print("          *** GAME OVER - YOUR CHARACTER IS NO MORE... ***\n")
         self.wait_input()
 
     def play_music(self):
-        playsound("music.mp3")
+        current_dir = os.getcwd()
+        file_path = current_dir + "/music.mp3"
+        try:
+            while True:
+                playsound(file_path)
+        except:
+            pass
 
     def main(self):
         self.music = Thread(target=self.play_music, args=()).start()
@@ -251,8 +267,6 @@ class Game:
                         if self.secret == True:
                             self.secret_battle()
                         break
-                    # elif self.move_player(self.move_menu.direction, self.map.player_position):
-                    #     break
 
 
 if __name__ == "__main__":
