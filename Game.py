@@ -21,7 +21,7 @@ class Game:
         self.player = 0
         self.old_position = (0,)
         self.escaped = False
-        self. secret = False
+        self.secret = False
         self.wall_count = 0
 
     def wait_input(self):
@@ -183,13 +183,9 @@ class Game:
         self.battle_method()
         if self.player.health:
             visuals.clear()
-            print(
-                "*** The smell of Evil is gone, but not the smell of Kebab... ***"
-            )
+            print("*** The smell of Evil is gone, but not the smell of Kebab... ***")
             self.wait_input()
-            print(
-                f"*** {self.player.name} looks around and cannot believe it ***"
-            )
+            print(f"*** {self.player.name} looks around and cannot believe it ***")
             self.wait_input()
             visuals.clear()
             print(KEBAB)
@@ -217,7 +213,7 @@ class Game:
         playsound("music.mp3")
 
     def main(self):
-        # self.music = Thread(target=self.play_music, args=()).start()
+        self.music = Thread(target=self.play_music, args=()).start()
         while True:
             visuals.clear()
             print(RAIDERS)
@@ -249,7 +245,9 @@ class Game:
                     self.move_menu.run_menu()
                     if self.move_menu.quit == True:
                         break
-                    if self.move_player(self.move_menu.direction, self.map.player_position):
+                    if self.move_player(
+                        self.move_menu.direction, self.map.player_position
+                    ):
                         if self.secret == True:
                             self.secret_battle()
                         break
