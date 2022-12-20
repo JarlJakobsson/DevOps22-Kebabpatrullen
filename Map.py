@@ -11,6 +11,7 @@ class Map:
         for row in range(size):
             for col in range(size):
                 self.map[row][col] = Room()
+
         exit_row = randint(0, (size - 1))
         exit_col = randint(0, (size - 1))
         self.map[exit_row][exit_col].monster = 0
@@ -20,7 +21,7 @@ class Map:
         self.find_outer_rooms()
         secret_room_index = choice(self.outer_rooms)
         self.map[secret_room_index[0]][secret_room_index[1]].have_secret = True
-        self.map[secret_room_index[0]][secret_room_index[1]].name = "S"
+        # self.map[secret_room_index[0]][secret_room_index[1]].name = "S"
         self.is_start = True
         self.player_position = player_position
 
