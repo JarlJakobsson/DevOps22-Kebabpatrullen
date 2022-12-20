@@ -1,14 +1,14 @@
-from Map import Map
-from PlayerRoles import Knight, Thief, Wizard
-from MoveMenu import Move_menu
-from StartMenu import Start_menu
-from BattleMenu import Battle_menu
-import json
-from utils import visuals
 from constants import RAIDERS, KEBAB, BATTLE_TEXT, ASCII_WALL, EXIT_TEXT
+from PlayerRoles import Knight, Thief, Wizard
+from BattleMenu import Battle_menu
+from StartMenu import Start_menu
+from MoveMenu import Move_menu
 from threading import Thread
 from Monsters import Death
+from utils import visuals
+from Map import Map
 import pygame
+import json
 import os
 
 
@@ -26,7 +26,7 @@ class Game:
         pygame.init()
 
     def wait_input(self):
-            input("\nPress Enter...\n")
+        input("\nPress Enter...\n")
 
     def create_player(self, role):
         if role == "Knight":
@@ -178,6 +178,7 @@ class Game:
             if self.choice == "1":
                 return False
             elif self.choice == "2":
+                self.play_music("kebab_win.mp3")
                 print(
                     f"\n*** YOU ESCAPED WITH TREASURES WORTH {self.player.score} KEBABS ***"
                 )
@@ -186,6 +187,7 @@ class Game:
                 print(f"Thank you for playing\n{RAIDERS}\n")
                 self.wait_input()
                 self.save_method()
+                self.play_music("music.mp3")
                 self.player.exits = True
                 return True
             else:
@@ -202,10 +204,11 @@ class Game:
         self.first = self.player
         self.second = death
         print(death.ascii)
-        self.play_music("boss_music.mp3")
+        self.play_music("persona_boss.mp3")
         self.wait_input()
         self.battle_method(death)
         if self.player.health and not self.escaped:
+            self.play_music("kebab_win.mp3")
             visuals.clear()
             print("*** The smell of Evil is gone, but the smell of Kebab is not... ***")
             self.wait_input()
@@ -224,6 +227,7 @@ class Game:
             self.wait_input()
 
     def game_over_method(self):
+        self.play_music("death_music.mp3")
         visuals.clear()
         self.start_menu.data.pop(self.player.name)
         with open("save_data.json", "w+") as f:
@@ -233,7 +237,6 @@ class Game:
         print(
             "                         *** GAME OVER - YOUR CHARACTER IS NO MORE... ***\n"
         )
-        self.play_music("death_music.mp3")
         self.wait_input()
 
     def play_music(self, filename):
@@ -251,8 +254,6 @@ class Game:
             self.start_menu.run_menu()
             if not self.start_menu.keep_going:
                 pygame.quit()
-                print("Bye")
-                self.wait_input()
                 break
             self.create_player(self.start_menu.role)
             self.map = Map(self.start_menu.size, self.start_menu.start)

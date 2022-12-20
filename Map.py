@@ -11,8 +11,8 @@ class Map:
         for row in range(size):
             for col in range(size):
                 self.map[row][col] = Room()
-        exit_row = randint(0, size - 1)
-        exit_col = randint(0, size - 1)
+        exit_row = randint(0, (size - 1))
+        exit_col = randint(0, (size - 1))
         self.map[exit_row][exit_col].monster = 0
         self.map[exit_row][exit_col].treasure = 0
         self.map[exit_row][exit_col].have_exit = True
