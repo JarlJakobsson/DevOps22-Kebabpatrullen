@@ -55,15 +55,15 @@ class Character:
 
     def death(self):
         self.is_alive = False
-        print(f"{self.name} died...")
+        print(f"\n*** {self.name} died... ***\n")
         self.wait_input()
         visuals.clear()
 
     # Method to take damage
-    def take_dmg(self):
+    def take_dmg(self, rogue=0):
         print(f"\n{self.name}: Ouch!")
-        self.health -= 1
-        if self.health == 0:
+        self.health -= (1 + rogue)
+        if self.health <= 0:
             self.death()
         else:
             print(f"\n*** {self.name} have {self.health} HP remaining. ***")

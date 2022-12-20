@@ -8,10 +8,11 @@ from constants import (
     ASCII_WIZARD,
     ASCII_KNIGHT,
     ASCII_THIEF,
-    RAIDERS
+    RAIDERS,
 )
 from utils import visuals
 import json
+
 
 class Start_menu:
     def __init__(self):
@@ -22,7 +23,6 @@ class Start_menu:
         self.score = 0
         with open("save_data.json", "r") as f:
             self.data = json.loads(f.read())
-
 
     def print_saved_characters(self):
         visuals.clear()
@@ -61,6 +61,7 @@ class Start_menu:
                 self.choose_name()
             else:
                 break
+
     def wait_input(self):
         input("Press Enter...")
 
@@ -153,7 +154,7 @@ class Start_menu:
             if self.load:
                 self.choose_size()
                 self.choose_start()
-        elif self.choice == "3":
+        elif self.choice == "q":
             self.keep_going = False
         else:
             print("Thats not a valid choice...")

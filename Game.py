@@ -2,11 +2,10 @@ from Map import Map
 from PlayerRoles import Knight, Thief, Wizard
 from MoveMenu import Move_menu
 from StartMenu import Start_menu
-from constants import EXIT_TEXT
 from BattleMenu import Battle_menu
 import json
 from utils import visuals
-from constants import RAIDERS, KEBAB, BATTLE_TEXT, ASCII_WALL
+from constants import RAIDERS, KEBAB, BATTLE_TEXT, ASCII_WALL, EXIT_TEXT
 from playsound import playsound
 from threading import Thread
 from Monsters import Death
