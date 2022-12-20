@@ -102,7 +102,7 @@ ASCII_KNIGHT = """
  |    |   _,^-'/  /       Initiative - 5
  |    , ``  (\/  /_
   \,.->._    \X-=/^       Special: [SHIELD BLOCK] 
-  (  /   `-._//^`                 Block 1 attack every encounter
+  (  /   `-._//^`                  Block 1 attack every encounter
    `Y-.____(__}
     |     {__)
 

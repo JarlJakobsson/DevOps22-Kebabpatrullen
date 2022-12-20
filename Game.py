@@ -6,13 +6,10 @@ from BattleMenu import Battle_menu
 import json
 from utils import visuals
 from constants import RAIDERS, KEBAB, BATTLE_TEXT, ASCII_WALL, EXIT_TEXT
-from playsound import playsound
-from threading import Thread, Event
+from threading import Thread
 from Monsters import Death
 import pygame
 import os
-import sys
-import time
 
 
 class Game:
@@ -29,7 +26,7 @@ class Game:
         pygame.init()
 
     def wait_input(self):
-        input("\nPress Enter...\n")
+            input("\nPress Enter...\n")
 
     def create_player(self, role):
         if role == "Knight":
@@ -59,9 +56,11 @@ class Game:
         # If player escaped calls move back method, else post_combat cleanup
         if self.map.map[position[0]][position[1]].monster:
             print(self.map.map[position[0]][position[1]].monster.ascii)
+            self.play_music("battle_music.mp3")
             self.wait_input()
             self.knight_block()
             self.battle_method(self.map.map[position[0]][position[1]].monster)
+            self.play_music("music.mp3")
         else:
             print(f"\n{self.player.name}: ...No monsters in here...\n")
         if self.escaped:
@@ -148,7 +147,7 @@ class Game:
             if current_room.have_secret and self.wall_count == 1:
                 current_room.have_secret = False
                 self.secret = True
-                print(f"*** {self.first.name} charges into the wall head first ***")
+                print(f"*** {self.player.name} charges into the wall head first ***")
                 self.wait_input()
                 return True
             print(ASCII_WALL)
@@ -203,6 +202,7 @@ class Game:
         self.first = self.player
         self.second = death
         print(death.ascii)
+        self.play_music("boss_music.mp3")
         self.wait_input()
         self.battle_method(death)
         if self.player.health and not self.escaped:
@@ -231,24 +231,23 @@ class Game:
             f.write(new_data)
         print(RAIDERS)
         print(
-            "                                 *** GAME OVER - YOUR CHARACTER IS NO MORE... ***\n"
+            "                         *** GAME OVER - YOUR CHARACTER IS NO MORE... ***\n"
         )
+        self.play_music("death_music.mp3")
         self.wait_input()
 
-    def play_music(self):
+    def play_music(self, filename):
         current_dir = os.getcwd()
-        self.stop_playing = False
-        file_path = current_dir + "/music.mp3"
-        while True:
-            pygame.mixer.music.load(file_path)
-            pygame.mixer.music.play(-1)
-            self.stop_event.wait()
+        file_path = current_dir + filename
+        pygame.mixer.music.load(filename)
+        pygame.mixer.music.play()
 
     def main(self):
-        self.stop_event = Event()
-        self.music = Thread(target=self.play_music, args=(), daemon=True)
-        self.music.start()
+        stop_thread = Thread(target=pygame.mixer.music.stop)
+        stop_thread.start()
         while True:
+            self.play_music("music.mp3")
+            self.music = Thread(target=pygame.mixer.music.play)
             self.start_menu.run_menu()
             if not self.start_menu.keep_going:
                 pygame.quit()
@@ -285,6 +284,7 @@ class Game:
                     ):
                         if self.secret == True:
                             self.secret_battle()
+                            self.play_music("music.mp3")
                         break
 
 

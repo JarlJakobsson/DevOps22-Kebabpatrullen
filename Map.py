@@ -20,6 +20,7 @@ class Map:
         self.find_outer_rooms()
         secret_room_index = choice(self.outer_rooms)
         self.map[secret_room_index[0]][secret_room_index[1]].have_secret = True
+        self.map[secret_room_index[0]][secret_room_index[1]].name = "S"
         self.is_start = True
         self.player_position = player_position
 
