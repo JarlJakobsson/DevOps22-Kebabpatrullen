@@ -1,20 +1,14 @@
-from constants import (
-    MAIN_MENU_TEXT,
-    NAME_TEXT,
-    ROLE_TEXT,
-    SIZE_TEXT,
-    START_TEXT,
-    LOAD_TEXT,
-    ASCII_WIZARD,
-    ASCII_KNIGHT,
-    ASCII_THIEF,
-    RAIDERS,
-)
-from utils import visuals
 import json
+
+from constants import (ASCII_KNIGHT, ASCII_THIEF, ASCII_WIZARD, LOAD_TEXT,
+                       MAIN_MENU_TEXT, NAME_TEXT, RAIDERS, ROLE_TEXT,
+                       SIZE_TEXT, START_TEXT)
+from utils import visuals
 
 
 class Start_menu:
+    """ The start menu for the game. """
+
     def __init__(self):
         self.name = ""
         self.role = 0
@@ -25,6 +19,7 @@ class Start_menu:
             self.data = json.loads(f.read())
 
     def print_saved_characters(self):
+        """ Prints all saved characters """
         visuals.clear()
         for key in self.data.keys():
             print(
@@ -33,6 +28,7 @@ class Start_menu:
             print("-----------------------------")
 
     def load_data(self, load_name):
+        """ Loads data from save_data.json """
         self.load = False
         while True:
             if load_name in self.data.keys():
@@ -51,6 +47,7 @@ class Start_menu:
                 load_name = input(LOAD_TEXT)
 
     def choose_name(self):
+        """ Asks for a name and checks if its valid. """
         self.name = input(NAME_TEXT)
         while True:
             if self.name == "":
@@ -63,15 +60,18 @@ class Start_menu:
                 break
 
     def wait_input(self):
+        """ Waits for input. """
         input("Press Enter...")
 
     def art_and_load(self, art):
+        """ Prints ascii art and waits for input."""
         visuals.clear()
         print(art)
         self.wait_input()
         print("")
 
     def choose_role(self):
+        """ Asks for a role and checks if its valid. """
         print(ASCII_KNIGHT)
         self.wait_input()
         print(ASCII_WIZARD)
@@ -98,6 +98,7 @@ class Start_menu:
                 break
 
     def choose_size(self):
+        """ Asks for a size and checks if its valid. """
         self.choice = input(SIZE_TEXT)
         if self.choice == "1":
             self.size = 4
@@ -115,6 +116,7 @@ class Start_menu:
                 break
 
     def choose_start(self):
+        """ Asks for a start position and checks if its valid. """
         self.choice = input(START_TEXT)
         if self.choice == "1":
             self.start = (0, 0)
@@ -134,9 +136,11 @@ class Start_menu:
                 break
 
     def add_player(self):
+        """ Adds the player to save_data.json """
         self.data[self.name] = {"role": self.role, "score": 0}
 
     def menu_commands(self):
+        """ The main menu. """
         self.load = False
         visuals.clear()
         print(RAIDERS)
@@ -167,6 +171,7 @@ class Start_menu:
                 break
 
     def run_menu(self):
+        """ Runs the menu. """
         self.keep_going = True
         while self.keep_going:
             self.menu_commands()

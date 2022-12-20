@@ -1,19 +1,16 @@
 from Room import Room
 
 
-def test_set_visited():
+def test_summon_monster():
     room = Room()
-    room.set_visited()
-    assert room.visited is True
+    assert room.monster is not None
 
 
-def test_remove_monster():
+def test_create_treasure():
     room = Room()
-    room.remove_monster()
-    assert room.monster == 0
+    assert room.treasure is not None
 
 
-def test_remove_treasure():
+def test_repr():
     room = Room()
-    room.remove_treasure()
-    assert room.treasure == 0
+    assert room.__repr__() == "X"

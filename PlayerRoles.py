@@ -1,8 +1,11 @@
 import random
+
 from Player import Player
 
 
 class Knight(Player):
+    """ Knight class, inherits from Player class """
+
     def __init__(self):
         super().__init__()
         self.name = ""
@@ -14,9 +17,8 @@ class Knight(Player):
         self.role = "Knight"
         self.block = True
 
-    # Knight overrides the take_dmg method, to a block check and unique phrase for taking dmg
-    # If block is ready it will change block to false and ignore the first damage
     def take_dmg(self):
+        """ Knight takes damage, if block is ready it will ignore the first damage """
         if self.block:
             self.block = False
             print(f"\n*** {self.name}: Easy Block! [KNIGHT SPECIAL] ***\n")
@@ -30,6 +32,8 @@ class Knight(Player):
 
 
 class Wizard(Player):
+    """ Wizard class, inherits from Player class """
+
     def __init__(self):
         super().__init__()
         self.name = ""
@@ -40,8 +44,8 @@ class Wizard(Player):
         self.max_health = 5
         self.role = "Wizard"
 
-    # Overrides the normal escape method
     def escape_roll(self):
+        """ Wizard tries to escape, if successful it will return True """
         wizard_escape = random.randint(1, 100)
         if wizard_escape >= 20:
             print(f"\n*** {self.name}: Abracadabra, EZ escape [MAGE SPECIAL] ***")
@@ -52,6 +56,8 @@ class Wizard(Player):
 
 
 class Thief(Player):
+    """ Thief class, inherits from Player class """
+
     def __init__(self):
         super().__init__()
         self.name = ""
@@ -62,8 +68,8 @@ class Thief(Player):
         self.max_health = 5
         self.role = "Thief"
 
-    # Overrides the normal attack method
     def attack_roll(self):
+        """ Thief tries to attack, if successful it will return the attack value """
         self.atk_value = 0
         self.battle_menu.run_menu()
         if self.battle_menu.choice == 1:

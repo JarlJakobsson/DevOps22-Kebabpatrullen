@@ -1,10 +1,12 @@
+from random import choice, randint
+
 from Room import Room
-from random import randint, choice
 from utils import visuals
 
-## There probably is a better way but, I create a map template with "X"s and then replace all the "X"s with room objects
-## and give them the correct room_index
+
 class Map:
+    """ Map class to create a map of rooms and keep track of the player's position on the map."""
+
     def __init__(self, size=4, player_position=(0, 0)):
         self.size = size
         self.map = [["X"] * size for i in range(size)]
@@ -25,27 +27,31 @@ class Map:
         self.player_position = player_position
 
     def find_outer_rooms(self):
+        """ Method to find the outer rooms of the map. """
         for row in range(self.size):
             for col in range(self.size):
                 if row in [0, self.size - 1] or col in [0, self.size - 1]:
                     self.outer_rooms.append((row, col))
 
     def mark_player_position(self, position):
+        """ Method to mark the player's position on the map."""
         x, y = position
         self.map[x][y].name = "P"
 
     def mark_visited_room(self, position):
+        """ Method to mark a room as visited."""
         x, y = position
         self.map[x][y].name = "0"
 
     def mark_player_leave_room(self):
+        """ Method to mark the player's previous position on the map."""
         for row in range(self.size):
             for room in range(self.size):
                 if self.map[row][room].name == "P":
                     self.map[row][room].name = "0"
 
-    # Method to print the map. And some bad math to try and get "Map" centered and boarder scaling with size
     def print_map(self):
+        """ Method to print the map."""
         visuals.clear()
         print(" " * (self.size + 1) + "MAP")
         print("#" * (self.size * 3))

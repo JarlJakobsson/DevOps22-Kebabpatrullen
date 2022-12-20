@@ -1,9 +1,12 @@
-from Characters import Character
 from random import randint
+
 from BattleMenu import Battle_menu
+from Characters import Character
 
 
 class Player(Character):
+    """ Player class, inherits from Character class """
+
     def __init__(self, name="Kebabhunter"):
         super().__init__()
         self.score = 0
@@ -13,6 +16,7 @@ class Player(Character):
         self.escape_fail = False
 
     def get_treasure(self, treasure):
+        """ This method is used to get treasures """
         if treasure == 2:
             print(f"{self.name}: I found some gold coins (Value 2).")
         elif treasure == 6:
@@ -33,6 +37,7 @@ class Player(Character):
             )
 
     def escape_roll(self):
+        """ Player tries to escape, if successful it will return True """
         if randint(1, 100) <= (10 * self.agility):
             return True
         else:
@@ -40,6 +45,7 @@ class Player(Character):
             return False
 
     def attack_roll(self):
+        """ Player tries to attack, if successful it will return the attack value """
         self.atk_value = 0
         self.battle_menu.run_menu()
         if self.battle_menu.choice == 1:

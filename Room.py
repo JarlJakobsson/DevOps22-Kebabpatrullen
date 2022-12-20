@@ -1,8 +1,11 @@
-from Monsters import Giantspider, Orc, Skeleton, Troll, Death
 import random
+
+from Monsters import Death, Giantspider, Orc, Skeleton, Troll
 
 
 class Room:
+    """ Room class, creates a room with a monster and treasure """
+
     def __init__(self):
         self.monster = 0
         self.treasure = 0
@@ -13,6 +16,7 @@ class Room:
         self.create_treasure()
 
     def summon_monster(self):
+        """ This method is used to summon a monster """
         monster_roll = random.randint(1, 100)
         if monster_roll in range(1, 20):
             self.monster = Giantspider()
@@ -22,10 +26,11 @@ class Room:
             self.monster = Orc()
         elif monster_roll in range(48, 53):
             self.monster = Troll()
-        elif monster_roll is 100:
+        elif monster_roll == 100:
             self.monster = Death()
 
     def create_treasure(self):
+        """ This method is used to create treasure """
         treasure_roll = random.randint(1, 100)
         if treasure_roll in range(1, 40):
             self.treasure = 2
@@ -39,4 +44,5 @@ class Room:
             self.treasure = 20
 
     def __repr__(self):
+        """ This method is used to print the room """
         return self.name

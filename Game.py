@@ -1,18 +1,22 @@
-from Map import Map
-from PlayerRoles import Knight, Thief, Wizard
-from MoveMenu import Move_menu
-from StartMenu import Start_menu
-from BattleMenu import Battle_menu
 import json
-from utils import visuals
-from constants import RAIDERS, KEBAB, BATTLE_TEXT, ASCII_WALL, EXIT_TEXT
-from threading import Thread
-from Monsters import Death
-import pygame
 import os
+from threading import Thread
+
+import pygame
+
+from BattleMenu import Battle_menu
+from constants import ASCII_WALL, BATTLE_TEXT, EXIT_TEXT, KEBAB, RAIDERS
+from Map import Map
+from Monsters import Death
+from MoveMenu import Move_menu
+from PlayerRoles import Knight, Thief, Wizard
+from StartMenu import Start_menu
+from utils import visuals
 
 
 class Game:
+    """ Game class, handles all the game logic """
+
     def __init__(self):
         self.start_menu = Start_menu()
         self.move_menu = Move_menu()
@@ -26,9 +30,11 @@ class Game:
         pygame.init()
 
     def wait_input(self):
-            input("\nPress Enter...\n")
+        """ Wait for input """
+        input("\nPress Enter...\n")
 
     def create_player(self, role):
+        """ Create player based on role """
         if role == "Knight":
             self.player = Knight()
         elif role == "Wizard":
@@ -38,22 +44,22 @@ class Game:
         self.player.name = self.start_menu.name
         self.player.score = self.start_menu.score
 
-    # After battle, Player loots treasure, monster get removed from room, treasure get removed from room
     def post_combat(self, position):
+        """ Post combat cleanup """
         if self.player.health:
             self.player.get_treasure(self.map.map[position[0]][position[1]].treasure)
             self.remove_treasure_and_moster(position)
             self.wait_input()
 
     def remove_treasure_and_moster(self, position):
+        """ Remove monster and treasure from room """
         self.map.map[position[0]][position[1]].monster = 0
         self.map.map[position[0]][position[1]].treasure = 0
 
     def check_room(self, position):
+        """ Check if room is empty """
         visuals.clear()
         self.map.print_map()
-        # Check if self.map.map[x][y].monster is True. If True prints the monster name, activates knight block, starts battle
-        # If player escaped calls move back method, else post_combat cleanup
         if self.map.map[position[0]][position[1]].monster:
             print(self.map.map[position[0]][position[1]].monster.ascii)
             self.play_music("battle_music.mp3")
@@ -71,8 +77,8 @@ class Game:
                 print(f"{self.player.name}: This room smell of Kebab... And evil...")
                 self.wait_input()
 
-    # Method to move player back to previous room (used after succesful escape)
     def move_back(self):
+        """ Move player back to previous room """
         self.map.mark_visited_room(self.map.player_position)
         self.map.player_position = self.old_position
         self.map.mark_player_position(self.old_position)
@@ -81,11 +87,12 @@ class Game:
         self.escaped = False
 
     def knight_block(self):
+        """ Knight block method """
         if self.player.role == "Knight":
             self.player.block = True
 
-    # Method to check compare initative rolls and decide who starts the battle
     def initiative_method(self, monster):
+        """ Checks who takes initative """
         if self.player.initative_roll() >= monster.initative_roll():
             self.first = self.player
             self.second = monster
@@ -96,6 +103,7 @@ class Game:
             self.second = self.player
 
     def battle_art(self, monster):
+        """ Prints battle ascii art """
         self.wait_input()
         visuals.clear()
         print(monster.ascii)
@@ -105,13 +113,13 @@ class Game:
         print(BATTLE_TEXT)
 
     def swap_atk(self):
-        # Swaps first and second
+        """ Swaps who attacks first """
         temp = self.second
         self.second = self.first
         self.first = temp
 
-    # Calls initative method to check who starts, if atk_value >= dodge, second takes dmg
     def battle_method(self, monster):
+        """ Battle method to handle all the battle logic """
         self.initiative_method(monster)
         while True:
             self.battle_art(monster)
@@ -135,7 +143,7 @@ class Game:
             self.swap_atk()
 
     def move_player(self, direction, position):
-        # Adds direction to player position and saves old player position (incase of Move back after battle escape)
+        """ Move player method, saves old position and checks if new room exists """
         x = position[0] + direction[0]
         y = position[1] + direction[1]
         current_room = self.map.map[position[0]][position[1]]
@@ -173,6 +181,7 @@ class Game:
             return True
 
     def check_exit(self, position):
+        """ Checks if room have exit and asks player if he wants to exit """
         if self.map.map[position[0]][position[1]].have_exit:
             self.choice = input(EXIT_TEXT)
             if self.choice == "1":
@@ -195,6 +204,7 @@ class Game:
             return False
 
     def secret_battle(self):
+        """ Secret battle method """
         self.secret = False
         print("\n*** You found a secret door! ***\n")
         self.wait_input()
@@ -216,6 +226,7 @@ class Game:
             self.wait_input()
 
     def save_method(self):
+        """ Saves player data to json file """
         with open("save_data.json", "w+") as f:
             self.start_menu.data[self.player.name]["score"] = self.player.score
             new_data = json.dumps(self.start_menu.data)
@@ -224,6 +235,7 @@ class Game:
             self.wait_input()
 
     def game_over_method(self):
+        """ Game over method, clears screen, removes player from save_data.json and prints game over art """
         visuals.clear()
         self.start_menu.data.pop(self.player.name)
         with open("save_data.json", "w+") as f:
@@ -237,12 +249,14 @@ class Game:
         self.wait_input()
 
     def play_music(self, filename):
+        """ Plays music """
         current_dir = os.getcwd()
         file_path = current_dir + filename
         pygame.mixer.music.load(filename)
         pygame.mixer.music.play()
 
     def main(self):
+        """ Main method, runs menu, creates player, creates map, removes treasure and moster from start position, runs game loop """
         stop_thread = Thread(target=pygame.mixer.music.stop)
         stop_thread.start()
         while True:

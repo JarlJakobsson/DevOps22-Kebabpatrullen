@@ -1,11 +1,13 @@
-from constants import BATTLE_TEXT
-from utils import visuals
+
 
 class Battle_menu:
+    """ This class is used to create a menu for the battle system. """
+
     def __init__(self):
         pass
 
     def run_menu(self):
+        """ This method is used to run the menu. """
         self.choice = input("What will you do?\n")
         if self.choice == "1":
             self.choice = 1
@@ -15,7 +17,7 @@ class Battle_menu:
             print("Thats not a choice...\n")
             self.choice = 2
         while True:
-            if self.choice is 2:
+            if self.choice == 2:
                 self.run_menu()
             else:
                 break

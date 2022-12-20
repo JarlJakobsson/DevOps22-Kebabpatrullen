@@ -2,10 +2,13 @@ from constants import MOVE_MENU_TEXT
 
 
 class Move_menu:
+    """ The menu for moving the player. """
+
     def __init__(self):
         self.quit = False
 
     def run_menu(self):
+        """ The menu for moving the player. """
         self.direction = (0,)
         self.choice = input(MOVE_MENU_TEXT)
 

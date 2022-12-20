@@ -1,8 +1,8 @@
 from Map import Map
 
-# Kind of stupid but playing around i noticed
-# if i wrote like the following code i clear the coverage.
+# Playing around i noticed if i wrote like the following code i clear the coverage.
 # Now is this a test or not?
+# More normal tests are in test_Map_2.py
 
 map = Map()
 
@@ -20,7 +20,7 @@ map.mark_player_leave_room()
 
 map.print_map()
 
-map.move_player((0, 1))
+map.mark_player_position((0, 1))
 
 map.print_map()
 

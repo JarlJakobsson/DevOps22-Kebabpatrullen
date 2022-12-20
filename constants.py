@@ -1,3 +1,8 @@
+
+# Removing this file from coverage report
+
+# pragma: no cover
+
 MAIN_MENU_TEXT = """
 ####### START MENU ########
 [1] - Create a new hero
