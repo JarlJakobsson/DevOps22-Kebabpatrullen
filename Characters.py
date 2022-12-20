@@ -10,8 +10,8 @@ class Character:
         self.health = 0
         self.attack = 0
         self.agility = 0
-        self.name = ""
         self.max_health = 0
+        self.name = ""
         self.role = ""
         self.ascii = ""
 

@@ -7,10 +7,12 @@ import json
 from utils import visuals
 from constants import RAIDERS, KEBAB, BATTLE_TEXT, ASCII_WALL, EXIT_TEXT
 from playsound import playsound
-from threading import Thread
+from threading import Thread, Event
 from Monsters import Death
+import pygame
 import os
 import sys
+import time
 
 
 class Game:
@@ -24,6 +26,7 @@ class Game:
         self.escaped = False
         self.secret = False
         self.wall_count = 0
+        pygame.init()
 
     def wait_input(self):
         input("\nPress Enter...\n")
@@ -114,12 +117,12 @@ class Game:
         while True:
             self.battle_art(monster)
             self.first.attack_roll()
-            if self.first.atk_value is 0:
+            if self.first.atk_value == 0:
                 # Heals monster if player escape
                 monster.heal()
                 self.escaped = True
                 break
-            elif self.first.atk_value is 1:
+            elif self.first.atk_value == 1:
                 print(f"{self.second.name} attacks {self.first.name}")
                 self.first.take_dmg()
                 if not self.first.health:
@@ -142,7 +145,7 @@ class Game:
         # Checks if new room exists. Adds a counter for moving into a wall, calls take_dmg if counter reaches 2
         # And checks if players health is not 0
         if x == -1 or x > self.map.size - 1 or y == -1 or y > self.map.size - 1:
-            if current_room.have_secret and self.wall_count is 1:
+            if current_room.have_secret and self.wall_count == 1:
                 current_room.have_secret = False
                 self.secret = True
                 print(f"*** {self.first.name} charges into the wall head first ***")
@@ -199,6 +202,8 @@ class Game:
         death = Death()
         self.first = self.player
         self.second = death
+        print(death.ascii)
+        self.wait_input()
         self.battle_method(death)
         if self.player.health and not self.escaped:
             visuals.clear()
@@ -225,31 +230,31 @@ class Game:
             new_data = json.dumps(self.start_menu.data)
             f.write(new_data)
         print(RAIDERS)
-        print("          *** GAME OVER - YOUR CHARACTER IS NO MORE... ***\n")
+        print(
+            "                                 *** GAME OVER - YOUR CHARACTER IS NO MORE... ***\n"
+        )
         self.wait_input()
 
     def play_music(self):
         current_dir = os.getcwd()
         self.stop_playing = False
         file_path = current_dir + "/music.mp3"
-        try:
-            while True:
-                playsound(file_path)
-                if self.stop_playing == True:
-                    break
-        except:
-            while True:
-                playsound(file_path)
-                if self.stop_playing == True:
-                    break
+        while True:
+            pygame.mixer.music.load(file_path)
+            pygame.mixer.music.play(-1)
+            self.stop_event.wait()
 
     def main(self):
-        music = Thread(target=self.play_music, args=())
-        music.start()
+        self.stop_event = Event()
+        self.music = Thread(target=self.play_music, args=(), daemon=True)
+        self.music.start()
         while True:
             self.start_menu.run_menu()
             if not self.start_menu.keep_going:
-                sys.exit()
+                pygame.quit()
+                print("Bye")
+                self.wait_input()
+                break
             self.create_player(self.start_menu.role)
             self.map = Map(self.start_menu.size, self.start_menu.start)
             self.map.mark_player_position(self.map.player_position)

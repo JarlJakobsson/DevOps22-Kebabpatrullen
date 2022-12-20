@@ -156,6 +156,7 @@ class Start_menu:
                 self.choose_start()
         elif self.choice == "q":
             self.keep_going = False
+            return
         else:
             print("Thats not a valid choice...")
             self.choice = 0
