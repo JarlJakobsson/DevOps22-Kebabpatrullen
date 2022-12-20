@@ -1,17 +1,13 @@
 from constants import MOVE_MENU_TEXT
 
-# from utils.visuals import USER_MOVE_VARIANT_3
-
 
 class Move_menu:
     def __init__(self):
-        pass
+        self.quit = False
 
     def run_menu(self):
-        self.choosing = True
         self.direction = (0,)
-        self.choice = input(MOVE_MENU_TEXT)  # Jarl version
-        # self.choice = input(USER_MOVE_VARIANT_3) # Alex version
+        self.choice = input(MOVE_MENU_TEXT)
 
         if self.choice == "w":
             self.direction = (-1, 0)
@@ -23,10 +19,13 @@ class Move_menu:
             self.direction = (0, -1)
 
         elif self.choice == "d":
-            return (-1, 0)
+            self.direction = (0, 1)
+        elif self.choice == "q":
+            self.choice = "q"
+            self.quit = True
         else:
             print("Thats not a direction...\n")
-            input("Press any key")
+            input("Press any key...")
             self.direction = 0
 
         while True:

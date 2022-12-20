@@ -1,56 +1,58 @@
+
 # Kebabpatrullen Agile Devops 2022
 
-## **Raiders Of The Lost Kebab** - _In the search of the Lost Kebab_
-
-Agile Project Management - DevOps22 - Team 5
+Let the search for the lost kebab begin!
 
 <p align = "center">
-<img src="img/dungeon art artwork.png" width=30% >
-  
-### <p align = "center">Kebab Intro Song:  
-<p align = "center">Nånting händer
-<p align = "center">Det är nåt skumt på gång
-<p align = "center">Men våra vänner
-<p align = "center">De grillar dagen lång
-<p align = "center">Och de finns i trakten här omkring
-<p align = "center">Vill du ha kebab så ring
-<p align = "center">Här kommer kebabpatrullen...e på språng nu
-<p align = "center">Här kommer kebabpatrullen...varje gång nu
-<p align = "center">Här kommer världens bästa kebabpatrull
-<p align = "center">Som svarvar kebaben för din skull
-  
-  
-<p align = "center">Let the search for the lost kebab begin!</p> 
+<img src="img/dungeon art artwork.png" width=50% >
 
 ---
 
 ## What's new?
 
-- DevOps22 [**Betygskriterier**](stuff/betygskriterier.md)
+[Robert's Sprint Demo Checklist](stuff/sprint_demo_checklist.md)
 
-- Game is now *playable in terminal* - Run `game.py` or `main.py`
+[*Dungeon Run* **Testing**](stuff/testing.md)
 
-- Info about Agile [**Ceremonies**](stuff/ceremonies.md)
+[*Dungeon Run* **Terminal Menu**](stuff/terminal_menu.md)
 
-- Robert's [**Sprint Demo Checklist**](stuff/sprint_demo_checklist.md)
+[Sprintperiod 1](#sprintperiod-1)
 
-- Raiders Of The Lost Kebab [**New Updated Testing**](stuff/testing.md)
+[Journals](#journal)
 
----
-
-## Stuff we will not use (at least for Sprint 1)
-
-[_Raiders Of The Lost Kebab_ **GUI**](stuff/gui.md)
-
-[_Raiders Of The Lost Kebab_ **Terminal Menu**](stuff/terminal_menu.md)
-
-[_Raiders Of The Lost Kebab_ **Testing**](stuff/testing.md)
+[Alex being Kebabmaster for a day](stuff/alex_agile.md)
 
 ---
 
-## Play in terminal - _Coming soon_ ⏳
+## **Dungeon Run** - *In the search of the Lost Kebab*
 
-[_Raiders Of The Lost Kebab_ **Terminal Demo**](stuff/terminal.md)
+Agile Project Management - DevOps22 - Team 5
+
+Don't forget *it's about the journey, not the destination*.
+
+---
+
+## GUI - *Graphical User Interface* 🚧
+
+[*Dungeon Run* **GUI**](stuff/gui.md)
+
+---
+
+## Testing - *Unit Testing* 🚧
+
+[*Dungeon Run* **Testing**](stuff/testing.md)
+
+---
+
+## New terminal menu 🚧
+
+[*Dungeon Run* **Terminal Menu**](stuff/terminal_menu.md)
+
+---
+
+## Play in terminal - *Coming soon* ⏳
+
+[*Dungeon Run* **Terminal**](stuff/terminal.md)
 
 ---
 
@@ -59,6 +61,8 @@ Agile Project Management - DevOps22 - Team 5
 [**TODO**](stuff/todo.md)
 
 [**Links**](stuff/links.md)
+
+[**Tips & Tricks**](stuff/howto.md)
 
 [**Story & Design**](stuff/story.md)
 
@@ -74,29 +78,45 @@ Agile Project Management - DevOps22 - Team 5
 
 ## Sprintperiod 1
 
-Sprint Period 1 - Project Raiders Of The Lost Kebab
+Sprint Period 1 - Project Dungeon Run
 
-| Name    | 07-Dec | 08-Dec | 09-Dec | 12-Dec | 13-Dec |
-| ------- | ------ | ------ | ------ | ------ | ------ |
-| Frida   | 3h     | 4h     | 7h     | 8h     | 5h     |
-| Mandana | 3h     | 4h     | 7h     | 8h     | 5h     |
-| Raffi   | 3h     | 4h     | 7h     | 8h     | 5h     |
-| Jarl    | 3h     | 4h     | 7h     | 8h     | 5h     |
-| Alex    | 3h     | 4h     | 7h     | 8h     | 5h     |
-| Total   | 15h    | 20h    | 35h    | 40h    | 25h    |
+| Name | 07-Dec | 08-Dec | 09-Dec | 12-Dec | 13-Dec |
+| --- | --- | --- | --- | --- | --- |
+| Frida | 3h | 4h | 7h | 5h | 5h |
+| Mandana | 3h | 4h | 7h | 5h | 5h |
+| Raffi | 3h | 4h | 7h | 5h | 5h |
+| Jarl | 3h | 4h | 7h | 5h | 5h |
+| Alex | 3h | 4h | 7h | 5h | 5h |
+| Total | 15h | 20h | 35h | 25h | 25h |
 
 ---
 
 ## Sprintperiod 2
 
-| Name    | 14-Dec | 15-Dec | 16-Dec | 19-Dec | 20-Dec |
-| ------- | ------ | ------ | ------ | ------ | ------ |
-| Frida   | 6h     | 3h     | 4h     | 5h     | -      |
-| Mandana | 6h     | 3h     | 4h     | 5h     | -      |
-| Raffi   | 6h     | 3h     | 4h     | 5h     | -      |
-| Jarl    | 6h     | 3h     | 4h     | 5h     | -      |
-| Alex    | 6h     | 3h     | 4h     | 5h     | -      |
-| Total   | 30h    | 15h    | 4h     | 25h    | -      |
+| Name | Day 01 | Day 02 | Day 03 | Day 04 | Day 05 |
+| --- | --- | --- | --- | --- | --- |
+| Frida | - | - | - | - | - |
+| Mandana | - | - | - | - | - |
+| Raffi | - | - | - | - | - |
+| Jarl | - | - | - | - | - |
+| Alex | - | - | - | - | - |
+| Total | - | - | - | - | - |
+
+---
+
+## Journal
+
+Daily journal for the project. (All team members) 🚧
+
+| Date | Description | Time |
+| --- | --- | --- |
+| 2022-12-05 | Start of project. Info. Got the task | 8h |
+| 2022-12-06 | Planning. Trello. Flowchart | 8h |
+| 2022-12-07 | Sprint 1. Backlog. Todo. Code for terminal version. Code for GUI | 1h |
+| 2022-12-08 | Sprint 1. Timeplaning. Fibonaci. Standup | 4h |
+| 2022-12-09 | Sprint 1. Standing. Show code. Team(pair) coding | 7h |
+| 2022-12-10 | Sprint 1. **Weekend**. PDF with timeplaning. New menu for terminal(proposition) | 4h |
+| 2022-12-11 | Sprint 1. **Weekend**. Testing with unittest and pytest.  | 4h |
 
 [Back to top](#kebabpatrullen-agile-devops-2022)
 
@@ -104,15 +124,15 @@ Sprint Period 1 - Project Raiders Of The Lost Kebab
 
 ## Dev Team
 
-[_Frida_](https://github.com/fridalundstroms)
+[*Frida*](https://github.com/fridalundstroms)
 
-[_Mandana_](https://github.com/Manibadani)
+[*Mandana*](https://github.com/Manibadani)
 
-[_Raffi_](https://github.com/raffiavakian)
+[*Raffi*](https://github.com/raffiavakian)
 
-[_Jarl_](https://github.com/JarlJakobsson)
+[*Jarl*](https://github.com/JarlJakobsson)
 
-[_Alex_](https://github.com/AlexRoman777)
+[*Alex*](https://github.com/AlexRoman777)
 
 ---
 
@@ -127,6 +147,15 @@ Sprint Period 1 - Project Raiders Of The Lost Kebab
 ---
 
 ## Kanban Board
+
+<p align = "center">
+<img src="img/kanban.png" width=50% >
+
+[Back to top](#kebabpatrullen-agile-devops-2022)
+
+---
+
+## Trello Sprint Backlog
 
 <p align = "center">
 <img src="img/sprint_backlog.png" width=50% >
@@ -144,7 +173,8 @@ Sprint Period 1 - Project Raiders Of The Lost Kebab
 
 ---
 
-## Project Timeline
+## Project Timeline - 🚧 *work in progress* 🚧
+
 
 ```mermaid
 gantt
@@ -155,7 +185,7 @@ section Start of project
 Planning                 :         des1, 2022-12-05, 3d
 Sprint 1                 :         des2, 2022-12-07, 7d
 Demo                     :         des3, 2022-12-14, 1d
-Planning                 :         des4, 2022-12-14, 2d
+Planning                 :         des4, 2022-12-12, 3d
 Sprint 2                 :         des3, after des2, 7d
 Deadline                 :         des4, after des3, 2d
 ```
@@ -164,4 +194,46 @@ Deadline                 :         des4, after des3, 2d
 
 ---
 
-<p align = "right">Don't forget it's about the journey, not the destination.</p>
+## Agile roles
+
+### **Roles**
+
+We have to decide on the roles for the project.
+
+- **Product Owner** - *Robert*
+- **Scrum Master** - *Mandana*
+- **Development Team** - *Alla*
+
+[Back to top](#kebabpatrullen-agile-devops-2022)
+
+---
+
+### Redoing the flowchart with mermaid
+
+🚧 *work in progress* 🚧
+
+---
+
+```mermaid
+graph TD
+A[Start] --> B[Create new user or login]
+B --> C[Input name]
+B --> D[Get data from file]
+C --> E[Input role]
+E --> F[Input start position]
+F --> G[Input map size]
+D --> G[Input map size]
+G --> H[Create player, map, room]
+H --> I[Try to move]
+I --> J[Check if monster]
+```
+
+[Back to top](#kebabpatrullen-agile-devops-2022)
+
+---
+
+## Timeline PDF - by *Frida*
+
+[**Timeline PDF**](stuff/sprint1_frida.pdf)
+
+---
