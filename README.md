@@ -5,15 +5,15 @@ Let the search for the lost kebab begin!
 <p align = "center">
 <img src="img/dungeon art artwork.png" width=50% >
 
-<p align = "right"> Ai generated art by <a href="https://www.openai.com/blog/dall-e/">OpenAI</a>
+<p align = "right"> generated art by <a href="https://openai.com/">OpenAI</a>
 
 ---
 
-## **Dungeon Run** - _In the search of the Lost Kebab_
+## **Raiders Of The Lost Kebab** - _In the search of the Lost Kebab_
 
 Agile Project Management - DevOps22 - Team 5
 
-Team members: **Frida**, **Mandana**, **Raffi**, **Jarl**, **Alex**
+Team members: [_Frida_](https://github.com/fridalundstroms), [_Mandana_](https://github.com/Manibadani), [_Raffi_](https://github.com/raffiavakian), [_Jarl_](https://github.com/JarlJakobsson), [_Alex_](https://github.com/AlexRoman777)
 
 <p align = "right">Don't forget "it's about the journey, not the destination".</a>
 
@@ -23,7 +23,7 @@ Team members: **Frida**, **Mandana**, **Raffi**, **Jarl**, **Alex**
 
 We focused our efforts on the terminal version of the game, but we also tryed to implement a GUI version of the game. The GUI version is not finished yet, but we are working on it. Maybe we will finish it on the next sprint 😀
 
-[_Dungeon Run_ **GUI**](stuff/gui.md)
+[_Raiders Of The Lost Kebab_ **GUI**](stuff/gui.md)
 
 ---
 
@@ -31,7 +31,7 @@ We focused our efforts on the terminal version of the game, but we also tryed to
 
 We have implemented unit testing for the game. We have used _Pytest_ and _Unittest_ to test the game. We have also implemented a coverage report to see how much of the code is covered by the tests.
 
-[_Dungeon Run_ **Testing**](stuff/tests.md)
+[_Raiders Of The Lost Kebab_ **Testing**](stuff/tests.md)
 
 ---
 
@@ -39,7 +39,7 @@ We have implemented unit testing for the game. We have used _Pytest_ and _Unitte
 
 We managed to create flowcharts for the game on 3 different ways. We used Lucidchart, Mermaid and Miro. Lucidchart and Miro are online tools, and Mermaid is a markdown extension. We used Lucidchart and Miro to create the flowcharts, and we used Mermaid to create the flowchart in this README file.
 
-[_Dungeon Run_ **Flowchart**](stuff/flowchart.md)
+[_Raiders Of The Lost Kebab_ **Flowchart**](stuff/flowchart.md)
 
 ---
 
@@ -47,7 +47,7 @@ We managed to create flowcharts for the game on 3 different ways. We used Lucidc
 
 We used Trello to create a Kanban board for the project. We used the Kanban board to manage the project and to keep track of the tasks. We also used the Kanban board for our sprint retrospectives.
 
-[_Dungeon Run_ **Kanban Board**](stuff/kanban.md)
+[_Raiders Of The Lost Kebab_ **Kanban Board**](stuff/kanban.md)
 
 ---
 
@@ -67,9 +67,9 @@ Time: 10:00 - 10:30
 
 ---
 
-## Sprintperiod 1
+## Sprint 1
 
-Sprint Period 1 - Project Dungeon Run
+Sprint Period 1 - Project Raiders Of The Lost Kebab
 
 | Name    | 07-Dec | 08-Dec | 09-Dec | 12-Dec | 13-Dec |
 | ------- | ------ | ------ | ------ | ------ | ------ |
@@ -82,54 +82,18 @@ Sprint Period 1 - Project Dungeon Run
 
 ---
 
-## Sprintperiod 2
+## Sprint 2
 
-| Name    | Day 01 | Day 02 | Day 03 | Day 04 | Day 05 |
+Sprint Period 2 - Project Raiders Of The Lost Kebab
+
+| Name    | 14-Dec | 15-Dec | 16-Dec | 19-Dec | 20-Dec |
 | ------- | ------ | ------ | ------ | ------ | ------ |
-| Frida   | -      | -      | -      | -      | -      |
-| Mandana | -      | -      | -      | -      | -      |
-| Raffi   | -      | -      | -      | -      | -      |
-| Jarl    | -      | -      | -      | -      | -      |
-| Alex    | -      | -      | -      | -      | -      |
-| Total   | -      | -      | -      | -      | -      |
-
----
-
-## Journal
-
-Daily journal for the project. (All team members) 🚧
-
-| Date       | Description                                                                     | Time |
-| ---------- | ------------------------------------------------------------------------------- | ---- |
-| 2022-12-05 | Start of project. Info. Got the task                                            | 8h   |
-| 2022-12-06 | Planning. Trello. Flowchart                                                     | 8h   |
-| 2022-12-07 | Sprint 1. Backlog. Todo. Code for terminal version. Code for GUI                | 1h   |
-| 2022-12-08 | Sprint 1. Timeplaning. Fibonaci. Standup                                        | 4h   |
-| 2022-12-09 | Sprint 1. Standing. Show code. Team(pair) coding                                | 7h   |
-| 2022-12-10 | Sprint 1. **Weekend**. PDF with timeplaning. New menu for terminal(proposition) | 4h   |
-| 2022-12-11 | Sprint 1. **Weekend**. Testing with unittest and pytest.                        | 4h   |
-
-[Back to top](#kebabpatrullen-agile-devops-2022)
-
----
-
-## Dev Team
-
-[_Frida_](https://github.com/fridalundstroms)
-
-[_Mandana_](https://github.com/Manibadani)
-
-[_Raffi_](https://github.com/raffiavakian)
-
-[_Jarl_](https://github.com/JarlJakobsson)
-
-[_Alex_](https://github.com/AlexRoman777)
-
----
-
-## Support Team
-
-[Robert WESTIN](https://github.com/robert-alfwar)
+| Frida   | 6h     | 3h     | 4h     | 5h     | 7h     |
+| Mandana | 6h     | 3h     | 4h     | 5h     | 7h     |
+| Raffi   | 6h     | 3h     | 4h     | 5h     | 7h     |
+| Jarl    | 6h     | 3h     | 4h     | 5h     | 7h     |
+| Alex    | 6h     | 3h     | 4h     | 5h     | 7h     |
+| Total   | 30h    | 15h    | 20h    | 25h    | 35h    |
 
 ---
 
@@ -137,34 +101,7 @@ Daily journal for the project. (All team members) 🚧
 
 ---
 
-## Kanban Board
-
-<p align = "center">
-<img src="img/kanban.png" width=50% >
-
-[Back to top](#kebabpatrullen-agile-devops-2022)
-
----
-
-## Trello Sprint Backlog
-
-<p align = "center">
-<img src="img/sprint_backlog.png" width=50% >
-
-[Back to top](#kebabpatrullen-agile-devops-2022)
-
----
-
-## Flowchart
-
-<p align = "center">
-<img src="img/flowchart.png" width=50% >
-
-[Back to top](#kebabpatrullen-agile-devops-2022)
-
----
-
-## Project Timeline - 🚧 _work in progress_ 🚧
+## Project Timeline
 
 ```mermaid
 gantt
@@ -172,46 +109,17 @@ dateFormat  YYYY-MM-DD
 title Kebabpatrullen
 
 section Start of project
-Planning                 :         des1, 2022-12-05, 3d
-Sprint 1                 :         des2, 2022-12-07, 7d
-Demo                     :         des3, 2022-12-14, 1d
-Planning                 :         des4, 2022-12-12, 3d
-Sprint 2                 :         des3, after des2, 7d
-Deadline                 :         des4, after des3, 2d
+Project start            :         des1, 2022-12-05, 2d
+Planning                 :         des2, 2022-12-07, 1d
+Sprint 1                 :         des3, 2022-12-07, 7d
+Demo                     :         des4, 2022-12-14, 1d
+Planning                 :         des5, 2022-12-15, 1d
+Sprint 2                 :         des6, 2022-12-15, 7d
+Deadline                 :         des7, 2022-12-21, 2d
 ```
 
-[Back to top](#kebabpatrullen-agile-devops-2022)
-
----
-
-## Agile roles
-
-### **Roles**
-
-We have to decide on the roles for the project.
-
-- **Product Owner** - _Robert_
-- **Scrum Master** - _Mandana_
-- **Development Team** - _Alla_
-
-[Back to top](#kebabpatrullen-agile-devops-2022)
-
 ---
 
 [Back to top](#kebabpatrullen-agile-devops-2022)
 
 ---
-
-## What's new?
-
-[Robert's Sprint Demo Checklist](stuff/sprint_demo_checklist.md)
-
-[_Dungeon Run_ **Testing**](stuff/testing.md)
-
-[_Dungeon Run_ **Terminal Menu**](stuff/terminal_menu.md)
-
-[Sprintperiod 1](#sprintperiod-1)
-
-[Journals](#journal)
-
-[Alex being Kebabmaster for a day](stuff/alex_agile.md)
