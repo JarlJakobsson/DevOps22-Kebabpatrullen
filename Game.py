@@ -11,6 +11,7 @@ from playsound import playsound
 from threading import Thread
 from Monsters import Death
 import os
+import sys
 
 
 class Game:
@@ -198,7 +199,6 @@ class Game:
             self.wait_input()
             visuals.clear()
             print(KEBAB)
-            print("*** THE LOST KEBAB ***")
             self.wait_input()
 
     def save_method(self):
@@ -221,21 +221,29 @@ class Game:
 
     def play_music(self):
         current_dir = os.getcwd()
+        self.stop_playing = False
         file_path = current_dir + "/music.mp3"
         try:
             while True:
                 playsound(file_path)
+                if self.stop_playing == True:
+                    break
         except:
             pass
 
+    def stop_music(self):
+        self.stop_playing = True
+        self.music.join()
+
     def main(self):
-        self.music = Thread(target=self.play_music, args=()).start()
+        music = Thread(target=self.play_music, args=())
+        music.start()
         while True:
             visuals.clear()
             print(RAIDERS)
             self.start_menu.run_menu()
             if not self.start_menu.keep_going:
-                break
+                sys.exit()
             self.create_player(self.start_menu.role)
             self.map = Map(self.start_menu.size, self.start_menu.start)
             self.map.mark_player_position(self.map.player_position)
