@@ -68,7 +68,7 @@ You are an adventurer, who has been hired by the king to find the lost kebab. Th
 ### Intro
 
 <p align = "center">
-<img src="../img/final/ASCII_intro.png" width=50% >
+<img src="../img/final/ascii_intro.png" width=50% >
 
 ---
 
