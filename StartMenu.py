@@ -7,12 +7,11 @@ from constants import (
     LOAD_TEXT,
     ASCII_WIZARD,
     ASCII_KNIGHT,
-    ASCII_THIEF
+    ASCII_THIEF,
+    RAIDERS
 )
 from utils import visuals
 import json
-import textwrap
-import shutil
 
 class Start_menu:
     def __init__(self):
@@ -137,8 +136,12 @@ class Start_menu:
         self.data[self.name] = {"role": self.role, "score": 0}
 
     def menu_commands(self):
+        self.load = False
+        visuals.clear()
+        print(RAIDERS)
         self.choice = input(MAIN_MENU_TEXT)
         if self.choice == "1":
+            self.load = True
             self.choose_name()
             self.choose_role()
             self.choose_size()
@@ -147,15 +150,16 @@ class Start_menu:
         elif self.choice == "2":
             self.print_saved_characters()
             self.load_data(input(LOAD_TEXT))
-            self.choose_size()
-            self.choose_start()
+            if self.load:
+                self.choose_size()
+                self.choose_start()
         elif self.choice == "3":
             self.keep_going = False
         else:
             print("Thats not a valid choice...")
             self.choice = 0
         while True:
-            if not self.choice:
+            if not self.choice or not self.load:
                 self.menu_commands()
             else:
                 break

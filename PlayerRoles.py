@@ -65,20 +65,20 @@ class Thief(Player):
     # Overrides the normal attack method
     def attack_roll(self):
         self.atk_value = 0
-        if self.battle_menu.run_menu():
+        self.battle_menu.run_menu()
+        if self.battle_menu.choice == 1:
             for i in range(self.attack):
                 self.atk_value += self.roll_dice()
             thief_atk = random.randint(1, 100)
             if thief_atk >= 75:
-                print(f"*** {self.name}: Haiyyaa [THIEF SPECIAL] ***")
+                print(f"*** {self.name}: HAIYAAA!! [THIEF SPECIAL] ***")
                 self.atk_value = self.atk_value * 2
-            print(f"{self.name} tries to ({self.atk_value} attack roll)")
+            print(f"{self.name} tries to attack({self.atk_value} attack roll)")
             return self.atk_value
-        else:
+        elif not self.battle_menu.choice:
             if self.escape_roll():
                 self.atk_value = 0
                 return self.atk_value
             else:
                 self.atk_value = 1
-                print(f"{self.name} failed to escape (0 attack roll)")
                 return self.atk_value

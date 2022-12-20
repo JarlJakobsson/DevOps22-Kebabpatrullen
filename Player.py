@@ -10,6 +10,7 @@ class Player(Character):
         self.name = name
         self.exits = False
         self.battle_menu = Battle_menu()
+        self.escape_fail = False
 
     def get_treasure(self, treasure):
         if treasure == 2:
@@ -36,22 +37,20 @@ class Player(Character):
             return True
         else:
             print(f"\n*** Never lucky...Escape attempt failed ***\n")
-            self.wait_input()
             return False
 
     def attack_roll(self):
         self.atk_value = 0
         self.battle_menu.run_menu()
-        if self.battle_menu.choice:
+        if self.battle_menu.choice == 1:
             for i in range(self.attack):
                 self.atk_value += self.roll_dice()
             print(f"{self.name} tries to ({self.atk_value} attack roll)")
             return self.atk_value
-        else:
+        elif not self.battle_menu.choice:
             if self.escape_roll():
                 self.atk_value = 0
                 return self.atk_value
             else:
                 self.atk_value = 1
-                print(f"{self.name} failed to escape (0 attack roll)")
                 return self.atk_value

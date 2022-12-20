@@ -27,7 +27,7 @@ class Game:
         self.wall_count = 0
 
     def wait_input(self):
-        input("\nPress any key...\n")
+        input("\nPress Enter...\n")
 
     def create_player(self, role):
         if role == "Knight":
@@ -103,46 +103,56 @@ class Game:
         print(self.player.name + " : " + "[]" * self.player.health)
         print(BATTLE_TEXT)
 
+    def swap_atk(self):
+        # Swaps first and second
+        temp = self.second
+        self.second = self.first
+        self.first = temp
+
     # Calls initative method to check who starts, if atk_value >= dodge, second takes dmg
     def battle_method(self, monster):
         self.initiative_method(monster)
         while True:
             self.battle_art(monster)
-            if self.first.attack_roll():
-                if self.first.atk_value >= self.second.dodge_roll():
-                    self.second.take_dmg()
-                    if not self.second.health:
-                        break
-                else:
-                    print(f"\n*** {self.second} dodged the attack! ***")
-                # Swaps first and second
-                temp = self.second
-                self.second = self.first
-                self.first = temp
-            else:
+            self.first.attack_roll()
+            if self.first.atk_value is 0:
                 # Heals monster if player escape
                 monster.heal()
                 self.escaped = True
                 break
+            elif self.first.atk_value is 1:
+                print(f"{self.second.name} attacks {self.first.name}")
+                self.first.take_dmg()
+                if not self.first.health:
+                    break
+            elif self.first.atk_value >= self.second.dodge_roll():
+                self.second.take_dmg()
+                if not self.second.health:
+                    break
+            else:
+                print(f"\n*** {self.second} dodged the attack! ***")
+            self.swap_atk()
 
     def move_player(self, direction, position):
         # Adds direction to player position and saves old player position (incase of Move back after battle escape)
         x = position[0] + direction[0]
         y = position[1] + direction[1]
+        current_room = self.map.map[position[0]][position[1]]
         self.old_position = position
 
         # Checks if new room exists. Adds a counter for moving into a wall, calls take_dmg if counter reaches 2
         # And checks if players health is not 0
         if x == -1 or x > self.map.size - 1 or y == -1 or y > self.map.size - 1:
-            if self.map.map[position[0]][position[1]].have_secret:
-                self.map.map[position[0]][position[1]].have_secret = False
+            if current_room.have_secret and self.wall_count is 1:
+                current_room.have_secret = False
                 self.secret = True
+                print(f"*** {self.first.name} charges into the wall head first ***")
+                self.wait_input()
                 return True
             print(ASCII_WALL)
-            self.wait_input()
             print(f"{self.player.name}: Ouch... There is a wall there...")
-            self.wait_input()
             self.wall_count += 1
+            self.wait_input()
             if self.wall_count == 2:
                 self.player.take_dmg()
                 self.wall_count = 0
@@ -191,7 +201,7 @@ class Game:
         self.first = self.player
         self.second = death
         self.battle_method(death)
-        if self.player.health and self.escaped == False:
+        if self.player.health and not self.escaped:
             visuals.clear()
             print("*** The smell of Evil is gone, but the smell of Kebab is not... ***")
             self.wait_input()
@@ -229,18 +239,15 @@ class Game:
                 if self.stop_playing == True:
                     break
         except:
-            pass
-
-    def stop_music(self):
-        self.stop_playing = True
-        self.music.join()
+            while True:
+                playsound(file_path)
+                if self.stop_playing == True:
+                    break
 
     def main(self):
         music = Thread(target=self.play_music, args=())
         music.start()
         while True:
-            visuals.clear()
-            print(RAIDERS)
             self.start_menu.run_menu()
             if not self.start_menu.keep_going:
                 sys.exit()
