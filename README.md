@@ -19,6 +19,51 @@ Team members: [_Frida_](https://github.com/fridalundstroms), [_Mandana_](https:/
 
 ---
 
+## Requirements
+
+The game was tested on Windows and Mac. It should work on Linux as well, but we have not tested it on Linux.
+The only requirement is to have Python 3 installed on your computer. You can download Python 3 from [here](https://www.python.org/downloads/).
+
+The only other requirement is to install the _Pygame_ library. You can install it by running the following command in your terminal:
+
+```bash
+pip install pygame
+```
+
+We use the _Pygame_ library to play sounds and music in the game.
+
+For running the tests, you need to install the _Pytest_ library. You can install it by running the following command in your terminal:
+
+```bash
+pip install pytest
+```
+
+There is a requirements.txt file in the root directory of the project. You can install all the requirements by running the following command in your terminal:
+
+```bash
+pip install -r requirements.txt
+```
+
+Tox was used to run the tests on multiple Python versions. Tox is not required to run the game, but it is required to run the tests.
+
+---
+
+## How to run the game
+
+To run the game, you need to open your terminal and navigate to the root directory of the project. Then you need to run the following command:
+
+```bash
+python main.py
+```
+
+or if you are using Linux/Mac:
+
+```bash
+python3 main.py
+```
+
+---
+
 ## GUI - _Graphical User Interface_ 🚧
 
 We focused our efforts on the terminal version of the game, but we also tryed to implement a GUI version of the game. The GUI version is not finished yet, but we are working on it. Maybe we will finish it on the next sprint 😀
