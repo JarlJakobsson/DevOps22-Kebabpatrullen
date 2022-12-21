@@ -138,6 +138,7 @@ class Start_menu:
 
     def menu_commands(self):
         self.load = False
+        self.keep_going = True
         visuals.clear()
         print(RAIDERS)
         self.choice = input(MAIN_MENU_TEXT)
@@ -156,11 +157,11 @@ class Start_menu:
                 self.choose_start()
         elif self.choice == "q":
             self.keep_going = False
-            return
+            self.choice = "q"
         else:
             print("Thats not a valid choice...")
             self.choice = 0
-        while True:
+        while self.keep_going:
             if not self.choice or not self.load:
                 self.menu_commands()
             else:

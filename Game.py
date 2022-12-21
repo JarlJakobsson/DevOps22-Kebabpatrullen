@@ -51,7 +51,6 @@ class Game:
 
     def check_room(self, position):
         visuals.clear()
-        self.map.print_map()
         # Check if self.map.map[x][y].monster is True. If True prints the monster name, activates knight block, starts battle
         # If player escaped calls move back method, else post_combat cleanup
         if self.map.map[position[0]][position[1]].monster:
@@ -61,14 +60,18 @@ class Game:
             self.knight_block()
             self.battle_method(self.map.map[position[0]][position[1]].monster)
             self.play_music("music.mp3")
+            self.map.print_map()
         else:
-            print(f"\n{self.player.name}: ...No monsters in here...\n")
+            self.map.print_map()
+            print(f"\n{self.player.name}: ...No monsters in here...")
+
         if self.escaped:
             self.move_back()
         else:
             self.post_combat(position)
             if self.map.map[position[0]][position[1]].have_secret:
-                print(f"{self.player.name}: This room smell of Kebab... And evil...")
+                self.map.print_map()
+                print(f"\n{self.player.name}: This room smell of Kebab... And evil...")
                 self.wait_input()
 
     # Method to move player back to previous room (used after succesful escape)
@@ -84,7 +87,7 @@ class Game:
         if self.player.role == "Knight":
             self.player.block = True
 
-    # Method to check compare initative rolls and decide who starts the battle
+    # Method to compare initative rolls and decide who starts the battle
     def initiative_method(self, monster):
         if self.player.initative_roll() >= monster.initative_roll():
             self.first = self.player
@@ -120,12 +123,10 @@ class Game:
                 # Heals monster if player escape
                 monster.heal()
                 self.escaped = True
+                self.wait_input()
                 break
             elif self.first.atk_value == 1:
-                print(f"{self.second.name} attacks {self.first.name}")
-                self.first.take_dmg()
-                if not self.first.health:
-                    break
+                pass
             elif self.first.atk_value >= self.second.dodge_roll():
                 self.second.take_dmg()
                 if not self.second.health:
@@ -246,11 +247,8 @@ class Game:
         pygame.mixer.music.play()
 
     def main(self):
-        stop_thread = Thread(target=pygame.mixer.music.stop)
-        stop_thread.start()
         while True:
             self.play_music("music.mp3")
-            self.music = Thread(target=pygame.mixer.music.play)
             self.start_menu.run_menu()
             if not self.start_menu.keep_going:
                 pygame.quit()

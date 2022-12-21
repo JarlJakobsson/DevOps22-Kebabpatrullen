@@ -14,17 +14,17 @@ class Player(Character):
 
     def get_treasure(self, treasure):
         if treasure == 2:
-            print(f"{self.name}: I found some gold coins (Value 2).")
+            print(f"\n{self.name}: I found some gold coins (Value 2).")
         elif treasure == 6:
-            print(f"{self.name}: Sweet! I found a Pouch of gold coins (Value 6).")
+            print(f"\n{self.name}: Sweet! I found a Pouch of gold coins (Value 6).")
         elif treasure == 10:
-            print(f"{self.name}: Cool! I found some Golden Jewlery (Value 10).")
+            print(f"\n{self.name}: Cool! I found some Golden Jewlery (Value 10).")
         elif treasure == 14:
-            print(f"{self.name}: Nice! I found a rare Gem (Value 14).")
+            print(f"\n{self.name}: Nice! I found a rare Gem (Value 14).")
         elif treasure == 20:
-            print(f"{self.name}: WOW! I found a Treasure! (Value 20).")
+            print(f"\n{self.name}: WOW! I found a Treasure! (Value 20).")
         else:
-            print(f"{self.name}: ...No treasures in here...")
+            print(f"\n{self.name}: ...No treasures in here...")
 
         self.score += treasure
         if treasure:

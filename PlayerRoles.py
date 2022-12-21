@@ -73,7 +73,7 @@ class Thief(Player):
             if thief_atk >= 75:
                 print(f"*** {self.name}: HAIYAAA!! [THIEF SPECIAL] ***")
                 self.atk_value = self.atk_value * 2
-            print(f"{self.name} tries to attack({self.atk_value} attack roll)")
+            print(f"{self.name} tries to attack ({self.atk_value} attack roll)")
             return self.atk_value
         elif not self.battle_menu.choice:
             if self.escape_roll():
