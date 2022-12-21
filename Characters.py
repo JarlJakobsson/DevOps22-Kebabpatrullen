@@ -20,16 +20,7 @@ class Character:
         return random.randint(1, 6)
 
     def wait_input(self):
-        input("\nPress any key...\n")
-
-    # Generic method for all roll mechanics (not used atm)
-    def roll(self, value):
-        sum = 0
-        for i in range(value):
-            sum += self.roll_dice()
-        print(f"{self.name}I try something! (Rolled {sum})")
-        print(f"{self.name}: I try something! (Rolled {sum})")
-        return sum
+        input("\nPress Enter...\n")
 
     # Rolls a dice for each attack_value of character
     def attack_roll(self):
@@ -62,7 +53,7 @@ class Character:
     # Method to take damage
     def take_dmg(self, rogue=0):
         print(f"\n{self.name}: Ouch!")
-        self.health -= (1 + rogue)
+        self.health -= 1 + rogue
         if self.health <= 0:
             self.death()
         else:

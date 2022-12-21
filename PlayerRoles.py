@@ -34,7 +34,7 @@ class Wizard(Player):
         super().__init__()
         self.name = ""
         self.initiative = 6
-        self.health = 5
+        self.health = 30
         self.attack = 9
         self.agility = 5
         self.max_health = 5

@@ -241,8 +241,8 @@ class Game:
         self.wait_input()
 
     def play_music(self, filename):
-        current_dir = os.getcwd()
-        file_path = current_dir + filename
+        # current_dir = os.getcwd()
+        # file_path = current_dir + filename
         pygame.mixer.music.load(filename)
         pygame.mixer.music.play()
 
